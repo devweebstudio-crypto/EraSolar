@@ -131,7 +131,7 @@
             transform: rotate(90deg);
         }
 
-        /* Hero Section with Visible Images */
+        /* Hero Section */
         .hero-section {
             min-height: 85vh;
             position: relative;
@@ -160,7 +160,7 @@
             transition: opacity 1.2s ease-in-out;
             background-size: cover;
             background-position: center;
-            filter: brightness(0.7);
+            filter: brightness(0.85);
         }
 
         .slide.active {
@@ -173,7 +173,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(13, 27, 62, 0.7), rgba(26, 35, 126, 0.8));
+            background: linear-gradient(to bottom, rgba(13, 27, 62, 0.4), rgba(26, 35, 126, 0.5));
             z-index: 2;
         }
 
@@ -185,6 +185,7 @@
             padding: 40px 20px;
             max-width: 900px;
             width: 100%;
+            margin-top: 20px;
         }
 
         .hero-title-container {
@@ -215,26 +216,27 @@
             letter-spacing: 0.5px;
         }
 
-        /* Vision Container with Proper Height */
+        /* Vision Container */
         .vision-container {
             position: relative;
-            min-height: 80px;
+            height: auto;
             margin: 40px auto 0;
             max-width: 800px;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 60px;
         }
 
         .vision-text {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 400;
             background-color: rgba(255, 255, 255, 0.15);
             display: inline-block;
-            padding: 20px 35px;
-            border-radius: 12px;
+            padding: 15px 25px;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            max-width: 750px;
+            max-width: 90%;
             position: absolute;
             top: 0;
             left: 50%;
@@ -244,9 +246,10 @@
             text-align: center;
             backdrop-filter: blur(8px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            line-height: 1.5;
+            line-height: 1.4;
             white-space: normal;
             word-wrap: break-word;
+            overflow: hidden;
         }
 
         .vision-text.active {
@@ -259,11 +262,12 @@
             transform: translateX(-50%) translateY(-20px);
         }
 
+        /* Stats Container */
         .stats-container {
             display: flex;
             justify-content: center;
             gap: 30px;
-            margin-top: 50px;
+            margin-top: 80px;
             flex-wrap: wrap;
         }
 
@@ -446,24 +450,51 @@
             font-weight: 500;
         }
 
-        /* Subsidy Section */
+        /* Subsidy Section with Enhanced Button Animation */
         .subsidy-section {
             padding: 80px 5%;
             background: var(--gradient-blue);
             color: white;
             text-align: center;
             position: relative;
+            overflow: hidden;
+        }
+
+        .subsidy-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: floatGrid 20s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatGrid {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(25px, 25px) rotate(1deg); }
         }
 
         .subsidy-content {
             max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .subsidy-content h2 {
             font-size: 2.2rem;
             margin-bottom: 20px;
             font-weight: 700;
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6); }
         }
 
         .subsidy-content p {
@@ -477,19 +508,93 @@
             background: white;
             color: var(--dark);
             border: none;
-            padding: 16px 40px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 8px;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 12px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 0 rgba(255, 152, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            animation: pulse 2s infinite;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 0 rgba(255, 152, 0, 0.7); }
+            70% { box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 15px rgba(255, 152, 0, 0); }
+            100% { box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 0 rgba(255, 152, 0, 0); }
+        }
+
+        .eligibility-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+
+        .eligibility-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: ripple 3s infinite;
+            z-index: -1;
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(40); opacity: 0; }
         }
 
         .eligibility-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            transform: translateY(-5px) scale(1.05);
             background: #f8f9fa;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 0 0 rgba(255, 152, 0, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .eligibility-btn:hover::before {
+            left: 100%;
+        }
+
+        .eligibility-btn i {
+            font-size: 1.3rem;
+            transition: transform 0.4s ease;
+        }
+
+        .eligibility-btn:hover i {
+            transform: translateX(5px) rotate(10deg);
+        }
+
+        .btn-sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkle 1.5s ease-out forwards;
+        }
+
+        @keyframes sparkle {
+            0% { transform: translate(0, 0) scale(0); opacity: 1; }
+            100% { transform: translate(var(--tx), var(--ty)) scale(1); opacity: 0; }
         }
 
         /* Contact Section */
@@ -654,8 +759,8 @@
             max-height: 90vh;
             padding: 0;
             position: relative;
-            transform: translateY(-20px);
-            transition: transform 0.3s ease;
+            transform: translateY(-20px) scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             overflow: hidden;
             display: flex;
@@ -663,7 +768,7 @@
         }
 
         .modal-overlay.active .modal {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         .modal-header {
@@ -750,8 +855,8 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .form-group {
@@ -887,6 +992,12 @@
         .progress-step.active .step-circle {
             background-color: var(--primary);
             color: white;
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         .progress-step.completed .step-circle {
@@ -1068,12 +1179,19 @@
             z-index: 999;
             transition: all 0.2s ease;
             text-decoration: none;
+            animation: floatWhatsApp 3s ease-in-out infinite;
+        }
+
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
         .whatsapp-button:hover {
             transform: scale(1.1);
             background: #1da851;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
         }
 
         /* Responsive Styles */
@@ -1096,8 +1214,18 @@
             }
             
             .vision-text {
-                font-size: 1.2rem;
-                padding: 18px 25px;
+                font-size: 1.1rem;
+                padding: 12px 20px;
+                max-width: 85%;
+            }
+            
+            .stats-container {
+                margin-top: 60px;
+            }
+            
+            .eligibility-btn {
+                padding: 16px 35px;
+                font-size: 1.1rem;
             }
         }
 
@@ -1147,17 +1275,24 @@
             }
             
             .vision-text {
-                font-size: 1.1rem;
-                padding: 15px 20px;
+                font-size: 1rem;
+                padding: 10px 16px;
+                max-width: 90%;
             }
             
             .stats-container {
                 gap: 15px;
+                margin-top: 50px;
             }
             
             .stat-card {
                 min-width: 150px;
                 padding: 15px;
+            }
+            
+            .eligibility-btn {
+                padding: 14px 30px;
+                font-size: 1rem;
             }
         }
 
@@ -1180,8 +1315,8 @@
             }
             
             .vision-text {
-                font-size: 1rem;
-                padding: 12px 16px;
+                font-size: 0.95rem;
+                padding: 10px 14px;
                 max-width: 90%;
             }
             
@@ -1193,11 +1328,17 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
+                margin-top: 40px;
             }
             
             .stat-card {
                 width: 100%;
                 max-width: 250px;
+            }
+            
+            .eligibility-btn {
+                padding: 12px 25px;
+                font-size: 0.95rem;
             }
             
             .whatsapp-button {
@@ -1326,13 +1467,13 @@
         </div>
     </section>
 
-    <!-- Subsidy Section -->
+    <!-- Subsidy Section with Enhanced Button -->
     <section class="subsidy-section" id="products">
         <div class="subsidy-content">
             <h2>Get Upto 50% Govt Subsidy</h2>
             <p>Government of India is providing subsidies for residential rooftop solar installations. Check your eligibility now and start saving on your electricity bills.</p>
             <button class="eligibility-btn" id="eligibilityBtn">
-                Check Eligibility
+                <i class="fas fa-check-circle"></i> Check Eligibility Now
             </button>
         </div>
     </section>
@@ -1636,14 +1777,14 @@
         
         setInterval(showNextSlide, 4000);
         
-        // Vision texts - all text fully visible
+        // Vision texts - shorter for better display
         const visionTexts = [
-            "Harnessing the power of the sun for a sustainable future",
-            "Making solar energy accessible to everyone",
-            "Innovating for a cleaner, greener tomorrow",
-            "Your trusted partner in solar energy solutions",
-            "Reducing carbon footprint, one panel at a time",
-            "Powering homes with clean, renewable energy"
+            "Harnessing solar power sustainably",
+            "Solar energy accessible to everyone",
+            "Cleaner, greener tomorrow",
+            "Your trusted solar partner",
+            "Reducing carbon footprint",
+            "Clean renewable energy"
         ];
         
         // Create vision text elements with proper height
@@ -1741,17 +1882,20 @@
             partnersSlider.appendChild(partnerLogo);
         });
         
-        // Modal functionality
+        // Modal functionality with enhanced animations
         const eligibilityBtn = document.getElementById('eligibilityBtn');
         const modalOverlay = document.getElementById('modalOverlay');
         const closeModal = document.getElementById('closeModal');
         const backToSite = document.getElementById('backToSite');
         
         eligibilityBtn.addEventListener('click', () => {
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            showStep('step1');
-            updateProgress(1);
+            createButtonSparkles(eligibilityBtn);
+            setTimeout(() => {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                showStep('step1');
+                updateProgress(1);
+            }, 300);
         });
         
         closeModal.addEventListener('click', () => {
@@ -1835,8 +1979,11 @@
                 const nextStepId = this.getAttribute('data-next');
                 const stepNumber = parseInt(nextStepId.replace('step', ''));
                 if (validateCurrentStep(currentStep)) {
-                    showStep(nextStepId);
-                    updateProgress(stepNumber);
+                    createButtonSparkles(this);
+                    setTimeout(() => {
+                        showStep(nextStepId);
+                        updateProgress(stepNumber);
+                    }, 200);
                 }
             });
         });
@@ -1931,6 +2078,8 @@
                     responseMsg.className = "msg success";
                     responseMsg.textContent = "Enquiry submitted successfully! We'll contact you soon.";
                     enquiryForm.reset();
+                    
+                    createSuccessSparkles(submitBtn);
                     
                     setTimeout(() => {
                         modalOverlay.classList.remove('active');
@@ -2032,6 +2181,81 @@
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
             cardObserver.observe(card);
+        });
+        
+        // Enhanced button animation functions
+        function createButtonSparkles(button) {
+            const rect = button.getBoundingClientRect();
+            const buttonCenterX = rect.left + rect.width / 2;
+            const buttonCenterY = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 15; i++) {
+                createSparkle(buttonCenterX, buttonCenterY);
+            }
+        }
+        
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'btn-sparkle';
+            
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 50 + Math.random() * 100;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            
+            sparkle.style.setProperty('--tx', `${tx}px`);
+            sparkle.style.setProperty('--ty', `${ty}px`);
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+        
+        function createSuccessSparkles(button) {
+            const rect = button.getBoundingClientRect();
+            const buttonCenterX = rect.left + rect.width / 2;
+            const buttonCenterY = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    createSuccessSparkle(buttonCenterX, buttonCenterY);
+                }, i * 100);
+            }
+        }
+        
+        function createSuccessSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'btn-sparkle';
+            sparkle.style.background = 'rgba(76, 175, 80, 0.8)';
+            
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 30 + Math.random() * 70;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            
+            sparkle.style.setProperty('--tx', `${tx}px`);
+            sparkle.style.setProperty('--ty', `${ty}px`);
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            
+            document.body.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+        
+        // Add floating animation to eligibility button on hover
+        eligibilityBtn.addEventListener('mouseenter', () => {
+            eligibilityBtn.style.animation = 'pulse 1s infinite';
+        });
+        
+        eligibilityBtn.addEventListener('mouseleave', () => {
+            eligibilityBtn.style.animation = 'pulse 2s infinite';
         });
     </script>
 </body>
