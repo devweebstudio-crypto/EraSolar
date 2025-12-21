@@ -7,12 +7,13 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/Xr2NHYPY/Gemini-Generated-Image-xeafzlxeafzlxeaf.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         :root {
@@ -20,40 +21,43 @@
             --secondary: #2196F3;
             --accent: #FF5722;
             --dark: #1A237E;
+            --green: #4CAF50;
+            --yellow: #FFC107;
             --dark-blue: #0D1B3E;
             --light: #F5F5F5;
             --success: #4CAF50;
             --light-blue: #E8F4FD;
-            --shadow: 0 5px 20px rgba(0,0,0,0.1);
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
             --gradient: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
             --gradient-blue: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
-            --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FF9800 100%);
         }
 
         body {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header Styles - WHITE BACKGROUND */
+        /* Header Styles */
         header {
-            background: #ffffff !important;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            background: #ffffff;
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 15px 5%;
+            padding: 18px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            animation: slideDown 0.5s ease-out;
+            animation: slideDown 0.3s ease-out;
         }
 
         @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .logo-container {
@@ -63,39 +67,35 @@
         }
 
         .logo-container img {
-            height: 75px;
-            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
-            transition: transform 0.5s ease;
+            height: 50px;
+            transition: transform 0.3s ease;
         }
 
         .logo-container:hover img {
-            transform: rotate(5deg) scale(1.05);
+            transform: scale(1.05);
         }
 
         .logo-slogan {
-            font-size: 14px;
-            color: var(--dark);
+            font-size: 13px;
+            color: #666;
             font-weight: 500;
-            letter-spacing: 1px;
-            margin-top: 5px;
+            letter-spacing: 0.5px;
             opacity: 0.8;
         }
 
         .nav-links {
             display: flex;
-            gap: 35px;
+            gap: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
-            font-weight: 700;
-            font-size: 16px;
-            transition: all 0.3s ease;
+            color: #444;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s ease;
             position: relative;
-            padding: 8px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            padding: 6px 0;
         }
 
         .nav-links a:hover {
@@ -108,10 +108,9 @@
             bottom: 0;
             left: 0;
             width: 0;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 2px;
-            transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
         }
 
         .nav-links a:hover::after {
@@ -122,8 +121,8 @@
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
-            color: var(--dark);
+            font-size: 20px;
+            color: #444;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -132,15 +131,14 @@
             transform: rotate(90deg);
         }
 
-        /* Hero Section with 3D Slide Effect */
+        /* Hero Section with Visible Images */
         .hero-section {
-            height: 90vh;
+            min-height: 85vh;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            perspective: 1000px;
         }
 
         .slideshow-container {
@@ -159,22 +157,14 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+            transition: opacity 1.2s ease-in-out;
             background-size: cover;
             background-position: center;
-            transform: translateX(100%) rotateY(20deg) scale(1.1);
-            filter: brightness(0.95);
+            filter: brightness(0.7);
         }
 
         .slide.active {
             opacity: 1;
-            transform: translateX(0) rotateY(0) scale(1.05);
-            filter: brightness(1);
-        }
-
-        .slide.exit {
-            transform: translateX(-100%) rotateY(-20deg) scale(1.1);
-            opacity: 0;
         }
 
         .hero-overlay {
@@ -183,7 +173,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, rgba(26, 35, 126, 0.85), rgba(13, 27, 62, 0.7));
+            background: linear-gradient(to bottom, rgba(13, 27, 62, 0.7), rgba(26, 35, 126, 0.8));
             z-index: 2;
         }
 
@@ -192,165 +182,178 @@
             z-index: 3;
             text-align: center;
             color: white;
-            padding: 0 20px;
-            max-width: 1000px;
+            padding: 40px 20px;
+            max-width: 900px;
             width: 100%;
+        }
+
+        .hero-title-container {
+            margin-bottom: 30px;
         }
 
         .hero-title {
-            font-size: 82px;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 15px rgba(0,0,0,0.4);
-            animation: fadeInUp 1.5s ease-out;
+            font-size: 4.5rem;
+            margin-bottom: 5px;
             font-weight: 900;
-            letter-spacing: 2px;
-            background: var(--gradient-gold);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-transform: uppercase;
-            line-height: 1.1;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .hero-title span:nth-child(1) {
+            color: #4CAF50;
+        }
+
+        .hero-title span:nth-child(2) {
+            color: #FFC107;
         }
 
         .hero-slogan {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
-            animation: fadeInUp 1.8s ease-out;
-            color: white;
-            display: inline-block;
-            padding: 15px 40px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Vision Container with Proper Height */
+        .vision-container {
             position: relative;
-            overflow: hidden;
-            transition: all 0.5s ease;
-            cursor: pointer;
-        }
-
-        .hero-slogan:hover {
-            transform: translateY(-5px) scale(1.05);
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            border-color: rgba(255, 215, 0, 0.5);
-        }
-
-        .hero-slogan::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.7s ease;
-        }
-
-        .hero-slogan:hover::before {
-            left: 100%;
+            min-height: 80px;
+            margin: 40px auto 0;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .vision-text {
-            font-size: 28px;
-            font-weight: 500;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
+            font-size: 1.4rem;
+            font-weight: 400;
+            background-color: rgba(255, 255, 255, 0.15);
             display: inline-block;
-            padding: 25px 50px;
-            border-radius: 20px;
-            margin-top: 40px;
-            animation: fadeIn 2s ease-out, float 6s ease-in-out infinite;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            max-width: 800px;
+            padding: 20px 35px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 750px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            text-align: center;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            line-height: 1.5;
+            white-space: normal;
+            word-wrap: break-word;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .vision-text.active {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .vision-text.exit {
+            opacity: 0;
+            transform: translateX(-50%) translateY(-20px);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 22px;
+            min-width: 180px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            color: #FFC107;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
         }
 
         /* Services Section */
         .services-section {
-            padding: 100px 5%;
-            background-color: var(--light-blue);
+            padding: 80px 5%;
+            background-color: #ffffff;
             position: relative;
-            overflow: hidden;
-        }
-
-        .services-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: var(--gradient);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
-            position: relative;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 48px;
+            font-size: 2.5rem;
             color: var(--dark);
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 150px;
-            height: 6px;
-            background: var(--gradient);
-            border-radius: 3px;
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
         .section-title p {
-            font-size: 20px;
+            font-size: 1.1rem;
             color: #666;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
         .services-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
             margin-bottom: 40px;
         }
 
         .service-card {
             background-color: white;
-            border-radius: 20px;
+            border-radius: 12px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            border-top: 6px solid transparent;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
         }
 
         .service-card:hover {
-            transform: translateY(-20px) scale(1.03);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-            border-top: 6px solid var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .service-img {
-            height: 250px;
+            height: 200px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -362,217 +365,183 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s ease;
+            transition: transform 0.5s ease;
         }
 
         .service-card:hover .service-img img {
-            transform: scale(1.15);
+            transform: scale(1.05);
         }
 
         .service-content {
-            padding: 30px;
+            padding: 25px;
         }
 
         .service-content h3 {
-            font-size: 26px;
+            font-size: 1.3rem;
             color: var(--dark);
-            margin-bottom: 15px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .service-content h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background-color: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        .service-card:hover .service-content h3::after {
-            width: 100px;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .service-content p {
             color: #666;
-            margin-bottom: 20px;
-            line-height: 1.7;
-            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+
+        .impact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .impact-stat {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .impact-stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .impact-unit {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: inline-block;
+            margin-left: 3px;
+        }
+
+        .impact-label {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 500;
         }
 
         /* Subsidy Section */
         .subsidy-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background: var(--gradient-blue);
             color: white;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .subsidy-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.3;
         }
 
         .subsidy-content {
-            max-width: 900px;
+            max-width: 700px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         .subsidy-content h2 {
-            font-size: 52px;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-            position: relative;
-            display: inline-block;
-        }
-
-        .subsidy-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 5px;
-            background-color: var(--primary);
-            border-radius: 3px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .subsidy-content p {
-            font-size: 22px;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            opacity: 0.9;
+            line-height: 1.7;
         }
 
         .eligibility-btn {
-            background: var(--gradient);
-            color: white;
+            background: white;
+            color: var(--dark);
             border: none;
-            padding: 25px 70px;
-            font-size: 26px;
-            font-weight: 800;
-            border-radius: 50px;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.4s ease;
-            box-shadow: 0 15px 35px rgba(255, 152, 0, 0.4);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            letter-spacing: 1.5px;
-            animation: wave 2s infinite, pulse 1.5s infinite alternate;
-            text-transform: uppercase;
-        }
-
-        @keyframes wave {
-            0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); }
-            70% { box-shadow: 0 0 0 25px rgba(255, 152, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
-        }
-
-        .eligibility-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.7s ease;
-            z-index: -1;
-        }
-
-        .eligibility-btn:hover::before {
-            left: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .eligibility-btn:hover {
-            transform: translateY(-8px) scale(1.08);
-            box-shadow: 0 20px 50px rgba(255, 152, 0, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            background: #f8f9fa;
         }
 
         /* Contact Section */
         .contact-section {
-            padding: 100px 5%;
+            padding: 80px 5%;
             background-color: white;
             position: relative;
-            overflow: hidden;
         }
 
         .contact-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
+            gap: 50px;
             align-items: start;
-        }
-
-        .contact-info {
-            padding-right: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-info h3 {
-            font-size: 36px;
+            font-size: 1.8rem;
             color: var(--dark);
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .contact-info h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 5px;
-            background: var(--gradient);
-            border-radius: 3px;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .contact-info p {
-            font-size: 18px;
+            font-size: 1rem;
             color: #666;
-            margin-bottom: 30px;
-            line-height: 1.8;
+            margin-bottom: 25px;
+            line-height: 1.7;
         }
 
         .contact-details {
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
         .contact-detail {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
+            gap: 15px;
         }
 
         .contact-detail i {
-            font-size: 24px;
+            font-size: 18px;
             color: var(--primary);
             background: rgba(255, 152, 0, 0.1);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -580,105 +549,96 @@
         }
 
         .contact-detail div h4 {
-            font-size: 20px;
+            font-size: 1rem;
             color: var(--dark);
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            font-weight: 600;
         }
 
         .contact-detail div p {
-            font-size: 16px;
+            font-size: 0.95rem;
             color: #666;
             margin: 0;
         }
 
-        /* Contact Form - Simplified */
         .contact-form-container {
             background: #f8f9fa;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            border: 1px solid #eaeaea;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #eee;
         }
 
         .contact-form-container h3 {
-            font-size: 28px;
+            font-size: 1.4rem;
             color: var(--dark);
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: center;
+            font-weight: 600;
         }
 
         .contact-form-container p {
-            font-size: 16px;
+            font-size: 0.95rem;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-align: center;
         }
 
         .mini-form {
             display: flex;
             flex-direction: column;
-            gap: 20px;
-        }
-
-        .mini-form .form-group {
-            margin-bottom: 0;
+            gap: 15px;
         }
 
         .mini-form .form-control {
-            padding: 16px 20px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
             width: 100%;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             background: white;
         }
 
         .mini-form .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.1);
+            box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
         }
 
         .mini-form-btn {
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 18px 30px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 10px;
+            padding: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             margin-top: 10px;
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
 
         .mini-form-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
+            background: #f57c00;
+            transform: translateY(-2px);
         }
 
-        /* Enhanced Modal Styles */
+        /* Modal Styles */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            background-color: rgba(0,0,0,0.7);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 3000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
 
         .modal-overlay.active {
@@ -687,235 +647,215 @@
         }
 
         .modal {
-            background: linear-gradient(145deg, #ffffff, #f0f0f0);
-            border-radius: 25px;
+            background: white;
+            border-radius: 12px;
             width: 90%;
-            max-width: 550px;
+            max-width: 500px;
             max-height: 90vh;
             padding: 0;
             position: relative;
-            transform: translateY(-60px) scale(0.9);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
 
         .modal-overlay.active .modal {
-            transform: translateY(0) scale(1);
+            transform: translateY(0);
         }
 
         .modal-header {
             background: var(--gradient-blue);
-            padding: 30px;
+            padding: 25px;
             color: white;
             text-align: center;
             position: relative;
         }
 
         .modal-header h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .modal-header h2 i {
-            font-size: 36px;
-            color: #FFD740;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .modal-header p {
-            font-size: 18px;
+            font-size: 0.95rem;
             opacity: 0.9;
         }
 
         .close-modal {
             position: absolute;
-            top: 25px;
-            right: 25px;
+            top: 20px;
+            right: 20px;
             background: rgba(255,255,255,0.2);
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 22px;
+            font-size: 18px;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
+            transition: all 0.2s ease;
         }
 
         .close-modal:hover {
             background: rgba(255,255,255,0.3);
-            transform: rotate(90deg);
         }
 
         .back-to-site {
             position: absolute;
-            top: 25px;
-            left: 25px;
+            top: 20px;
+            left: 20px;
             background: rgba(255,255,255,0.2);
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 22px;
+            font-size: 18px;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
+            transition: all 0.2s ease;
         }
 
         .back-to-site:hover {
             background: rgba(255,255,255,0.3);
-            transform: translateX(-5px);
         }
 
         .modal-body {
-            padding: 30px;
+            padding: 25px;
             overflow-y: auto;
             flex-grow: 1;
         }
 
-        /* Simplified Form Styles - One by One */
+        /* Form Styles */
         .form-box {
             width: 100%;
         }
 
         .form-step {
             display: none;
-            animation: fadeIn 0.5s ease;
         }
 
         .form-step.active {
             display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .form-group {
-            margin-bottom: 30px;
-            position: relative;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 12px;
-            font-weight: 700;
-            color: var(--dark);
-            font-size: 18px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .form-group label i {
-            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+            font-size: 0.95rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 18px 22px;
-            border: 2px solid #e0e0e0;
-            border-radius: 12px;
-            font-size: 17px;
-            transition: all 0.3s ease;
-            background-color: #f9f9f9;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            background-color: white;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary);
-            background-color: white;
-            box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.15);
+            box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
         }
 
         textarea.form-control {
-            min-height: 140px;
+            min-height: 100px;
             resize: vertical;
-            font-family: inherit;
         }
 
         select.form-control {
             appearance: none;
             background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
             background-repeat: no-repeat;
-            background-position: right 20px center;
-            background-size: 18px;
-            padding-right: 50px;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 45px;
         }
 
         .form-navigation {
             display: flex;
             justify-content: space-between;
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 2px solid #eee;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
         }
 
         .form-btn {
-            background: var(--gradient);
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 16px 35px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 50px;
+            padding: 12px 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             display: flex;
             align-items: center;
-            gap: 12px;
-            min-width: 160px;
-            justify-content: center;
+            gap: 8px;
         }
 
         .form-btn.outline {
             background: transparent;
-            color: var(--dark);
-            border: 3px solid var(--dark);
+            color: #666;
+            border: 1px solid #ddd;
         }
 
         .form-btn.outline:hover {
-            background: var(--dark);
-            color: white;
+            background: #f8f9fa;
+            border-color: #ccc;
         }
 
         .form-btn:hover:not(:disabled) {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
+            background: #f57c00;
+            transform: translateY(-2px);
         }
 
         .form-btn:disabled {
             background: #ccc;
             cursor: not-allowed;
             transform: none;
-            box-shadow: none;
         }
 
         .form-progress {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             position: relative;
         }
 
         .form-progress::before {
             content: '';
             position: absolute;
-            top: 20px;
+            top: 16px;
             left: 0;
             width: 100%;
-            height: 4px;
-            background-color: #e0e0e0;
+            height: 2px;
+            background-color: #eee;
             z-index: 1;
         }
 
@@ -929,26 +869,24 @@
         }
 
         .step-circle {
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background-color: #e0e0e0;
+            background-color: #eee;
             color: #777;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            margin-bottom: 10px;
-            transition: all 0.3s ease;
-            border: 4px solid white;
-            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+            border: 2px solid white;
+            font-size: 0.9rem;
         }
 
         .progress-step.active .step-circle {
             background-color: var(--primary);
             color: white;
-            transform: scale(1.15);
-            box-shadow: 0 0 0 5px rgba(255, 152, 0, 0.2);
         }
 
         .progress-step.completed .step-circle {
@@ -957,61 +895,49 @@
         }
 
         .step-label {
-            font-size: 14px;
+            font-size: 0.8rem;
             color: #777;
             text-align: center;
-            font-weight: 600;
         }
 
         .progress-step.active .step-label {
-            color: var(--dark);
-            font-weight: 800;
+            color: #444;
+            font-weight: 500;
         }
 
         .msg {
-            margin-top: 20px;
-            padding: 18px;
-            border-radius: 12px;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
             text-align: center;
-            font-weight: 700;
-            animation: fadeIn 0.5s ease;
-            font-size: 16px;
+            font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .msg.success {
             background-color: #d4edda;
             color: #155724;
-            border: 2px solid #c3e6cb;
+            border: 1px solid #c3e6cb;
         }
 
         .msg.error {
             background-color: #f8d7da;
             color: #721c24;
-            border: 2px solid #f5c6cb;
+            border: 1px solid #f5c6cb;
         }
 
         /* Partners Section */
         .partners-section {
-            padding: 100px 5%;
-            background-color: white;
+            padding: 80px 5%;
+            background-color: #f8f9fa;
             overflow: hidden;
             position: relative;
-        }
-
-        .partners-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: var(--gradient);
         }
 
         .partners-slider-container {
             overflow: hidden;
             position: relative;
-            padding: 40px 0;
+            padding: 30px 0;
         }
 
         .partners-slider {
@@ -1020,43 +946,35 @@
             width: max-content;
         }
 
-        .partners-slider:hover {
-            animation-play-state: paused;
-        }
-
         @keyframes slideLeft {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
 
         .partner-logo {
-            height: 110px;
-            margin: 0 60px;
+            height: 80px;
+            margin: 0 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 15px;
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.4s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
         .partner-logo:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
         }
 
         .partner-logo img {
             max-height: 100%;
-            max-width: 200px;
+            max-width: 150px;
             filter: grayscale(100%);
-            opacity: 0.8;
-            transition: all 0.4s ease;
+            opacity: 0.7;
+            transition: all 0.3s ease;
         }
 
         .partner-logo:hover img {
@@ -1068,177 +986,118 @@
         footer {
             background: var(--dark-blue);
             color: white;
-            padding: 80px 5% 30px;
+            padding: 60px 5% 25px;
             position: relative;
-            overflow: hidden;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 10px;
-            background: var(--gradient);
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 60px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
         .footer-column h3 {
-            font-size: 24px;
-            margin-bottom: 30px;
-            color: #FFD740;
-            position: relative;
-            padding-bottom: 15px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary);
-            border-radius: 2px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
         }
 
         .footer-column p, .footer-column a {
-            color: #ddd;
-            margin-bottom: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
             display: block;
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 16px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
         }
 
         .footer-column a:hover {
-            color: var(--primary);
-            transform: translateX(8px);
-        }
-
-        .contact-info {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-        }
-
-        .contact-info i {
-            color: var(--primary);
-            margin-right: 15px;
-            font-size: 20px;
-            margin-top: 5px;
+            color: white;
+            transform: translateX(3px);
         }
 
         .social-icons {
             display: flex;
-            gap: 20px;
-            margin-top: 25px;
+            gap: 15px;
+            margin-top: 20px;
         }
 
         .social-icons a {
-            width: 50px;
-            height: 50px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background-color: rgba(255,255,255,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 22px;
-            transition: all 0.4s ease;
+            font-size: 16px;
+            transition: all 0.2s ease;
         }
 
         .social-icons a:hover {
-            background: var(--gradient);
-            transform: translateY(-8px) rotate(10deg);
-            box-shadow: 0 10px 20px rgba(255, 152, 0, 0.3);
+            background: var(--primary);
+            transform: translateY(-2px);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 2px solid rgba(255,255,255,0.1);
-            color: #aaa;
-            font-size: 16px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.2s ease;
+            text-decoration: none;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background: #1da851;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
         /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .services-container {
+        @media (max-width: 992px) {
+            .services-container, .impact-stats {
                 grid-template-columns: repeat(2, 1fr);
             }
             
             .hero-title {
-                font-size: 72px;
-            }
-            
-            .hero-slogan {
-                font-size: 42px;
-            }
-            
-            .contact-container {
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 58px;
-            }
-            
-            .hero-slogan {
-                font-size: 36px;
-                padding: 15px 30px;
-            }
-            
-            .vision-text {
-                font-size: 24px;
-                padding: 20px 40px;
-            }
-            
-            .section-title h2 {
-                font-size: 42px;
-            }
-            
-            .subsidy-content h2 {
-                font-size: 46px;
-            }
-            
-            .partner-logo {
-                margin: 0 40px;
+                font-size: 3.5rem;
             }
             
             .contact-container {
                 grid-template-columns: 1fr;
-                gap: 60px;
+                gap: 40px;
             }
             
-            .contact-info {
-                padding-right: 0;
+            .vision-container {
+                min-height: 70px;
+            }
+            
+            .vision-text {
+                font-size: 1.2rem;
+                padding: 18px 25px;
             }
         }
 
@@ -1247,26 +1106,22 @@
                 padding: 15px 20px;
             }
             
-            .logo-container img {
-                height: 65px;
-            }
-            
             .nav-links {
                 position: fixed;
-                top: 90px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background-color: white;
                 flex-direction: column;
                 align-items: center;
-                padding: 30px 0;
-                box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
                 transform: translateY(-100%);
                 opacity: 0;
                 visibility: hidden;
-                transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                transition: all 0.3s ease;
                 z-index: 999;
-                border-top: 4px solid var(--primary);
+                border-top: 1px solid #eee;
             }
             
             .nav-links.active {
@@ -1279,144 +1134,84 @@
                 display: block;
             }
             
-            .hero-section {
-                height: 85vh;
-            }
-            
             .hero-title {
-                font-size: 46px;
+                font-size: 2.8rem;
             }
             
             .hero-slogan {
-                font-size: 30px;
-                padding: 12px 25px;
+                font-size: 1.4rem;
+            }
+            
+            .vision-container {
+                min-height: 60px;
             }
             
             .vision-text {
-                font-size: 20px;
-                padding: 18px 30px;
+                font-size: 1.1rem;
+                padding: 15px 20px;
             }
             
-            .services-container {
-                grid-template-columns: 1fr;
+            .stats-container {
+                gap: 15px;
             }
             
-            .subsidy-content h2 {
-                font-size: 38px;
-            }
-            
-            .eligibility-btn {
-                padding: 22px 50px;
-                font-size: 24px;
-            }
-            
-            .partner-logo {
-                height: 90px;
-                margin: 0 30px;
-            }
-            
-            .modal {
-                width: 95%;
-            }
-            
-            .contact-form-container {
-                padding: 30px;
+            .stat-card {
+                min-width: 150px;
+                padding: 15px;
             }
         }
 
         @media (max-width: 576px) {
+            .services-container, .impact-stats {
+                grid-template-columns: 1fr;
+            }
+            
             .hero-title {
-                font-size: 38px;
+                font-size: 2.2rem;
             }
             
             .hero-slogan {
-                font-size: 24px;
-                padding: 10px 20px;
+                font-size: 1.2rem;
             }
             
-            .vision-text {
-                font-size: 18px;
-                padding: 15px 20px;
+            .vision-container {
+                min-height: 55px;
                 margin-top: 30px;
             }
             
+            .vision-text {
+                font-size: 1rem;
+                padding: 12px 16px;
+                max-width: 90%;
+            }
+            
             .section-title h2 {
-                font-size: 36px;
+                font-size: 2rem;
             }
             
-            .section-title p {
-                font-size: 18px;
-            }
-            
-            .service-content {
-                padding: 25px;
-            }
-            
-            .subsidy-content h2 {
-                font-size: 32px;
-            }
-            
-            .subsidy-content p {
-                font-size: 19px;
-            }
-            
-            .eligibility-btn {
-                padding: 20px 40px;
-                font-size: 22px;
-            }
-            
-            .modal-header {
-                padding: 25px 20px;
-            }
-            
-            .modal-body {
-                padding: 25px 20px;
-            }
-            
-            .form-btn {
-                padding: 14px 25px;
-                font-size: 16px;
-                min-width: 140px;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            
-            .contact-info h3 {
-                font-size: 30px;
-            }
-            
-            .contact-form-container {
-                padding: 25px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 32px;
-            }
-            
-            .hero-slogan {
-                font-size: 22px;
-            }
-            
-            .eligibility-btn {
-                padding: 18px 35px;
-                font-size: 20px;
-            }
-            
-            .contact-detail {
+            .stats-container {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .stat-card {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header with WHITE BACKGROUND -->
+    <!-- Header -->
     <header>
         <div class="logo-container">
             <img src="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg" alt="Era Solar Logo">
@@ -1428,25 +1223,58 @@
         </button>
         
         <nav class="nav-links" id="navLinks">
-            <a href="#home"><i class="fas fa-home"></i> Home</a>
-            <a href="#products"><i class="fas fa-solar-panel"></i> Products</a>
-            <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
-            <a href="#services"><i class="fas fa-concierge-bell"></i> Services</a>
-            <a href="#contact"><i class="fas fa-address-book"></i> Contact</a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#impact">Impact</a>
+            <a href="#products">Subsidy</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
-    <!-- Hero Section with 3D Slide Effect -->
+    <!-- Hero Section with Visible Images -->
     <section class="hero-section" id="home">
         <div class="slideshow-container" id="slideshow">
-            <!-- Slides will be added by JavaScript -->
+            <!-- All 6 images added here -->
         </div>
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <h1 class="hero-title animate__animated animate__fadeInUp">ERA SOLAR</h1>
-            <div class="hero-slogan animate__animated animate__fadeInUp" id="slogan">Sunlight in your pocket</div>
-            <div class="vision-text" id="visionText">Harnessing the power of the sun for a sustainable future</div>
+            <div class="hero-title-container">
+                <h1 class="hero-title">
+                    <span>ERA</span> <span>SOLAR</span>
+                </h1>
+                <div class="hero-slogan">Sunlight in your pocket</div>
+            </div>
+            
+            <div class="vision-container" id="visionContainer">
+                <!-- Vision texts added by JavaScript -->
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="stat-value">450 kWh+</div>
+                    <div class="stat-label">Daily Generation</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="stat-value">Zero</div>
+                    <div class="stat-label">Electricity Bills</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="stat-value">Upto 50%</div>
+                    <div class="stat-label">Govt Subsidy</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1458,7 +1286,43 @@
         </div>
         
         <div class="services-container" id="servicesContainer">
-            <!-- Services will be added by JavaScript -->
+            <!-- Services added by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Impact Section (Moved after Services) -->
+    <section class="impact-section" id="impact">
+        <div class="section-title">
+            <h2>Our Impact in Numbers</h2>
+            <p>Join thousands of satisfied customers who have switched to solar energy with Era Solar</p>
+        </div>
+        
+        <div class="impact-content">
+            <div class="impact-stats">
+                <div class="impact-stat">
+                    <div class="impact-number" id="installationsCount">0</div>
+                    <div class="impact-unit">+</div>
+                    <div class="impact-label">Solar Installations</div>
+                </div>
+                
+                <div class="impact-stat">
+                    <div class="impact-number" id="megawattsCount">0</div>
+                    <div class="impact-unit">MW</div>
+                    <div class="impact-label">MegaWatts Generated</div>
+                </div>
+                
+                <div class="impact-stat">
+                    <div class="impact-number" id="co2Count">0</div>
+                    <div class="impact-unit">T</div>
+                    <div class="impact-label">Tons of CO₂ Reduced</div>
+                </div>
+                
+                <div class="impact-stat">
+                    <div class="impact-number" id="satisfactionCount">0</div>
+                    <div class="impact-unit">%</div>
+                    <div class="impact-label">Customer Satisfaction</div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1468,7 +1332,7 @@
             <h2>Get Upto 50% Govt Subsidy</h2>
             <p>Government of India is providing subsidies for residential rooftop solar installations. Check your eligibility now and start saving on your electricity bills.</p>
             <button class="eligibility-btn" id="eligibilityBtn">
-                <i class="fas fa-bolt"></i> Check Eligibility
+                Check Eligibility
             </button>
         </div>
     </section>
@@ -1498,7 +1362,7 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h4>Call Us</h4>
-                            <p>+91 98765 43210<br>+91 12345 67890</p>
+                            <p>+91 98765 43210</p>
                         </div>
                     </div>
                     
@@ -1506,15 +1370,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h4>Email Us</h4>
-                            <p>info@erasolar.com<br>support@erasolar.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-detail">
-                        <i class="fas fa-clock"></i>
-                        <div>
-                            <h4>Working Hours</h4>
-                            <p>Monday - Saturday: 9:00 AM - 7:00 PM<br>Sunday: 10:00 AM - 5:00 PM</p>
+                            <p>info@erasolar.com</p>
                         </div>
                     </div>
                 </div>
@@ -1525,27 +1381,18 @@
                 <p>Fill out this short form and we'll get back to you within 24 hours</p>
                 
                 <form class="mini-form" id="miniForm">
-                    <div class="form-group">
-                        <input type="text" id="miniName" name="name" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="tel" id="miniMobile" name="mobile" class="form-control" placeholder="Mobile Number" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="miniEmail" name="email" class="form-control" placeholder="Email Address">
-                    </div>
-                    
+                    <input type="text" id="miniName" name="name" class="form-control" placeholder="Your Name" required>
+                    <input type="tel" id="miniMobile" name="mobile" class="form-control" placeholder="Mobile Number" required>
+                    <input type="email" id="miniEmail" name="email" class="form-control" placeholder="Email Address">
                     <button type="submit" class="mini-form-btn">
-                        <i class="fas fa-paper-plane"></i> Send Message
+                        Send Message
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Enhanced Modal for Form -->
+    <!-- Modal for Form -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <div class="modal-header">
@@ -1555,13 +1402,13 @@
                 <button class="close-modal" id="closeModal" title="Close">
                     <i class="fas fa-times"></i>
                 </button>
-                <h2><i class="fas fa-solar-panel"></i> Enquiry Form</h2>
+                <h2>Enquiry Form</h2>
                 <p>Fill out the form step by step</p>
             </div>
             
             <div class="modal-body">
                 <div class="form-progress" id="formProgress">
-                    <!-- Progress steps will be added by JavaScript -->
+                    <!-- Progress steps added by JavaScript -->
                 </div>
                 
                 <div class="form-box">
@@ -1569,15 +1416,13 @@
                         <!-- Step 1: Name -->
                         <div class="form-step active" id="step1">
                             <div class="form-group">
-                                <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                                <label for="name">Full Name</label>
                                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
-                                <div style="font-size: 14px; color: #666; margin-top: 8px;">Please enter your full name as per official documents</div>
                             </div>
-                            
                             <div class="form-navigation">
-                                <div></div> <!-- Empty div for spacing -->
+                                <div></div>
                                 <button type="button" class="form-btn next-step" data-next="step2">
-                                    Next <i class="fas fa-arrow-right"></i>
+                                    Next
                                 </button>
                             </div>
                         </div>
@@ -1585,17 +1430,15 @@
                         <!-- Step 2: Mobile -->
                         <div class="form-step" id="step2">
                             <div class="form-group">
-                                <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile Number</label>
-                                <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Enter your 10-digit mobile number" required>
-                                <div style="font-size: 14px; color: #666; margin-top: 8px;">We'll contact you on this number</div>
+                                <label for="mobile">Mobile Number</label>
+                                <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Enter your mobile number" required>
                             </div>
-                            
                             <div class="form-navigation">
                                 <button type="button" class="form-btn outline prev-step" data-prev="step1">
-                                    <i class="fas fa-arrow-left"></i> Back
+                                    Back
                                 </button>
                                 <button type="button" class="form-btn next-step" data-next="step3">
-                                    Next <i class="fas fa-arrow-right"></i>
+                                    Next
                                 </button>
                             </div>
                         </div>
@@ -1603,17 +1446,15 @@
                         <!-- Step 3: Email -->
                         <div class="form-step" id="step3">
                             <div class="form-group">
-                                <label for="email"><i class="fas fa-envelope"></i> Email Address (Optional)</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address">
-                                <div style="font-size: 14px; color: #666; margin-top: 8px;">For sending documents and updates</div>
+                                <label for="email">Email (Optional)</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
                             </div>
-                            
                             <div class="form-navigation">
                                 <button type="button" class="form-btn outline prev-step" data-prev="step2">
-                                    <i class="fas fa-arrow-left"></i> Back
+                                    Back
                                 </button>
                                 <button type="button" class="form-btn next-step" data-next="step4">
-                                    Next <i class="fas fa-arrow-right"></i>
+                                    Next
                                 </button>
                             </div>
                         </div>
@@ -1621,7 +1462,7 @@
                         <!-- Step 4: Solar Type -->
                         <div class="form-step" id="step4">
                             <div class="form-group">
-                                <label for="solarType"><i class="fas fa-sun"></i> Solar Type</label>
+                                <label for="solarType">Solar Type</label>
                                 <select id="solarType" name="solarType" class="form-control" required>
                                     <option value="">Select Solar Type</option>
                                     <option>Residential Rooftop</option>
@@ -1630,15 +1471,13 @@
                                     <option>Solar Water Pump</option>
                                     <option>Other</option>
                                 </select>
-                                <div style="font-size: 14px; color: #666; margin-top: 8px;">Choose the type of solar solution you need</div>
                             </div>
-                            
                             <div class="form-navigation">
                                 <button type="button" class="form-btn outline prev-step" data-prev="step3">
-                                    <i class="fas fa-arrow-left"></i> Back
+                                    Back
                                 </button>
                                 <button type="button" class="form-btn next-step" data-next="step5">
-                                    Next <i class="fas fa-arrow-right"></i>
+                                    Next
                                 </button>
                             </div>
                         </div>
@@ -1646,17 +1485,15 @@
                         <!-- Step 5: Location -->
                         <div class="form-step" id="step5">
                             <div class="form-group">
-                                <label for="location"><i class="fas fa-map-marker-alt"></i> Location</label>
-                                <input type="text" id="location" name="location" class="form-control" placeholder="Enter your city and state" required>
-                                <div style="font-size: 14px; color: #666; margin-top: 8px;">We need your location for site assessment</div>
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location" class="form-control" placeholder="Enter your location" required>
                             </div>
-                            
                             <div class="form-navigation">
                                 <button type="button" class="form-btn outline prev-step" data-prev="step4">
-                                    <i class="fas fa-arrow-left"></i> Back
+                                    Back
                                 </button>
                                 <button type="button" class="form-btn next-step" data-next="step6">
-                                    Next <i class="fas fa-arrow-right"></i>
+                                    Next
                                 </button>
                             </div>
                         </div>
@@ -1664,17 +1501,15 @@
                         <!-- Step 6: Message -->
                         <div class="form-step" id="step6">
                             <div class="form-group">
-                                <label for="message"><i class="fas fa-comment-alt"></i> Message (Optional)</label>
-                                <textarea id="message" name="message" class="form-control" placeholder="Any specific requirements or questions"></textarea>
-                                <div style="font-size: 14px; color: #666; margin-top: 8px;">Additional details about your requirement</div>
+                                <label for="message">Message (Optional)</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Any specific requirements"></textarea>
                             </div>
-                            
                             <div class="form-navigation">
                                 <button type="button" class="form-btn outline prev-step" data-prev="step5">
-                                    <i class="fas fa-arrow-left"></i> Back
+                                    Back
                                 </button>
                                 <button type="submit" class="form-btn" id="submitBtn">
-                                    <i class="fas fa-paper-plane"></i> Submit
+                                    Submit
                                 </button>
                             </div>
                         </div>
@@ -1695,7 +1530,7 @@
         
         <div class="partners-slider-container">
             <div class="partners-slider" id="partnersSlider">
-                <!-- Partner logos will be added by JavaScript -->
+                <!-- Partner logos added by JavaScript -->
             </div>
         </div>
     </section>
@@ -1705,55 +1540,50 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Era Solar</h3>
-                <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future. Our mission is to make clean energy accessible to everyone.</p>
+                <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
             <div class="footer-column">
                 <h3>Quick Links</h3>
-                <a href="#home"><i class="fas fa-chevron-right"></i> Home</a>
-                <a href="#products"><i class="fas fa-chevron-right"></i> Products</a>
-                <a href="#about"><i class="fas fa-chevron-right"></i> About Us</a>
-                <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
-                <a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#impact">Impact</a>
+                <a href="#products">Subsidy</a>
+                <a href="#contact">Contact</a>
             </div>
             
             <div class="footer-column">
                 <h3>Our Services</h3>
-                <a href="#"><i class="fas fa-check-circle"></i> Residential Solar</a>
-                <a href="#"><i class="fas fa-check-circle"></i> Commercial Solar</a>
-                <a href="#"><i class="fas fa-check-circle"></i> Solar Maintenance</a>
-                <a href="#"><i class="fas fa-check-circle"></i> Solar Water Pumps</a>
-                <a href="#"><i class="fas fa-check-circle"></i> Govt Subsidy Assistance</a>
+                <a href="#">Residential Solar</a>
+                <a href="#">Commercial Solar</a>
+                <a href="#">Solar Maintenance</a>
+                <a href="#">Solar Water Pumps</a>
+                <a href="#">Govt Subsidy Assistance</a>
             </div>
             
             <div class="footer-column">
                 <h3>Contact Us</h3>
-                <div class="contact-info">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Solar Energy Park, Sector 18, Gurugram, Haryana 122015</p>
-                </div>
-                <div class="contact-info">
-                    <i class="fas fa-phone"></i>
-                    <p>+91 98765 43210<br>+91 12345 67890</p>
-                </div>
-                <div class="contact-info">
-                    <i class="fas fa-envelope"></i>
-                    <p>info@erasolar.com<br>support@erasolar.com</p>
-                </div>
+                <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Gurugram</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> info@erasolar.com</p>
             </div>
         </div>
         
         <div class="copyright">
-            &copy; 2023 Era Solar. All rights reserved. | Designed with <i class="fas fa-heart" style="color: #FF9800;"></i> for a sustainable future.
+            © 2023 Era Solar. All rights reserved.
         </div>
     </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         // Mobile menu toggle
@@ -1767,7 +1597,7 @@
                 : '<i class="fas fa-bars"></i>';
         });
         
-        // Close mobile menu when clicking a link
+        // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1775,7 +1605,7 @@
             });
         });
         
-        // Image URLs for slideshow
+        // All 6 image URLs for slideshow
         const slideImages = [
             "https://i.ibb.co/DHhkTvWq/Gemini-Generated-Image-8dp7i08dp7i08dp7.jpg",
             "https://i.ibb.co/dJbpffRb/Gemini-Generated-Image-r6limqr6limqr6li.jpg",
@@ -1785,7 +1615,7 @@
             "https://i.ibb.co/N2C722Z7/Gemini-Generated-Image-z246m7z246m7z246.jpg"
         ];
         
-        // Create slideshow with 3D effect
+        // Create slideshow with all 6 images
         const slideshowContainer = document.getElementById('slideshow');
         slideImages.forEach((imgUrl, index) => {
             const slide = document.createElement('div');
@@ -1794,45 +1624,19 @@
             slideshowContainer.appendChild(slide);
         });
         
-        // 3D Slideshow functionality
+        // Slideshow functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         
         function showNextSlide() {
-            // Mark current slide as exiting
-            slides[currentSlide].classList.add('exit');
             slides[currentSlide].classList.remove('active');
-            
-            setTimeout(() => {
-                // Remove exit class after animation
-                slides[currentSlide].classList.remove('exit');
-                
-                // Move to next slide
-                currentSlide = (currentSlide + 1) % slides.length;
-                
-                // Show new slide
-                slides[currentSlide].classList.add('active');
-            }, 1200);
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
         }
         
-        // Change slide every 3 seconds with 3D effect
-        setInterval(showNextSlide, 3000);
+        setInterval(showNextSlide, 4000);
         
-        // Slogan click effect
-        const sloganElement = document.getElementById('slogan');
-        sloganElement.addEventListener('click', function() {
-            this.style.transform = 'translateY(-10px) scale(1.1)';
-            this.style.background = 'rgba(255, 255, 255, 0.3)';
-            this.style.borderColor = 'rgba(255, 215, 0, 0.8)';
-            
-            setTimeout(() => {
-                this.style.transform = 'translateY(-5px) scale(1.05)';
-                this.style.background = 'rgba(255, 255, 255, 0.25)';
-                this.style.borderColor = 'rgba(255, 215, 0, 0.5)';
-            }, 300);
-        });
-        
-        // Vision text animation
+        // Vision texts - all text fully visible
         const visionTexts = [
             "Harnessing the power of the sun for a sustainable future",
             "Making solar energy accessible to everyone",
@@ -1842,59 +1646,66 @@
             "Powering homes with clean, renewable energy"
         ];
         
-        let currentTextIndex = 0;
-        const visionTextElement = document.getElementById('visionText');
+        // Create vision text elements with proper height
+        const visionContainer = document.getElementById('visionContainer');
+        visionTexts.forEach((text, index) => {
+            const visionText = document.createElement('div');
+            visionText.className = `vision-text ${index === 0 ? 'active' : ''}`;
+            visionText.textContent = text;
+            visionContainer.appendChild(visionText);
+        });
+        
+        const visionElements = document.querySelectorAll('.vision-text');
+        let currentVisionIndex = 0;
         
         function changeVisionText() {
-            visionTextElement.style.opacity = 0;
-            visionTextElement.style.transform = 'translateY(20px)';
+            visionElements[currentVisionIndex].classList.add('exit');
+            visionElements[currentVisionIndex].classList.remove('active');
             
             setTimeout(() => {
-                currentTextIndex = (currentTextIndex + 1) % visionTexts.length;
-                visionTextElement.textContent = visionTexts[currentTextIndex];
-                visionTextElement.style.opacity = 1;
-                visionTextElement.style.transform = 'translateY(0)';
-            }, 500);
+                currentVisionIndex = (currentVisionIndex + 1) % visionTexts.length;
+                visionElements[currentVisionIndex].classList.remove('exit');
+                visionElements[currentVisionIndex].classList.add('active');
+            }, 600);
         }
         
-        // Change vision text every 5 seconds
-        setInterval(changeVisionText, 5000);
+        setInterval(changeVisionText, 4000);
         
-        // Services data with GIFs - 6 services (3x2 grid)
+        // Services data
         const services = [
             {
                 title: "Residential Solar Solutions",
-                description: "Customized solar power systems for homes with government subsidy options and financing. We provide end-to-end solutions from consultation to installation.",
+                description: "Customized solar power systems for homes with government subsidy options and financing.",
                 gif: "https://media.giphy.com/media/kT2pd8b5kDAxuw96s9/giphy.gif"
             },
             {
                 title: "Commercial Solar Installations",
-                description: "Large-scale solar solutions for businesses to reduce electricity costs and carbon footprint. Custom designs for factories, offices, and institutions.",
+                description: "Large-scale solar solutions for businesses to reduce electricity costs and carbon footprint.",
                 gif: "https://media.giphy.com/media/JJ4IUWI3Ed0qFDfYxO/giphy.gif"
             },
             {
                 title: "Solar Maintenance Services",
-                description: "Regular maintenance and monitoring to ensure optimal performance of your solar systems. Annual checkups and 24/7 support available.",
+                description: "Regular maintenance and monitoring to ensure optimal performance of your solar systems.",
                 gif: "https://media.giphy.com/media/pZSXJWzTjV7LIFBSgE/giphy.gif"
             },
             {
                 title: "Solar Water Pumps",
-                description: "Eco-friendly solar-powered water pumps for agricultural and domestic use. Reliable and cost-effective irrigation solutions.",
+                description: "Eco-friendly solar-powered water pumps for agricultural and domestic use.",
                 gif: "https://media.giphy.com/media/rWTk0VeppEtReljmuB/giphy.gif"
             },
             {
                 title: "Energy Storage Solutions",
-                description: "Battery storage systems to store solar energy for use during non-sunny hours. Ensure uninterrupted power supply day and night.",
+                description: "Battery storage systems to store solar energy for use during non-sunny hours.",
                 gif: "https://media.giphy.com/media/dQWfmkWCQXI7PImwET/giphy.gif"
             },
             {
                 title: "Govt Subsidy Assistance",
-                description: "Complete assistance in availing government subsidies for solar installations. We handle all documentation and approval processes.",
+                description: "Complete assistance in availing government subsidies for solar installations.",
                 gif: "https://media.giphy.com/media/XhSfauoUyAxV9qpQrf/giphy.gif"
             }
         ];
         
-        // Create service cards - 3 per row
+        // Create service cards
         const servicesContainer = document.getElementById('servicesContainer');
         services.forEach(service => {
             const serviceCard = document.createElement('div');
@@ -1906,9 +1717,6 @@
                 <div class="service-content">
                     <h3>${service.title}</h3>
                     <p>${service.description}</p>
-                    <div style="color: var(--primary); font-weight: 700; font-size: 15px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-arrow-right"></i> Learn More
-                    </div>
                 </div>
             `;
             servicesContainer.appendChild(serviceCard);
@@ -1924,9 +1732,8 @@
             "https://i.ibb.co/6RVP5y0K/image-removebg-preview-2.png"
         ];
         
-        // Create partner slider with duplicate logos for seamless animation
+        // Create partner slider
         const partnersSlider = document.getElementById('partnersSlider');
-        // Add logos twice for continuous sliding
         [...partnerLogos, ...partnerLogos].forEach(logoUrl => {
             const partnerLogo = document.createElement('div');
             partnerLogo.className = 'partner-logo';
@@ -1943,7 +1750,6 @@
         eligibilityBtn.addEventListener('click', () => {
             modalOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            // Reset form to step 1
             showStep('step1');
             updateProgress(1);
         });
@@ -1958,7 +1764,6 @@
             document.body.style.overflow = 'auto';
         });
         
-        // Close modal when clicking outside
         modalOverlay.addEventListener('click', (e) => {
             if (e.target === modalOverlay) {
                 modalOverlay.classList.remove('active');
@@ -1971,20 +1776,16 @@
         miniForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get values from mini form
             const name = document.getElementById('miniName').value;
             const mobile = document.getElementById('miniMobile').value;
             const email = document.getElementById('miniEmail').value;
             
-            // Open modal with prefilled data
             modalOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
             
-            // Reset form to step 1
             showStep('step1');
             updateProgress(1);
             
-            // Prefill first three steps
             setTimeout(() => {
                 document.getElementById('name').value = name;
                 document.getElementById('mobile').value = mobile;
@@ -1993,12 +1794,9 @@
         });
         
         // Multi-step form functionality
-        const formSteps = ['step1', 'step2', 'step3', 'step4', 'step5', 'step6'];
-        let currentStep = 1;
-        
-        // Create progress steps - 6 steps for 6 fields
-        const formProgress = document.getElementById('formProgress');
         const stepLabels = ['Name', 'Mobile', 'Email', 'Solar Type', 'Location', 'Message'];
+        const formProgress = document.getElementById('formProgress');
+        let currentStep = 1;
         
         stepLabels.forEach((label, index) => {
             const stepElement = document.createElement('div');
@@ -2013,26 +1811,21 @@
         const progressSteps = document.querySelectorAll('.progress-step');
         
         function showStep(stepId) {
-            // Hide all steps
             document.querySelectorAll('.form-step').forEach(step => {
                 step.classList.remove('active');
             });
-            
-            // Show current step
             document.getElementById(stepId).classList.add('active');
         }
         
         function updateProgress(stepNumber) {
             progressSteps.forEach((step, index) => {
                 step.classList.remove('active', 'completed');
-                
                 if (index + 1 < stepNumber) {
                     step.classList.add('completed');
                 } else if (index + 1 === stepNumber) {
                     step.classList.add('active');
                 }
             });
-            
             currentStep = stepNumber;
         }
         
@@ -2041,14 +1834,9 @@
             button.addEventListener('click', function() {
                 const nextStepId = this.getAttribute('data-next');
                 const stepNumber = parseInt(nextStepId.replace('step', ''));
-                
-                // Validate current step before proceeding
                 if (validateCurrentStep(currentStep)) {
                     showStep(nextStepId);
                     updateProgress(stepNumber);
-                    
-                    // Scroll to top of form
-                    document.querySelector('.modal-body').scrollTop = 0;
                 }
             });
         });
@@ -2060,9 +1848,6 @@
                 const stepNumber = parseInt(prevStepId.replace('step', ''));
                 showStep(prevStepId);
                 updateProgress(stepNumber);
-                
-                // Scroll to top of form
-                document.querySelector('.modal-body').scrollTop = 0;
             });
         });
         
@@ -2076,7 +1861,6 @@
                         return false;
                     }
                     return true;
-                    
                 case 2:
                     const mobile = document.getElementById('mobile').value.trim();
                     const mobileRegex = /^[0-9]{10}$/;
@@ -2085,7 +1869,6 @@
                         return false;
                     }
                     return true;
-                    
                 case 4:
                     const solarType = document.getElementById('solarType').value;
                     if (solarType === '') {
@@ -2093,7 +1876,6 @@
                         return false;
                     }
                     return true;
-                    
                 case 5:
                     const location = document.getElementById('location').value.trim();
                     if (location === '') {
@@ -2101,7 +1883,6 @@
                         return false;
                     }
                     return true;
-                    
                 default:
                     return true;
             }
@@ -2117,14 +1898,12 @@
         enquiryForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Final validation
             if (!validateCurrentStep(6)) return;
             
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            submitBtn.textContent = "Submitting...";
             responseMsg.className = "msg";
             responseMsg.textContent = "Submitting your enquiry...";
-            responseMsg.style.color = "#000";
             
             const payload = {
                 name: this.name.value,
@@ -2141,8 +1920,6 @@
             })
             .then(res => res.text())
             .then(text => {
-                console.log("Raw response:", text);
-                
                 let data;
                 try {
                     data = JSON.parse(text);
@@ -2152,20 +1929,15 @@
                 
                 if (data.status === "success") {
                     responseMsg.className = "msg success";
-                    responseMsg.innerHTML = `
-                        <i class="fas fa-check-circle" style="margin-right: 10px;"></i>
-                        Enquiry submitted successfully! We'll contact you within 24 hours.
-                    `;
+                    responseMsg.textContent = "Enquiry submitted successfully! We'll contact you soon.";
                     enquiryForm.reset();
                     
-                    // Auto-close modal after successful submission
                     setTimeout(() => {
                         modalOverlay.classList.remove('active');
                         document.body.style.overflow = 'auto';
                         responseMsg.textContent = "";
-                        // Reset mini form
                         miniForm.reset();
-                    }, 4000);
+                    }, 3000);
                 } else {
                     throw new Error(data.message || "Server error");
                 }
@@ -2173,25 +1945,20 @@
             .catch(err => {
                 console.error(err);
                 responseMsg.className = "msg error";
-                responseMsg.innerHTML = `
-                    <i class="fas fa-exclamation-circle" style="margin-right: 10px;"></i>
-                    Submission failed. Please try again or contact us directly.
-                `;
+                responseMsg.textContent = "Submission failed. Please try again.";
             })
             .finally(() => {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit';
+                submitBtn.textContent = "Submit";
             });
         });
         
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -2202,27 +1969,69 @@
             });
         });
         
-        // Add animation to elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+        // Impact numbers counting animation
+        const installationsCount = document.getElementById('installationsCount');
+        const megawattsCount = document.getElementById('megawattsCount');
+        const co2Count = document.getElementById('co2Count');
+        const satisfactionCount = document.getElementById('satisfactionCount');
+        
+        const finalNumbers = {
+            installations: 12500,
+            megawatts: 89500,
+            co2: 52400,
+            satisfaction: 98
         };
         
+        function animateCount(element, finalValue, duration = 1500) {
+            const startValue = 0;
+            const increment = finalValue / (duration / 16);
+            let current = startValue;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= finalValue) {
+                    element.textContent = finalValue.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
+        
+        // Start counting when impact section is in view
+        const impactSection = document.getElementById('impact');
+        let counted = false;
+        
         const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counted) {
+                    counted = true;
+                    animateCount(installationsCount, finalNumbers.installations);
+                    animateCount(megawattsCount, finalNumbers.megawatts);
+                    animateCount(co2Count, finalNumbers.co2);
+                    animateCount(satisfactionCount, finalNumbers.satisfaction);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        observer.observe(impactSection);
+        
+        // Add animation to service cards on scroll
+        const serviceCards = document.querySelectorAll('.service-card');
+        const cardObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
         
-        // Observe service cards
-        document.querySelectorAll('.service-card').forEach(card => {
+        serviceCards.forEach(card => {
             card.style.opacity = '0';
-            card.style.transform = 'translateY(40px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            cardObserver.observe(card);
         });
     </script>
 </body>
