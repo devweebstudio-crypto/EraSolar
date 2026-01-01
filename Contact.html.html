@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Era Solar</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/Xr2NHYPY/Gemini-Generated-Image-xeafzlxeafzlxeaf.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        :root {
+            --primary: #FF9800;
+            --secondary: #2196F3;
+            --accent: #FF5722;
+            --dark: #1A237E;
+            --green: #4CAF50;
+            --yellow: #FFC107;
+            --dark-blue: #0D1B3E;
+            --light: #F5F5F5;
+            --success: #4CAF50;
+            --light-blue: #E8F4FD;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --gradient: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+            --gradient-blue: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header Styles */
+        header {
+            background: #ffffff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-slogan {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 6px 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #444;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Contact Hero Section */
+        .contact-hero {
+            min-height: 40vh;
+            background: var(--gradient-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 80px 20px;
+        }
+
+        .contact-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+
+        .contact-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Contact Main Section */
+        .contact-main {
+            padding: 80px 5%;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+        }
+
+        .info-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-text h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .contact-text a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Business Hours */
+        .business-hours {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .business-hours h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            color: #666;
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hours-list .day {
+            font-weight: 500;
+        }
+
+        .hours-list .time {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Social Links */
+        .social-contact {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .social-contact h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+
+        .social-icons a.facebook:hover {
+            background: #1877F2;
+            color: white;
+        }
+
+        .social-icons a.twitter:hover {
+            background: #1DA1F2;
+            color: white;
+        }
+
+        .social-icons a.instagram:hover {
+            background: #E4405F;
+            color: white;
+        }
+
+        .social-icons a.linkedin:hover {
+            background: #0A66C2;
+            color: white;
+        }
+
+        .social-icons a.youtube:hover {
+            background: #FF0000;
+            color: white;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .form-subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* Form Styles */
+        .form-box {
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            background-color: white;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+            font-family: 'Inter', sans-serif;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 45px;
+        }
+
+        .form-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .form-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+
+        .form-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+        }
+
+        .form-btn:hover::before {
+            left: 100%;
+        }
+
+        .form-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .msg {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .msg.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .msg.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 5% 80px;
+            background-color: white;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            height: 500px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* Branch Offices */
+        .branches-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .branches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .branch-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .branch-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .branch-card p {
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .branch-card i {
+            color: var(--primary);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 5%;
+            background-color: white;
+        }
+
+        .faq-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.05rem;
+            transition: all 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-question.active {
+            background-color: var(--light-blue);
+            color: var(--dark);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 60px 5% 25px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            animation: floatWhatsApp 3s ease-in-out infinite;
+        }
+
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background: #1da851;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .contact-hero {
+                min-height: 30vh;
+                padding: 60px 20px;
+            }
+            
+            .map-container {
+                height: 400px;
+            }
+            
+            .branches-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                border-top: 1px solid #eee;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info, .contact-form {
+                padding: 30px 25px;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .map-container {
+                height: 350px;
+            }
+            
+            .branches-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-btn {
+                padding: 16px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-hero {
+                padding: 40px 20px;
+            }
+            
+            .contact-detail {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .contact-icon {
+                align-self: flex-start;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .social-icons a {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .branch-card {
+                padding: 25px 20px;
+            }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg" alt="Era Solar Logo">
+            <div class="logo-slogan">Sunlight in your pocket</div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="Product.html">Product</a>
+            <a href="Services.html">Services</a>
+            <a href="Work.html">Our Work</a>
+            <a href="franchisee.html">Ask for Franchisee</a>
+            <a href="Contact.html" class="active">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Contact Us</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">
+                Get in touch with our solar experts for a free consultation. We're here to answer your questions 
+                and help you start your solar journey.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Main Section -->
+    <section class="contact-main">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        </div>
+        
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2 class="info-title">Contact Information</h2>
+                
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Our Headquarters</h3>
+                            <p>
+                                Solar Energy Park, Sector 18,<br>
+                                Gurugram, Haryana 122015<br>
+                                India
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Phone Numbers</h3>
+                            <p>
+                                <a href="tel:+919876543210">+91 98765 43210</a> (Sales)<br>
+                                <a href="tel:+919876543211">+91 98765 43211</a> (Support)<br>
+                                <a href="tel:+919876543212">+91 98765 43212</a> (Installation)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email Addresses</h3>
+                            <p>
+                                <a href="mailto:info@erasolar.com">info@erasolar.com</a> (General)<br>
+                                <a href="mailto:sales@erasolar.com">sales@erasolar.com</a> (Sales)<br>
+                                <a href="mailto:support@erasolar.com">support@erasolar.com</a> (Support)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Business Hours</h3>
+                            <p>
+                                Monday - Friday: 9:00 AM - 7:00 PM<br>
+                                Saturday: 10:00 AM - 5:00 PM<br>
+                                Sunday: Emergency Support Only
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Hours -->
+                <div class="business-hours">
+                    <h3>Detailed Business Hours</h3>
+                    <ul class="hours-list">
+                        <li><span class="day">Monday - Friday</span> <span class="time">9:00 AM - 7:00 PM</span></li>
+                        <li><span class="day">Saturday</span> <span class="time">10:00 AM - 5:00 PM</span></li>
+                        <li><span class="day">Sunday</span> <span class="time">Emergency Support Only</span></li>
+                        <li><span class="day">Public Holidays</span> <span class="time">10:00 AM - 3:00 PM</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="social-contact">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2 class="form-title">Send Us a Message</h2>
+                <p class="form-subtitle">Fill out the form below and our team will get back to you within 24 hours.</p>
+                
+                <div class="form-box">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Full Name *</label>
+                            <input type="text" id="contactName" name="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMobile">Mobile Number *</label>
+                            <input type="tel" id="contactMobile" name="mobile" class="form-control" placeholder="10-digit mobile number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactEmail">Email Address *</label>
+                            <input type="email" id="contactEmail" name="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" name="subject" class="form-control" required>
+                                <option value="">Select a subject</option>
+                                <option value="Solar Consultation">Solar Consultation</option>
+                                <option value="Installation Quote">Installation Quote</option>
+                                <option value="Maintenance Service">Maintenance Service</option>
+                                <option value="Subsidy Assistance">Subsidy Assistance</option>
+                                <option value="Product Inquiry">Product Inquiry</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Franchise Inquiry">Franchise Inquiry</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" class="form-control" placeholder="Tell us about your solar needs, location, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="form-btn" id="submitContactBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <div class="msg" id="contactResponseMsg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="section-title">
+            <h2>Find Us</h2>
+            <p>Visit our headquarters or schedule an appointment with our solar experts</p>
+        </div>
+        
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3508.836932142019!2d77.0473183150732!3d28.431882082499503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1807c0f9a4f5%3A0x4fcf7b3e5c0b1a2a!2sSector%2018%2C%20Gurugram%2C%20Haryana%20122015!5e0!3m2!1sen!2sin!4v1624567890123!5m2!1sen!2sin" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Branch Offices -->
+    <section class="branches-section">
+        <div class="section-title">
+            <h2>Our Branch Offices</h2>
+            <p>Visit us at any of our conveniently located offices across North India</p>
+        </div>
+        
+        <div class="branches-grid">
+            <div class="branch-card">
+                <h3>Gurugram (Headquarters)</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Sector 18, Gurugram, Haryana 122015</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> gurugram@erasolar.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-7PM</p>
+            </div>
+            
+            <div class="branch-card">
+                <h3>Delhi Office</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Green Energy Hub, Connaught Place, New Delhi 110001</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43211</p>
+                <p><i class="fas fa-envelope"></i> delhi@erasolar.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-7PM</p>
+            </div>
+            
+            <div class="branch-card">
+                <h3>Noida Office</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Sector 62, Noida, Uttar Pradesh 201301</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43212</p>
+                <p><i class="fas fa-envelope"></i> noida@erasolar.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-7PM</p>
+            </div>
+            
+            <div class="branch-card">
+                <h3>Chandigarh Office</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Industrial Area, Phase 1, Chandigarh 160002</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43213</p>
+                <p><i class="fas fa-envelope"></i> chandigarh@erasolar.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM-6PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="section-title">
+            <h2>Frequently Asked Questions</h2>
+            <p>Find quick answers to common questions about contacting us</p>
+        </div>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How quickly will you respond to my inquiry?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call our support number or use the WhatsApp button for immediate assistance.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer free solar consultations?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! We offer free, no-obligation solar consultations. Our experts will assess your energy needs, provide system recommendations, and explain government subsidy options during the consultation.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What information should I provide for a solar quote?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>For an accurate quote, please provide: Your location, average monthly electricity bill, available rooftop area, and any specific energy requirements. Our team will also need to know if you're interested in residential, commercial, or industrial solar solutions.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I visit your office without an appointment?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>While walk-ins are welcome, we recommend scheduling an appointment to ensure our solar experts are available to give you their full attention. You can call ahead or book an appointment through our website.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What areas do you serve?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We serve residential, commercial, and industrial clients across North India including Delhi NCR, Haryana, Punjab, Uttar Pradesh, Rajasthan, and Uttarakhand. We're expanding to new regions regularly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Era Solar</h3>
+                <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
+                <div class="footer-social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="Product.html">Product</a>
+                <a href="Services.html">Services</a>
+                <a href="Work.html">Our Work</a>
+                <a href="franchisee.html">Ask for Franchisee</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <a href="#">Residential Solar</a>
+                <a href="#">Commercial Solar</a>
+                <a href="#">Solar Maintenance</a>
+                <a href="#">Solar Water Pumps</a>
+                <a href="#">Govt Subsidy Assistance</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Sector 18, Gurugram, Haryana 122015</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> info@erasolar.com</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2023 Era Solar. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Close menu when clicking outside (for mobile view)
+        document.addEventListener('click', (e) => {
+            const isClickInsideMenu = navLinks.contains(e.target);
+            const isClickOnMenuBtn = mobileMenuBtn.contains(e.target);
+            const isMenuActive = navLinks.classList.contains('active');
+            
+            // If menu is active and click is outside menu and menu button, close menu
+            if (isMenuActive && !isClickInsideMenu && !isClickOnMenuBtn) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close menu on window resize if it becomes desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const isActive = question.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-question').forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+        
+        // Form submission with Google Apps Script
+        const contactForm = document.getElementById('contactForm');
+        const submitContactBtn = document.getElementById('submitContactBtn');
+        const contactResponseMsg = document.getElementById('contactResponseMsg');
+        
+        // Same Google Apps Script URL from index.html
+        const API_URL = "https://script.google.com/macros/s/AKfycbzVOpDQ0Qz-z1EkWIA4XuJnctWeD_6VWB8LWIkVMgW33HLPXsLsjpmAGXKufygkw4tfZA/exec";
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('contactName').value.trim();
+            const mobile = document.getElementById('contactMobile').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const subject = document.getElementById('contactSubject').value;
+            const message = document.getElementById('contactMessage').value.trim();
+            
+            // Validation
+            if (!name) {
+                showMessage('Please enter your full name', 'error');
+                return;
+            }
+            
+            const mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                showMessage('Please enter a valid 10-digit mobile number', 'error');
+                return;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            if (!subject) {
+                showMessage('Please select a subject', 'error');
+                return;
+            }
+            
+            if (!message) {
+                showMessage('Please enter your message', 'error');
+                return;
+            }
+            
+            // Show loading state
+            submitContactBtn.disabled = true;
+            submitContactBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Prepare payload
+            const payload = {
+                name: name,
+                mobile: mobile,
+                email: email,
+                subject: subject,
+                message: message,
+                source: 'Contact Page',
+                timestamp: new Date().toISOString()
+            };
+            
+            // Send to Google Apps Script
+            fetch(API_URL, {
+                method: "POST",
+                mode: "no-cors", // Important for Google Apps Script
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(() => {
+                // Since we're using no-cors, we can't read the response
+                // But we can assume it was successful
+                showMessage('Thank you! Your message has been sent. Our team will contact you within 24 hours.', 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Add sparkle animation
+                createSuccessSparkles(submitContactBtn);
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                showMessage('There was an error sending your message. Please try again or call us directly.', 'error');
+            })
+            .finally(() => {
+                // Reset button
+                submitContactBtn.disabled = false;
+                submitContactBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                
+                // Auto-hide success message after 5 seconds
+                if (contactResponseMsg.classList.contains('success')) {
+                    setTimeout(() => {
+                        contactResponseMsg.style.display = 'none';
+                        contactResponseMsg.className = 'msg';
+                    }, 5000);
+                }
+            });
+        });
+        
+        // Message display function
+        function showMessage(message, type) {
+            contactResponseMsg.textContent = message;
+            contactResponseMsg.className = `msg ${type}`;
+            contactResponseMsg.style.display = 'block';
+            
+            // Scroll to message
+            contactResponseMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Success sparkle animation
+        function createSuccessSparkles(button) {
+            const rect = button.getBoundingClientRect();
+            const buttonCenterX = rect.left + rect.width / 2;
+            const buttonCenterY = rect.top + rect.height / 2;
+            
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    createSparkle(buttonCenterX, buttonCenterY);
+                }, i * 100);
+            }
+        }
+        
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'btn-sparkle';
+            sparkle.style.background = 'rgba(76, 175, 80, 0.8)';
+            sparkle.style.position = 'fixed';
+            sparkle.style.zIndex = '1000';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.borderRadius = '50%';
+            
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 30 + Math.random() * 70;
+            const tx = Math.cos(angle) * distance;
+            const ty = Math.sin(angle) * distance;
+            
+            sparkle.style.setProperty('--tx', `${tx}px`);
+            sparkle.style.setProperty('--ty', `${ty}px`);
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
+            
+            // Add animation keyframes
+            sparkle.style.animation = 'sparkle 1.5s ease-out forwards';
+            
+            document.body.appendChild(sparkle);
+            
+            // Add keyframes for animation
+            if (!document.getElementById('sparkle-keyframes')) {
+                const style = document.createElement('style');
+                style.id = 'sparkle-keyframes';
+                style.textContent = `
+                    @keyframes sparkle {
+                        0% { transform: translate(0, 0) scale(0); opacity: 1; }
+                        100% { transform: translate(var(--tx), var(--ty)) scale(1); opacity: 0; }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1500);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for scroll animations
+        document.querySelectorAll('.branch-card, .faq-item, .contact-detail').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+        
+        // Initialize map click functionality
+        document.querySelector('.map-container').addEventListener('click', function() {
+            window.open('https://maps.google.com/maps?q=Solar+Energy+Park,+Sector+18,+Gurugram,+Haryana+122015&hl=en&t=m&z=15', '_blank');
+        });
+        
+        // Add hover effect to map
+        const mapContainer = document.querySelector('.map-container');
+        mapContainer.style.cursor = 'pointer';
+        mapContainer.style.transition = 'transform 0.3s ease';
+        
+        mapContainer.addEventListener('mouseenter', () => {
+            mapContainer.style.transform = 'scale(1.02)';
+        });
+        
+        mapContainer.addEventListener('mouseleave', () => {
+            mapContainer.style.transform = 'scale(1)';
+        });
+    </script>
+</body>
+</html>

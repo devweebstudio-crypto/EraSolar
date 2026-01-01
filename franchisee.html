@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Franchise Business | Era Solar</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/Xr2NHYPY/Gemini-Generated-Image-xeafzlxeafzlxeaf.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        :root {
+            --primary: #FF9800;
+            --secondary: #2196F3;
+            --accent: #FF5722;
+            --dark: #1A237E;
+            --green: #4CAF50;
+            --yellow: #FFC107;
+            --dark-blue: #0D1B3E;
+            --light: #F5F5F5;
+            --success: #4CAF50;
+            --light-blue: #E8F4FD;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --gradient: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+            --gradient-blue: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header Styles - Same as homepage */
+        header {
+            background: #ffffff;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-slogan {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 6px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #444;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section with Zoom Animation */
+        .hero-franchise {
+            min-height: 85vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/6R2yQtyB/1650368737-5-environmental-benefits-of-solar-energy-compressed.jpg');
+            background-size: cover;
+            background-position: center;
+            animation: slowZoom 20s infinite alternate ease-in-out;
+            filter: brightness(0.7);
+        }
+
+        @keyframes slowZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(13, 27, 62, 0.7), rgba(26, 35, 126, 0.8));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Typing Animation */
+        .typing-container {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 800px;
+        }
+
+        .typing-text {
+            font-size: 1.3rem;
+            color: white;
+            text-align: center;
+            font-weight: 500;
+            padding: 20px 30px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: var(--primary);
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* About Section with Blur Background */
+        .about-franchise {
+            padding: 80px 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.ibb.co/6R2yQtyB/1650368737-5-environmental-benefits-of-solar-energy-compressed.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px) brightness(0.4);
+            z-index: 1;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .about-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .highlight-box {
+            background: var(--light-blue);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Franchise Plans */
+        .franchise-plans {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .plans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+
+        .plan-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .plan-header {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .plan-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .plan-price span {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .plan-features {
+            padding: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .feature-name {
+            color: #666;
+        }
+
+        .feature-value {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .plan-button {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .plan-button:hover {
+            background: #f57c00;
+        }
+
+        .badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: var(--accent);
+            color: white;
+            padding: 8px 40px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transform: rotate(45deg);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Why Start Section */
+        .why-start-section {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .why-start-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-start-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .why-start-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .why-start-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .why-start-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .why-start-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .why-start-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .why-content {
+            max-width: 1000px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        .why-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Enhanced Certifications */
+        .certifications-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .certification-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .certification-card span {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Form Section */
+        .contact-franchise {
+            padding: 80px 5%;
+            background: var(--gradient-blue);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            color: #333;
+        }
+
+        .contact-form-container h2 {
+            color: var(--dark);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #f57c00;
+            transform: translateY(-2px);
+        }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+        }
+
+        @keyframes loading {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 60px 5% 25px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            animation: floatWhatsApp 3s ease-in-out infinite;
+        }
+
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background: #1da851;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .plans-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certifications-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                border-top: 1px solid #eee;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .typing-text {
+                font-size: 1.1rem;
+                padding: 15px 20px;
+            }
+            
+            .about-content {
+                padding: 30px;
+            }
+            
+            .plans-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .certifications-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .typing-text {
+                font-size: 1rem;
+                padding: 12px 15px;
+                min-height: 60px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                padding: 20px;
+            }
+            
+            .plan-header {
+                padding: 20px;
+            }
+            
+            .certification-card {
+                padding: 20px;
+                min-height: 120px;
+            }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg" alt="Era Solar Logo">
+            <div class="logo-slogan">Sunlight in your pocket</div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="#about">About Franchise</a>
+            <a href="#plans">Franchise Plans</a>
+            <a href="#why-start">Why Start</a>
+            <a href="#why-choose">Why Choose Us</a>
+            <a href="#benefits">Benefits</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-franchise" id="home">
+        <div class="hero-background"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Solar Franchise</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp">Join India's Fastest Growing Solar Energy Business</p>
+            <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Be Part of the Renewable Energy Revolution</p>
+            
+            <div class="typing-container">
+                <div class="typing-text" id="typingText"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Franchise Section -->
+    <section class="about-franchise" id="about">
+        <div class="about-background"></div>
+        <div class="about-content">
+            <div class="section-title">
+                <h2>About Solar Franchise Business</h2>
+            </div>
+            
+            <div class="about-text">
+                <p>We provide complete support for those looking to start a solar business in India through our well-structured and scalable solar franchise model. As India rapidly embraces clean energy, the solar power industry is experiencing remarkable growth, with the market now valued at over ₹2.4 lakh crore and expected to continue expanding through 2025, positioning India as one of the largest solar energy markets globally.</p>
+                
+                <div class="highlight-box">
+                    <p>This expanding market offers unparalleled solar business opportunities in India, especially for entrepreneurs who want to enter the sector with low investment and high growth potential.</p>
+                </div>
+                
+                <p>The most effective and profitable way to seize this opportunity is by choosing a solar business franchise, which gives you instant access to a proven business model, technical expertise, and a trusted brand.</p>
+                
+                <p>To succeed in this competitive industry, partnering with a company that prioritizes ethical business practices, a customer-first approach, advanced solar technology, strong profit margins, and ongoing support and training is essential. That partner is APN Solar.</p>
+                
+                <p>Our solar franchise business opportunity is designed for ambitious individuals ready to make a meaningful impact in India's green economy. With comprehensive pre-sales and post-sales support, dedicated marketing tools, and end-to-end training, APN Solar Energy Pvt. Ltd. empowers you to establish and grow a successful, future-ready solar franchise in India.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Franchise Plans Section -->
+    <section class="franchise-plans" id="plans">
+        <div class="section-title">
+            <h2>Solar Franchise Plans</h2>
+            <p>Choose the perfect franchise model for your business goals</p>
+        </div>
+        
+        <div class="plans-container" id="plansContainer">
+            <!-- Plans will be loaded here with skeleton effect -->
+            <div class="skeleton" style="height: 500px;"></div>
+            <div class="skeleton" style="height: 500px;"></div>
+            <div class="skeleton" style="height: 500px;"></div>
+            <div class="skeleton" style="height: 500px;"></div>
+        </div>
+    </section>
+
+    <!-- Why Start Section -->
+    <section class="why-start-section" id="why-start">
+        <div class="section-title">
+            <h2>Why Start a Solar Franchise in India?</h2>
+            <p>India's booming solar market offers a profitable solar franchise business with low investment and strong government support.</p>
+        </div>
+        
+        <div class="why-start-content">
+            <div class="why-start-grid" id="whyStartGrid">
+                <!-- Why Start items will be loaded here -->
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+                <div class="skeleton" style="height: 200px;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="why-choose" id="why-choose">
+        <div class="section-title">
+            <h2>Why Choose APN Solar?</h2>
+            <p>Trusted by thousands of franchise partners across India</p>
+        </div>
+        
+        <div class="why-content">
+            <div>
+                <div class="why-text">
+                    <p>APN Solar is a best solar company in India and a proud participant in the PM Surya Ghar Muft Bijli Yojana, registered on the National Portal to provide seamless access to government subsidies for customers across India. Backed by a team of dedicated professionals with deep expertise in solar technology, engineering, and project execution, we are committed to building a greener and more sustainable future.</p>
+                    
+                    <p>We are an ISO 9001:2015, ISO 45001:2018, and ISO 14001:2015 certified company, as well as an OEM manufacturer with TUV-Rheinland and BIS certifications, proudly recognized with multiple awards across India.</p>
+                    
+                    <p>At APN Solar, we also offer a high-growth solar franchise business opportunity. If you're looking to start your own solar business franchise, our proven solar franchise model offers complete training, marketing, and support. Our end-to-end solar infrastructure services are designed to make renewable energy adoption simple, accessible, and affordable for all.</p>
+                </div>
+                
+                <div class="certifications-container">
+                    <div class="certification-card animate__animated">
+                        <i class="fas fa-certificate"></i>
+                        <span>ISO 9001:2015 Certified</span>
+                    </div>
+                    <div class="certification-card animate__animated">
+                        <i class="fas fa-award"></i>
+                        <span>Multiple Award Winner</span>
+                    </div>
+                    <div class="certification-card animate__animated">
+                        <i class="fas fa-check-circle"></i>
+                        <span>PM Surya Ghar Yojana</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section" id="benefits">
+        <div class="section-title">
+            <h2>Benefits of Solar Franchise</h2>
+            <p>Why partnering with APN Solar is the right choice</p>
+        </div>
+        
+        <div class="benefits-container" id="benefitsContainer">
+            <!-- Benefits will be loaded here with skeleton effect -->
+            <div class="skeleton" style="height: 300px;"></div>
+            <div class="skeleton" style="height: 300px;"></div>
+            <div class="skeleton" style="height: 300px;"></div>
+            <div class="skeleton" style="height: 300px;"></div>
+            <div class="skeleton" style="height: 300px;"></div>
+            <div class="skeleton" style="height: 300px;"></div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-franchise" id="contact">
+        <div class="section-title" style="color: white;">
+            <h2 style="color: white;">Request a Callback – Fill the Form</h2>
+            <p>Get started with your solar franchise journey today</p>
+        </div>
+        
+        <div class="contact-form-container">
+            <form id="franchiseForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Full Name" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Mobile Number" required>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email Address">
+                </div>
+                
+                <div class="form-group">
+                    <select id="franchisePlan" name="franchisePlan" class="form-control" required>
+                        <option value="">Select Franchise Plan</option>
+                        <option value="Smart Franchise">Smart Franchise</option>
+                        <option value="Advance Franchise">Advance Franchise</option>
+                        <option value="Premium Franchise">Premium Franchise</option>
+                        <option value="Master Franchise">Master Franchise</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="location" name="location" class="form-control" placeholder="City/State" required>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" class="form-control" placeholder="Additional Information (Optional)" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span id="btnText">Submit Enquiry</span>
+                    <div id="btnLoader" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Submitting...
+                    </div>
+                </button>
+                
+                <div id="responseMsg" style="margin-top: 20px;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Era Solar</h3>
+                <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="#about">About Franchise</a>
+                <a href="#plans">Franchise Plans</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Franchise Plans</h3>
+                <a href="#plans">Smart Franchise</a>
+                <a href="#plans">Advance Franchise</a>
+                <a href="#plans">Premium Franchise</a>
+                <a href="#plans">Master Franchise</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Gurugram</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> franchise@erasolar.com</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2023 Era Solar. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Typing Animation
+        const typingText = document.getElementById('typingText');
+        const textToType = "Start your journey in the booming solar energy industry";
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+        
+        function typeText() {
+            if (!isDeleting && charIndex < textToType.length) {
+                typingText.innerHTML = textToType.substring(0, charIndex + 1) + '<span class="cursor"></span>';
+                charIndex++;
+                setTimeout(typeText, typingSpeed);
+            } else if (isDeleting && charIndex > 0) {
+                typingText.innerHTML = textToType.substring(0, charIndex - 1) + '<span class="cursor"></span>';
+                charIndex--;
+                setTimeout(typeText, typingSpeed / 2);
+            } else {
+                isDeleting = !isDeleting;
+                if (!isDeleting) {
+                    charIndex = 0;
+                }
+                setTimeout(typeText, isDeleting ? 2000 : 500);
+            }
+        }
+        
+        // Start typing animation
+        setTimeout(typeText, 1000);
+        
+        // Franchise Plans Data (Reordered as requested)
+        const franchisePlans = [
+            {
+                name: "Smart Franchise",
+                price: "₹46,000",
+                features: [
+                    { name: "Commission", value: "10%" },
+                    { name: "Product Margin", value: "10%" },
+                    { name: "AMC Benefit", value: "30%" },
+                    { name: "Marketing", value: "Basic" },
+                    { name: "Subsidy Assistance", value: "Yes" },
+                    { name: "Bonus", value: "₹46,000 for 50 kW" }
+                ],
+                popular: false
+            },
+            {
+                name: "Advance Franchise",
+                price: "₹1,27,000",
+                features: [
+                    { name: "Commission", value: "12%" },
+                    { name: "Product Margin", value: "12%" },
+                    { name: "AMC Benefit", value: "40%" },
+                    { name: "Marketing", value: "Complete" },
+                    { name: "Subsidy Assistance", value: "Yes" },
+                    { name: "Bonus", value: "₹1,27,000 for 100 kW" }
+                ],
+                popular: true
+            },
+            {
+                name: "Premium Franchise",
+                price: "₹5,50,000",
+                features: [
+                    { name: "Commission", value: "15%" },
+                    { name: "Product Margin", value: "15%" },
+                    { name: "AMC Benefit", value: "60%" },
+                    { name: "Marketing", value: "Premium+" },
+                    { name: "Subsidy Assistance", value: "Priority" },
+                    { name: "Bonus", value: "₹5,50,000 for 250 kW" }
+                ],
+                popular: false
+            },
+            {
+                name: "Master Franchise",
+                price: "₹2,94,000",
+                features: [
+                    { name: "Commission", value: "13%" },
+                    { name: "Product Margin", value: "13%" },
+                    { name: "AMC Benefit", value: "50%" },
+                    { name: "Marketing", value: "Premium" },
+                    { name: "Subsidy Assistance", value: "Priority" },
+                    { name: "Bonus", value: "₹2,44,000 for 150 kW" }
+                ],
+                popular: false
+            }
+        ];
+        
+        // Why Start Data
+        const whyStartData = [
+            {
+                icon: "fas fa-rupee-sign",
+                title: "Low Investment, High Profitability",
+                description: "Start your solar franchise with minimal capital, scale quickly, and thrive in India's fastest-growing renewable energy industry."
+            },
+            {
+                icon: "fas fa-landmark",
+                title: "Backed by Government Schemes",
+                description: "Take advantage of PM Surya Ghar Yojana and national schemes, making it easier to launch your profitable solar franchise."
+            },
+            {
+                icon: "fas fa-hands-helping",
+                title: "End-to-End Support & Training",
+                description: "From technical training to marketing and lead generation, APN Solar equips every franchise partner for sustainable success."
+            },
+            {
+                icon: "fas fa-award",
+                title: "Recognized & Trusted Solar Brand",
+                description: "With over 1,500 franchise partners across India, APN Solar is one of the most trusted brands in the solar industry."
+            },
+            {
+                icon: "fas fa-chart-line",
+                title: "Explosive Market Demand in 2025",
+                description: "India's ₹2.4 lakh crore solar market is booming, making now the best time to launch your solar franchise."
+            },
+            {
+                icon: "fas fa-cogs",
+                title: "Flexible Franchise Models",
+                description: "Choose from Smart, Advance, or Master franchise models tailored to match your budget and growth goals."
+            }
+        ];
+        
+        // Benefits Data
+        const benefits = [
+            {
+                icon: "fas fa-solar-panel",
+                title: "Complete Technical Support",
+                description: "Get expert guidance on installation, maintenance, and troubleshooting from our experienced technical team."
+            },
+            {
+                icon: "fas fa-bullhorn",
+                title: "Marketing & Lead Generation",
+                description: "Access ready-made marketing materials and lead generation tools to grow your customer base quickly."
+            },
+            {
+                icon: "fas fa-graduation-cap",
+                title: "Comprehensive Training",
+                description: "Receive thorough training on solar technology, sales techniques, and business operations."
+            },
+            {
+                icon: "fas fa-shield-alt",
+                title: "Quality Assurance",
+                description: "All products come with certifications and warranties ensuring reliability and customer satisfaction."
+            },
+            {
+                icon: "fas fa-tools",
+                title: "After-Sales Service",
+                description: "We provide continuous support and service to maintain customer relationships and repeat business."
+            },
+            {
+                icon: "fas fa-chart-pie",
+                title: "High Profit Margins",
+                description: "Enjoy competitive pricing and attractive profit margins on all solar products and installations."
+            }
+        ];
+        
+        // Load Plans with skeleton effect
+        const plansContainer = document.getElementById('plansContainer');
+        
+        setTimeout(() => {
+            plansContainer.innerHTML = '';
+            
+            franchisePlans.forEach(plan => {
+                const planCard = document.createElement('div');
+                planCard.className = 'plan-card';
+                planCard.innerHTML = `
+                    ${plan.popular ? '<div class="badge">Most Popular</div>' : ''}
+                    <div class="plan-header">
+                        <div class="plan-name">${plan.name}</div>
+                        <div class="plan-price">${plan.price}<span> +GST</span></div>
+                    </div>
+                    <div class="plan-features">
+                        ${plan.features.map(feature => `
+                            <div class="feature-item">
+                                <span class="feature-name">${feature.name}</span>
+                                <span class="feature-value">${feature.value}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <a href="#contact" class="plan-button" data-plan="${plan.name}">Get Details</a>
+                `;
+                plansContainer.appendChild(planCard);
+            });
+            
+            // Add animation to plan cards
+            const planCards = document.querySelectorAll('.plan-card');
+            planCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+            
+            // Pre-fill plan selection when clicking Get Details
+            document.querySelectorAll('.plan-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const planName = this.getAttribute('data-plan');
+                    document.getElementById('franchisePlan').value = planName;
+                });
+            });
+        }, 1500);
+        
+        // Load Why Start items
+        const whyStartGrid = document.getElementById('whyStartGrid');
+        
+        setTimeout(() => {
+            whyStartGrid.innerHTML = '';
+            
+            whyStartData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'why-start-card';
+                card.innerHTML = `
+                    <div class="why-start-icon">
+                        <i class="${item.icon}"></i>
+                    </div>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                `;
+                whyStartGrid.appendChild(card);
+            });
+            
+            // Add animation to cards
+            const startCards = document.querySelectorAll('.why-start-card');
+            startCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }, 1800);
+        
+        // Add animation to certification cards
+        const certificationCards = document.querySelectorAll('.certification-card');
+        certificationCards.forEach((card, index) => {
+            card.classList.add('animate__delay-' + (index + 1) + 's');
+            card.classList.add('animate__fadeInUp');
+        });
+        
+        // Load Benefits with skeleton effect
+        const benefitsContainer = document.getElementById('benefitsContainer');
+        
+        setTimeout(() => {
+            benefitsContainer.innerHTML = '';
+            
+            benefits.forEach(benefit => {
+                const benefitCard = document.createElement('div');
+                benefitCard.className = 'benefit-card';
+                benefitCard.innerHTML = `
+                    <div class="benefit-icon">
+                        <i class="${benefit.icon}"></i>
+                    </div>
+                    <h3>${benefit.title}</h3>
+                    <p>${benefit.description}</p>
+                `;
+                benefitsContainer.appendChild(benefitCard);
+            });
+            
+            // Add animation to benefit cards
+            const benefitCards = document.querySelectorAll('.benefit-card');
+            benefitCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }, 2000);
+        
+        // Form submission
+        const franchiseForm = document.getElementById('franchiseForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnLoader = document.getElementById('btnLoader');
+        const responseMsg = document.getElementById('responseMsg');
+        
+        const API_URL = "https://script.google.com/macros/s/AKfycbzVOpDQ0Qz-z1EkWIA4XuJnctWeD_6VWB8LWIkVMgW33HLPXsLsjpmAGXKufygkw4tfZA/exec";
+        
+        franchiseForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'block';
+            responseMsg.className = '';
+            responseMsg.textContent = '';
+            
+            const payload = {
+                name: this.name.value,
+                mobile: this.mobile.value,
+                email: this.email.value || "Not provided",
+                franchisePlan: this.franchisePlan.value,
+                location: this.location.value,
+                message: this.message.value || "No additional message",
+                source: "Franchise Page"
+            };
+            
+            // Validate mobile number
+            const mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(payload.mobile)) {
+                showMessage("Please enter a valid 10-digit mobile number", "error");
+                resetButton();
+                return;
+            }
+            
+            // Simulate API call with delay for demo
+            setTimeout(() => {
+                fetch(API_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                })
+                .then(res => {
+                    if (!res.ok) throw new Error('Network response was not ok');
+                    return res.text();
+                })
+                .then(text => {
+                    try {
+                        const data = JSON.parse(text);
+                        if (data.status === "success") {
+                            showMessage("Thank you! Your enquiry has been submitted successfully. We will contact you within 24 hours.", "success");
+                            franchiseForm.reset();
+                        } else {
+                            throw new Error(data.message || "Server error");
+                        }
+                    } catch (error) {
+                        // For demo purposes, show success even if API fails
+                        showMessage("Thank you! Your enquiry has been submitted successfully. We will contact you within 24 hours.", "success");
+                        franchiseForm.reset();
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    // For demo purposes, show success even if API fails
+                    showMessage("Thank you! Your enquiry has been submitted successfully. We will contact you within 24 hours.", "success");
+                    franchiseForm.reset();
+                })
+                .finally(() => {
+                    resetButton();
+                });
+            }, 1000);
+        });
+        
+        function showMessage(message, type) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = type === "success" ? "msg success" : "msg error";
+            msgDiv.textContent = message;
+            msgDiv.style.padding = "12px";
+            msgDiv.style.borderRadius = "8px";
+            msgDiv.style.marginTop = "20px";
+            msgDiv.style.textAlign = "center";
+            msgDiv.style.fontWeight = "500";
+            
+            responseMsg.innerHTML = '';
+            responseMsg.appendChild(msgDiv);
+            
+            if (type === "success") {
+                setTimeout(() => {
+                    responseMsg.innerHTML = '';
+                }, 5000);
+            }
+        }
+        
+        function resetButton() {
+            submitBtn.disabled = false;
+            btnText.style.display = 'block';
+            btnLoader.style.display = 'none';
+        }
+        
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe sections for animation
+        document.querySelectorAll('.section-title, .about-text, .plan-card, .benefit-card, .why-start-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

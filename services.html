@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Services | Era Solar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #FF9800;
+            --secondary: #2196F3;
+            --accent: #FF5722;
+            --dark: #1A237E;
+            --green: #4CAF50;
+            --yellow: #FFC107;
+            --dark-blue: #0D1B3E;
+            --light: #F5F5F5;
+            --success: #4CAF50;
+            --light-blue: #E8F4FD;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --gradient: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
+            --gradient-blue: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --border: #e5e7eb;
+            --text: #1f2937;
+            --muted: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--dark-blue);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-main {
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo-container img {
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        .logo-slogan {
+            font-size: 12px;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+        }
+
+        /* NAVIGATION */
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* BOOK CONSULTATION BUTTON IN HEADER */
+        .header-consultation-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .header-consultation-btn:hover {
+            background: #e68900;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        /* HERO SECTION WITH ROTATING PLUS SIGNS */
+        .services-hero {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: rotatePlus 20s linear infinite;
+        }
+
+        @keyframes rotatePlus {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--yellow);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* SERVICES CONTAINER */
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* SEARCH BAR */
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 16px 50px 16px 20px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 4px 20px rgba(255, 152, 0, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-size: 1.2rem;
+        }
+
+        .search-results-count {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 3;
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-image img.loaded {
+            opacity: 1;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.7));
+            z-index: 2;
+        }
+
+        /* LOGO OVERLAY */
+        .logo-overlay {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+            z-index: 4;
+            animation: blinkLogo 3s infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        @keyframes blinkLogo {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        .logo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* SKELETON LOADING */
+        .skeleton-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.9);
+            z-index: 5;
+            transition: opacity 0.3s ease;
+        }
+
+        .skeleton-loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .skeleton-logo {
+            width: 50px;
+            height: 50px;
+            filter: grayscale(100%) brightness(70%);
+            opacity: 0.7;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-description {
+            color: var(--muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .feature-item i {
+            color: var(--green);
+            font-size: 14px;
+        }
+
+        .service-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+        }
+
+        .call-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .call-btn:hover {
+            background: #e68900;
+            transform: translateY(-2px);
+        }
+
+        .enquiry-btn {
+            background: var(--dark);
+            color: white;
+        }
+
+        .enquiry-btn:hover {
+            background: #37475A;
+            transform: translateY(-2px);
+        }
+
+        /* SERVICE CATEGORIES */
+        .service-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .category-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* TESTIMONIALS SLIDER */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            margin-top: 60px;
+        }
+
+        .testimonial-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .testimonial-dot.active {
+            background: var(--primary);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: rotatePlus 20s linear infinite;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cta-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background: #e68900;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.3);
+        }
+
+        .cta-secondary {
+            background: white;
+            color: var(--dark);
+        }
+
+        .cta-secondary:hover {
+            background: #f8f9fa;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 60px 20px 25px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            animation: floatWhatsApp 3s ease-in-out infinite;
+        }
+
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background: #1da851;
+            animation: none;
+        }
+
+        /* MODAL STYLES */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            padding: 0;
+            position: relative;
+            transform: translateY(-20px) scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-header {
+            background: var(--gradient-blue);
+            padding: 25px;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .modal-header p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .modal-body {
+            padding: 25px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+
+        /* Form Styles */
+        .form-box {
+            width: 100%;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            background-color: white;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+            padding-right: 45px;
+        }
+
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .form-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-btn.outline {
+            background: transparent;
+            color: #666;
+            border: 1px solid #ddd;
+        }
+
+        .form-btn.outline:hover {
+            background: #f8f9fa;
+            border-color: #ccc;
+        }
+
+        .form-btn:hover:not(:disabled) {
+            background: #f57c00;
+            transform: translateY(-2px);
+        }
+
+        .form-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 16px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #eee;
+            z-index: 1;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #eee;
+            color: #777;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+            border: 2px solid white;
+            font-size: 0.9rem;
+        }
+
+        .progress-step.active .step-circle {
+            background-color: var(--primary);
+            color: white;
+            animation: bounce 0.5s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .progress-step.completed .step-circle {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .step-label {
+            font-size: 0.8rem;
+            color: #777;
+            text-align: center;
+        }
+
+        .progress-step.active .step-label {
+            color: #444;
+            font-weight: 500;
+        }
+
+        .msg {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .msg.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .msg.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                padding: 10px 15px;
+            }
+            
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--dark-blue);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                z-index: 1000;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-consultation-btn {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .service-actions {
+                flex-direction: column;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .services-hero::before,
+            .cta-section::before {
+                animation: rotatePlus 40s linear infinite;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-categories {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 10px;
+            }
+            
+            .category-btn {
+                white-space: nowrap;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .whatsapp-button {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .logo-overlay {
+                width: 25px;
+                height: 25px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo-container">
+                <img src="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg" alt="Era Solar Logo">
+                <div class="logo-slogan">Sunlight in your pocket</div>
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="Product.html">Products</a>
+                <a href="Services.html" class="active">Services</a>
+                <a href="Work.html">Our Work</a>
+                <a href="franchisee.html">Franchisee</a>
+                <a href="Contact.html">Contact</a>
+                <a href="about.html">About</a>
+                <button class="header-consultation-btn" onclick="openConsultationModal()">
+                    <i class="fas fa-calendar-check"></i> Book Free Consultation
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="services-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Comprehensive Solar Services</h1>
+            <p class="hero-subtitle">From installation to maintenance, we provide end-to-end solar solutions for residential, commercial, and industrial needs</p>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="stat-number">1500+</div>
+                    <div class="stat-label">Installations Completed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Customer Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-container">
+        <div class="section-title">
+            <h2>Our Solar Services</h2>
+            <p>Complete range of professional solar energy services for all your needs</p>
+        </div>
+
+        <!-- SEARCH BAR -->
+        <div class="search-container">
+            <input type="text" id="serviceSearch" class="search-box" placeholder="Search services by name or keyword...">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+
+        <div class="search-results-count" id="searchResultsCount">
+            Showing all 20 services
+        </div>
+
+        <!-- SERVICE CATEGORIES -->
+        <div class="service-categories" id="serviceCategories">
+            <button class="category-btn active" data-category="all">All Services</button>
+            <button class="category-btn" data-category="installation">Installation</button>
+            <button class="category-btn" data-category="maintenance">Maintenance</button>
+            <button class="category-btn" data-category="repair">Repair</button>
+            <button class="category-btn" data-category="consultation">Consultation</button>
+            <button class="category-btn" data-category="commercial">Commercial</button>
+        </div>
+
+        <!-- SERVICES GRID -->
+        <div class="services-grid" id="servicesGrid">
+            <!-- Services will be populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SLIDER -->
+    <section class="testimonials">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by thousands of satisfied customers across India</p>
+        </div>
+        
+        <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Era Solar installed a 5kW system at my home. The team was professional, completed the work on time, and the system has been performing excellently. My electricity bills have reduced by 80%!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">RS</div>
+                            <div class="author-info">
+                                <h4>Rajesh Sharma</h4>
+                                <p>Residential Customer, Delhi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Our factory needed a 50kW commercial solar system. Era Solar delivered beyond expectations. The installation was smooth, and we're saving ₹2.5 lakhs annually on electricity bills. Highly recommended!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PK</div>
+                            <div class="author-info">
+                                <h4>Priya Kapoor</h4>
+                                <p>Factory Owner, Pune</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "Excellent service! The team helped us navigate government subsidy paperwork and installed a 10kW system for our apartment complex. Professional, reliable, and great after-sales support."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AM</div>
+                            <div class="author-info">
+                                <h4>Arun Mehta</h4>
+                                <p>Apartment President, Bangalore</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "I was skeptical about solar, but Era Solar changed my mind. They provided a custom solution for my farm's water pump needs. Now I have reliable water supply without worrying about electricity bills."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">SJ</div>
+                            <div class="author-info">
+                                <h4>Sunil Joshi</h4>
+                                <p>Farmer, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The maintenance team from Era Solar is fantastic! They regularly service our solar panels and ensure maximum efficiency. Their proactive approach has kept our system running flawlessly for 3 years."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">NM</div>
+                            <div class="author-info">
+                                <h4>Neha Malhotra</h4>
+                                <p>School Principal, Gurugram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-dots" id="testimonialDots">
+                <!-- Dots will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2 class="cta-title">Ready to Go Solar?</h2>
+            <p class="cta-text">Get a free consultation and quote for your solar energy needs. Our experts will guide you through the entire process from planning to installation.</p>
+            
+            <div class="cta-buttons">
+                <button class="cta-button cta-primary" onclick="openConsultationModal()">
+                    <i class="fas fa-calendar-check"></i> Book Free Consultation
+                </button>
+                <button class="cta-button cta-secondary" onclick="callNow()">
+                    <i class="fas fa-phone"></i> Call Now: +91 98765 43210
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Era Solar</h3>
+                <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="Product.html">Products</a>
+                <a href="Services.html">Services</a>
+                <a href="Work.html">Our Work</a>
+                <a href="franchisee.html">Franchisee</a>
+                <a href="Contact.html">Contact Us</a>
+                <a href="about.html">About Us</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Our Services</h3>
+                <a href="#installation">Solar Panel Installation</a>
+                <a href="#maintenance">Solar System Maintenance</a>
+                <a href="#repair">Solar Repair Services</a>
+                <a href="#consultation">Free Consultation</a>
+                <a href="#commercial">Commercial Solar</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Gurugram</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> services@erasolar.com</p>
+                <p><i class="fas fa-clock"></i> Mon-Sat: 9AM - 7PM</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2023 Era Solar. All rights reserved. | Solar Services Provider
+        </div>
+    </footer>
+
+    <!-- WHATSAPP BUTTON -->
+    <a href="https://wa.me/919876543210" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- CONSULTATION MODAL -->
+    <div class="modal-overlay" id="consultationModal">
+        <div class="modal">
+            <div class="modal-header">
+                <button class="close-modal" id="closeConsultationModal" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>Book Free Consultation</h2>
+                <p>Fill out the form step by step to get your free solar consultation</p>
+            </div>
+            
+            <div class="modal-body">
+                <div class="form-progress" id="formProgress">
+                    <!-- Progress steps added by JavaScript -->
+                </div>
+                
+                <div class="form-box">
+                    <form id="consultationForm">
+                        <!-- Step 1: Name -->
+                        <div class="form-step active" id="step1">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-navigation">
+                                <div></div>
+                                <button type="button" class="form-btn next-step" data-next="step2">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Mobile -->
+                        <div class="form-step" id="step2">
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number</label>
+                                <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="Enter your mobile number" required>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="form-btn outline prev-step" data-prev="step1">
+                                    Back
+                                </button>
+                                <button type="button" class="form-btn next-step" data-next="step3">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Email -->
+                        <div class="form-step" id="step3">
+                            <div class="form-group">
+                                <label for="email">Email (Optional)</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="form-btn outline prev-step" data-prev="step2">
+                                    Back
+                                </button>
+                                <button type="button" class="form-btn next-step" data-next="step4">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 4: Solar Type -->
+                        <div class="form-step" id="step4">
+                            <div class="form-group">
+                                <label for="solarType">Service Type</label>
+                                <select id="solarType" name="solarType" class="form-control" required>
+                                    <option value="">Select Service Type</option>
+                                    <option>Residential Solar Panel Installation</option>
+                                    <option>Commercial Solar System Installation</option>
+                                    <option>Solar Panel Cleaning Service</option>
+                                    <option>Solar Inverter Installation & Repair</option>
+                                    <option>Solar System Performance Audit</option>
+                                    <option>Solar Battery Installation</option>
+                                    <option>Solar Water Pump Installation</option>
+                                    <option>Solar Street Light Installation</option>
+                                    <option>Solar System Preventive Maintenance</option>
+                                    <option>Solar Panel Repair Service</option>
+                                    <option>Free Solar Consultation</option>
+                                    <option>Industrial Solar Solutions</option>
+                                    <option>Solar Net Metering Setup</option>
+                                    <option>Solar System Monitoring</option>
+                                    <option>Solar Cable & Wiring</option>
+                                    <option>Solar System Upgradation</option>
+                                    <option>Solar Farm Installation</option>
+                                    <option>Solar Panel Bird Guard</option>
+                                    <option>Solar Insurance Assistance</option>
+                                    <option>Emergency Solar Repair</option>
+                                    <option>Other Service</option>
+                                </select>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="form-btn outline prev-step" data-prev="step3">
+                                    Back
+                                </button>
+                                <button type="button" class="form-btn next-step" data-next="step5">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 5: Location -->
+                        <div class="form-step" id="step5">
+                            <div class="form-group">
+                                <label for="location">Location</label>
+                                <input type="text" id="location" name="location" class="form-control" placeholder="Enter your location" required>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="form-btn outline prev-step" data-prev="step4">
+                                    Back
+                                </button>
+                                <button type="button" class="form-btn next-step" data-next="step6">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 6: Message -->
+                        <div class="form-step" id="step6">
+                            <div class="form-group">
+                                <label for="message">Message (Optional)</label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Any specific requirements or questions"></textarea>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="form-btn outline prev-step" data-prev="step5">
+                                    Back
+                                </button>
+                                <button type="submit" class="form-btn" id="submitBtn">
+                                    Submit Booking
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="msg" id="responseMsg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Transparent logo URL
+        const LOGO_URL = "https://i.ibb.co/9k0CQX4y/logo-transparant.png";
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Services Data with actual image URLs
+        const services = [
+            {
+                id: 1,
+                title: "Residential Solar Panel Installation",
+                description: "Complete installation of solar panels for homes with government subsidy assistance and financing options.",
+                image: "https://i.ibb.co/s97P4MtJ/Residential-Solar-Panel-Installatio.jpg",
+                category: "installation",
+                features: ["Free Site Survey", "Govt Subsidy Assistance", "10 Years Warranty", "24/7 Monitoring"],
+                badge: "Popular"
+            },
+            {
+                id: 2,
+                title: "Commercial Solar System Installation",
+                description: "Large-scale solar solutions for businesses, factories, and commercial establishments.",
+                image: "https://i.ibb.co/Y4JMzzp9/Commercial-Solar-System-Installatio.jpg",
+                category: "installation",
+                features: ["Custom Design", "ROI Analysis", "Tax Benefits", "Maintenance Package"],
+                badge: "Business"
+            },
+            {
+                id: 3,
+                title: "Solar Panel Cleaning Service",
+                description: "Professional cleaning of solar panels to maintain optimal efficiency and performance.",
+                image: "https://i.ibb.co/q38wN8t2/Solar-Panel-Cleaning-Servic.jpg",
+                category: "maintenance",
+                features: ["Water Conservation", "Eco-Friendly Cleaners", "No Scratches", "Performance Report"],
+                badge: "Maintenance"
+            },
+            {
+                id: 4,
+                title: "Solar Inverter Installation & Repair",
+                description: "Installation, maintenance, and repair of all types of solar inverters.",
+                image: "https://i.ibb.co/5DPzQg7/Solar-Inverter-Installation-Repai.jpg",
+                category: "repair",
+                features: ["All Brands", "Same Day Service", "Genuine Parts", "Warranty"],
+                badge: "Repair"
+            },
+            {
+                id: 5,
+                title: "Solar System Performance Audit",
+                description: "Comprehensive audit of your solar system to identify issues and optimize performance.",
+                image: "https://i.ibb.co/84r6m9Yw/Solar-System-Performance-Audi.jpg",
+                category: "consultation",
+                features: ["Detailed Report", "Efficiency Analysis", "Recommendations", "Cost Estimates"],
+                badge: "Premium"
+            },
+            {
+                id: 6,
+                title: "Solar Battery Installation",
+                description: "Installation of solar batteries for energy storage and backup solutions.",
+                image: "https://i.ibb.co/RktYJkyz/Solar-Battery-Installatio.jpg",
+                category: "installation",
+                features: ["Lithium-ion", "Long Life", "Smart Monitoring", "Warranty"],
+                badge: "Storage"
+            },
+            {
+                id: 7,
+                title: "Solar Water Pump Installation",
+                description: "Installation of solar-powered water pumps for agricultural and domestic use.",
+                image: "https://i.ibb.co/99bKJHc3/Solar-Water-Pump-Installatio.jpg",
+                category: "installation",
+                features: ["Subsidy Available", "All Capacities", "Durable", "Low Maintenance"],
+                badge: "Agricultural"
+            },
+            {
+                id: 8,
+                title: "Solar Street Light Installation",
+                description: "Installation of solar-powered street lights for communities and municipalities.",
+                image: "https://i.ibb.co/sv45htcH/Solar-Street-Light-Installatio.jpg",
+                category: "commercial",
+                features: ["Automatic", "Weatherproof", "Long Life", "Cost Effective"],
+                badge: "Municipal"
+            },
+            {
+                id: 9,
+                title: "Solar System Preventive Maintenance",
+                description: "Regular preventive maintenance to ensure your solar system operates at peak efficiency.",
+                image: "https://i.ibb.co/0j6VckCZ/Solar-System-Preventive-Maintenanc.jpg",
+                category: "maintenance",
+                features: ["Quarterly Visits", "Performance Check", "Cleaning", "Report"],
+                badge: "Essential"
+            },
+            {
+                id: 10,
+                title: "Solar Panel Repair Service",
+                description: "Professional repair of damaged or underperforming solar panels.",
+                image: "https://i.ibb.co/xSNjJBP3/Solar-Panel-Repair-Servic.jpg",
+                category: "repair",
+                features: ["Quick Response", "Expert Technicians", "Quality Parts", "Guarantee"],
+                badge: "Repair"
+            },
+            {
+                id: 11,
+                title: "Free Solar Consultation",
+                description: "Free consultation to assess your solar needs and provide customized solutions.",
+                image: "https://i.ibb.co/4ndT3B0K/Free-Solar-Consultatio.jpg",
+                category: "consultation",
+                features: ["Free Assessment", "Custom Solutions", "Cost Analysis", "ROI Calculation"],
+                badge: "Free"
+            },
+            {
+                id: 12,
+                title: "Industrial Solar Solutions",
+                description: "Heavy-duty solar solutions for industrial plants and manufacturing units.",
+                image: "https://i.ibb.co/sp7TPqKg/Industrial-Solar-Solution.jpg",
+                category: "commercial",
+                features: ["High Capacity", "Industrial Grade", "Custom Design", "Maintenance"],
+                badge: "Industrial"
+            },
+            {
+                id: 13,
+                title: "Solar Net Metering Setup",
+                description: "Complete setup and paperwork for solar net metering with electricity boards.",
+                image: "https://i.ibb.co/QFXPc4kM/Solar-Net-Metering-Setu.jpg",
+                category: "installation",
+                features: ["Documentation", "Approval Process", "Meter Installation", "Commissioning"],
+                badge: "Government"
+            },
+            {
+                id: 14,
+                title: "Solar System Monitoring",
+                description: "24/7 remote monitoring of your solar system performance via mobile app.",
+                image: "https://i.ibb.co/XfcXjVQc/Solar-System-Monitorin.jpg",
+                category: "maintenance",
+                features: ["Real-time Data", "Alerts", "Performance Reports", "Mobile App"],
+                badge: "Digital"
+            },
+            {
+                id: 15,
+                title: "Solar Cable & Wiring",
+                description: "Professional wiring and cable installation for solar systems.",
+                image: "https://i.ibb.co/xt3DSwd1/Solar-Cable-Wirin.jpg",
+                category: "installation",
+                features: ["Quality Cables", "Safety Standards", "Neat Installation", "Testing"],
+                badge: "Safety"
+            },
+            {
+                id: 16,
+                title: "Solar System Upgradation",
+                description: "Upgrade your existing solar system with latest technology and components.",
+                image: "https://i.ibb.co/1G5xq58G/Solar-System-Upgradatio.jpg",
+                category: "repair",
+                features: ["Tech Upgrade", "Efficiency Boost", "Modern Components", "Testing"],
+                badge: "Upgrade"
+            },
+            {
+                id: 17,
+                title: "Solar Farm Installation",
+                description: "Large-scale solar farm installation for developers and investors.",
+                image: "https://i.ibb.co/hFRghXbB/Solar-Farm-Installatio.jpg",
+                category: "commercial",
+                features: ["Turnkey Project", "EPC Services", "Land Assessment", "Maintenance"],
+                badge: "Mega"
+            },
+            {
+                id: 18,
+                title: "Solar Panel Bird Guard",
+                description: "Installation of bird guards to protect solar panels from bird droppings.",
+                image: "https://i.ibb.co/cXSHknxH/Solar-Panel-Bird-Guar.jpg",
+                category: "maintenance",
+                features: ["Mesh Protection", "Durable", "Easy Cleaning", "No Damage"],
+                badge: "Protection"
+            },
+            {
+                id: 19,
+                title: "Solar Insurance Assistance",
+                description: "Assistance with solar system insurance and claim processing.",
+                image: "https://i.ibb.co/fjG8D2p/Solar-Insurance-Assistanc.jpg",
+                category: "consultation",
+                features: ["Policy Selection", "Paperwork", "Claim Support", "Renewal"],
+                badge: "Insurance"
+            },
+            {
+                id: 20,
+                title: "Emergency Solar Repair",
+                description: "24/7 emergency repair services for critical solar system failures.",
+                image: "https://i.ibb.co/b5JSCYjW/Emergency-Solar-Repai.jpg",
+                category: "repair",
+                features: ["24/7 Service", "Quick Response", "Expert Technicians", "Spare Parts"],
+                badge: "Emergency"
+            }
+        ];
+
+        // Global variables for filtering
+        let currentFilter = 'all';
+        let currentSearchTerm = '';
+
+        // Render services with image loading
+        function renderServices(filter = 'all', searchTerm = '') {
+            const servicesGrid = document.getElementById('servicesGrid');
+            const filteredServices = services.filter(service => {
+                // Filter by category
+                const categoryMatch = filter === 'all' || service.category === filter;
+                // Filter by search term
+                const searchMatch = !searchTerm || 
+                    service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    service.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
+                
+                return categoryMatch && searchMatch;
+            });
+            
+            servicesGrid.innerHTML = filteredServices.map(service => `
+                <div class="service-card" data-category="${service.category}">
+                    ${service.badge ? `<div class="service-badge">${service.badge}</div>` : ''}
+                    <div class="service-image">
+                        <div class="skeleton-loading">
+                            <img src="${LOGO_URL}" class="skeleton-logo" alt="Loading...">
+                        </div>
+                        <img src="${service.image}" 
+                             alt="${service.title}"
+                             data-id="${service.id}"
+                             onload="imageLoaded(${service.id})"
+                             onerror="imageError(${service.id})">
+                        <div class="service-overlay"></div>
+                        <div class="logo-overlay">
+                            <img src="${LOGO_URL}" alt="Era Solar Logo">
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">${service.title}</h3>
+                        <p class="service-description">${service.description}</p>
+                        
+                        <div class="service-features">
+                            ${service.features.map(feature => `
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        
+                        <div class="service-actions">
+                            <button class="action-btn whatsapp-btn" onclick="enquireViaWhatsApp('${service.title}')">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </button>
+                            <button class="action-btn call-btn" onclick="callForService('${service.title}')">
+                                <i class="fas fa-phone"></i> Call Now
+                            </button>
+                            <button class="action-btn enquiry-btn" onclick="openConsultationModal('${service.title}')">
+                                <i class="fas fa-calendar-check"></i> Book Free Consult
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Update results count
+            const resultsCount = document.getElementById('searchResultsCount');
+            resultsCount.textContent = `Showing ${filteredServices.length} of ${services.length} services`;
+            
+            // Animate cards on load
+            setTimeout(() => {
+                document.querySelectorAll('.service-card').forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 100);
+        }
+
+        // Image loading handlers
+        function imageLoaded(id) {
+            const img = document.querySelector(`img[data-id="${id}"]`);
+            const skeleton = img.parentElement.querySelector('.skeleton-loading');
+            
+            if (img && skeleton) {
+                img.classList.add('loaded');
+                setTimeout(() => {
+                    skeleton.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function imageError(id) {
+            const img = document.querySelector(`img[data-id="${id}"]`);
+            const skeleton = img.parentElement.querySelector('.skeleton-loading');
+            
+            if (img && skeleton) {
+                // Set a placeholder image on error
+                img.src = 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                img.onload = () => imageLoaded(id);
+            }
+        }
+
+        // Initialize services
+        document.addEventListener('DOMContentLoaded', () => {
+            renderServices();
+            
+            // Category filter
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.getAttribute('data-category');
+                    renderServices(currentFilter, currentSearchTerm);
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('serviceSearch');
+            searchInput.addEventListener('input', () => {
+                currentSearchTerm = searchInput.value.trim();
+                renderServices(currentFilter, currentSearchTerm);
+            });
+            
+            // Clear search on X click
+            searchInput.addEventListener('search', () => {
+                currentSearchTerm = '';
+                renderServices(currentFilter, currentSearchTerm);
+            });
+            
+            // Animate on scroll
+            animateOnScroll();
+            
+            // Initialize testimonial slider
+            initTestimonialSlider();
+            
+            // Initialize consultation modal
+            initConsultationModal();
+        });
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.service-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Service enquiry functions
+        const PHONE_NUMBER = '9876543210';
+
+        function enquireViaWhatsApp(serviceName) {
+            const message = `Hello, I'm interested in your "${serviceName}" service. Please provide more details.`;
+            window.open(`https://wa.me/91${PHONE_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        function callForService(serviceName) {
+            if (confirm(`Call ${PHONE_NUMBER} for ${serviceName}?`)) {
+                window.location.href = `tel:+91${PHONE_NUMBER}`;
+            }
+        }
+
+        function callNow() {
+            window.location.href = `tel:+91${PHONE_NUMBER}`;
+        }
+
+        // Testimonial Slider
+        let currentTestimonial = 0;
+        let testimonialInterval;
+
+        function initTestimonialSlider() {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dotsContainer = document.getElementById('testimonialDots');
+            
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = `testimonial-dot ${index === 0 ? 'active' : ''}`;
+                dot.addEventListener('click', () => goToTestimonial(index));
+                dotsContainer.appendChild(dot);
+            });
+            
+            // Start auto-slide
+            startTestimonialAutoSlide();
+            
+            // Pause on hover
+            const slider = document.querySelector('.testimonial-slider');
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(testimonialInterval);
+            });
+            
+            slider.addEventListener('mouseleave', () => {
+                startTestimonialAutoSlide();
+            });
+        }
+
+        function goToTestimonial(index) {
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            const track = document.getElementById('testimonialTrack');
+            
+            if (index >= slides.length) index = 0;
+            if (index < 0) index = slides.length - 1;
+            
+            currentTestimonial = index;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Update dots
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        function startTestimonialAutoSlide() {
+            clearInterval(testimonialInterval);
+            testimonialInterval = setInterval(() => {
+                goToTestimonial(currentTestimonial + 1);
+            }, 4000); // 4 seconds
+        }
+
+        // Consultation Modal Functions
+        let currentStep = 1;
+
+        function initConsultationModal() {
+            const stepLabels = ['Name', 'Mobile', 'Email', 'Service Type', 'Location', 'Message'];
+            const formProgress = document.getElementById('formProgress');
+            
+            stepLabels.forEach((label, index) => {
+                const stepElement = document.createElement('div');
+                stepElement.className = `progress-step ${index === 0 ? 'active' : ''}`;
+                stepElement.innerHTML = `
+                    <div class="step-circle">${index + 1}</div>
+                    <div class="step-label">${label}</div>
+                `;
+                formProgress.appendChild(stepElement);
+            });
+            
+            const progressSteps = document.querySelectorAll('.progress-step');
+            
+            // Next step buttons
+            document.querySelectorAll('.next-step').forEach(button => {
+                button.addEventListener('click', function() {
+                    const nextStepId = this.getAttribute('data-next');
+                    const stepNumber = parseInt(nextStepId.replace('step', ''));
+                    
+                    if (validateCurrentStep(currentStep)) {
+                        showStep(nextStepId);
+                        updateProgress(stepNumber);
+                        currentStep = stepNumber;
+                    }
+                });
+            });
+            
+            // Previous step buttons
+            document.querySelectorAll('.prev-step').forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevStepId = this.getAttribute('data-prev');
+                    const stepNumber = parseInt(prevStepId.replace('step', ''));
+                    showStep(prevStepId);
+                    updateProgress(stepNumber);
+                    currentStep = stepNumber;
+                });
+            });
+            
+            // Form submission
+            const consultationForm = document.getElementById('consultationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const responseMsg = document.getElementById('responseMsg');
+            
+            const API_URL = "https://script.google.com/macros/s/AKfycbzVOpDQ0Qz-z1EkWIA4XuJnctWeD_6VWB8LWIkVMgW33HLPXsLsjpmAGXKufygkw4tfZA/exec";
+            
+            consultationForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate all steps before submission
+                let allValid = true;
+                for (let i = 1; i <= 5; i++) {
+                    if (!validateCurrentStep(i)) {
+                        allValid = false;
+                        showStep(`step${i}`);
+                        updateProgress(i);
+                        currentStep = i;
+                        break;
+                    }
+                }
+                
+                if (!allValid) return;
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Submitting...";
+                responseMsg.className = "msg";
+                responseMsg.textContent = "Submitting your enquiry...";
+                
+                const payload = {
+                    name: this.name.value,
+                    mobile: this.mobile.value,
+                    email: this.email.value || "Not provided",
+                    solarType: this.solarType.value,
+                    location: this.location.value,
+                    message: this.message.value || "No additional message",
+                    formType: "Services Page Consultation",
+                    timestamp: new Date().toISOString()
+                };
+                
+                fetch(API_URL, {
+                    method: "POST",
+                    body: JSON.stringify(payload)
+                })
+                .then(res => res.text())
+                .then(text => {
+                    let data;
+                    try {
+                        data = JSON.parse(text);
+                    } catch {
+                        throw new Error("Invalid server response");
+                    }
+                    
+                    if (data.status === "success") {
+                        responseMsg.className = "msg success";
+                        responseMsg.textContent = "Consultation booked successfully! We'll contact you within 24 hours.";
+                        consultationForm.reset();
+                        
+                        setTimeout(() => {
+                            closeConsultationModal();
+                            showStep('step1');
+                            updateProgress(1);
+                            currentStep = 1;
+                            responseMsg.textContent = "";
+                        }, 3000);
+                    } else {
+                        throw new Error(data.message || "Server error");
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    responseMsg.className = "msg error";
+                    responseMsg.textContent = "Submission failed. Please try again or call us directly.";
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Submit Booking";
+                });
+            });
+            
+            // Close modal
+            document.getElementById('closeConsultationModal').addEventListener('click', closeConsultationModal);
+            
+            // Close modal on outside click
+            document.getElementById('consultationModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeConsultationModal();
+                }
+            });
+        }
+
+        function openConsultationModal(serviceName = "") {
+            const modal = document.getElementById('consultationModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Reset form
+            showStep('step1');
+            updateProgress(1);
+            currentStep = 1;
+            document.getElementById('responseMsg').textContent = "";
+            
+            // If service name provided, set it in the form
+            if (serviceName) {
+                setTimeout(() => {
+                    const selectElement = document.getElementById('solarType');
+                    // Find matching option
+                    for (let option of selectElement.options) {
+                        if (option.text === serviceName) {
+                            selectElement.value = option.value;
+                            break;
+                        }
+                    }
+                }, 300);
+            }
+        }
+
+        function closeConsultationModal() {
+            const modal = document.getElementById('consultationModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function showStep(stepId) {
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+            document.getElementById(stepId).classList.add('active');
+        }
+
+        function updateProgress(stepNumber) {
+            const progressSteps = document.querySelectorAll('.progress-step');
+            progressSteps.forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                if (index + 1 < stepNumber) {
+                    step.classList.add('completed');
+                } else if (index + 1 === stepNumber) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        function validateCurrentStep(step) {
+            switch(step) {
+                case 1:
+                    const name = document.getElementById('name').value.trim();
+                    if (name === '') {
+                        alert('Please enter your name');
+                        document.getElementById('name').focus();
+                        return false;
+                    }
+                    return true;
+                case 2:
+                    const mobile = document.getElementById('mobile').value.trim();
+                    const mobileRegex = /^[0-9]{10}$/;
+                    if (!mobileRegex.test(mobile)) {
+                        alert('Please enter a valid 10-digit mobile number');
+                        document.getElementById('mobile').focus();
+                        return false;
+                    }
+                    return true;
+                case 4:
+                    const solarType = document.getElementById('solarType').value;
+                    if (solarType === '') {
+                        alert('Please select a service type');
+                        document.getElementById('solarType').focus();
+                        return false;
+                    }
+                    return true;
+                case 5:
+                    const location = document.getElementById('location').value.trim();
+                    if (location === '') {
+                        alert('Please enter your location');
+                        document.getElementById('location').focus();
+                        return false;
+                    }
+                    return true;
+                default:
+                    return true;
+            }
+        }
+    </script>
+</body>
+</html>
