@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Era Solar | Sunlight in your pocket</title>
+    <title>Era Solar | Most Affordable Solar Services + Govt Approved Subsidy Available</title>
+    <meta name="description" content="Era Solar provides most affordable solar services with government approved subsidy available. Get upto 50% subsidy on solar installations. Sunlight in your pocket.">
+    <meta name="keywords" content="solar services, solar subsidy, affordable solar, government approved solar, era solar, solar installation,Era Solar, solar panel installation, solar energy company, solar power solutions, residential solar panels, commercial solar systems, solar subsidy India, government solar subsidy, rooftop solar installation, solar panel cost, best solar company, solar inverter, solar battery, solar maintenance services, solar water pump, solar panel cleaning, solar energy consultant, solar panel manufacturer, solar panel dealer, solar EPC company, solar financing, solar loan, solar panel for home, solar panel for business, industrial solar solutions, solar system installation, off-grid solar system, on-grid solar system, hybrid solar system, solar energy storage, solar panel repair, solar panel warranty, solar energy audit, free solar consultation, solar panel efficiency, monocrystalline solar panels, polycrystalline solar panels, bifacial solar panels, solar panel mounting structure, solar charge controller, solar power plant, solar energy contractor, solar panel supplier, solar energy distributor, solar panel wholesaler, solar system installer, solar energy experts, solar panel technology, solar energy savings, reduce electricity bill with solar, solar energy benefits, solar energy advantages, clean energy solutions, renewable energy company, green energy solutions, sustainable energy, eco-friendly solar, carbon footprint reduction, solar energy for agriculture, solar for farmers, solar for schools, solar for hospitals, solar for hotels, solar for factories, solar for offices, solar for apartments, solar for villages, solar street lights, solar garden lights, solar home lighting, solar power backup, solar during power cut, solar energy monitoring, solar panel insurance, solar system upgrade, solar panel replacement, solar system expansion, solar energy training, solar workshop, solar seminar, solar awareness program, MNRE approved solar, solar panel certification, BIS certified solar, solar panel standards, solar panel testing, solar panel durability, weather resistant solar panels, high temperature solar panels, low light solar panels, solar panel efficiency rating, solar panel output, solar panel wattage, 1kW solar system, 2kW solar system, 3kW solar system, 5kW solar system, 10kW solar system, 50kW solar system, 100kW solar system, 1MW solar system, solar system design, solar system quotation, solar system proposal, solar system estimate, solar system calculation, solar system sizing, solar system capacity, solar system performance, solar system monitoring app, solar system maintenance contract, solar AMC, annual maintenance contract for solar, solar panel cleaning service, solar panel inspection, solar troubleshooting, solar system not working, solar inverter repair, solar battery replacement, lithium solar battery, tubular solar battery, solar charge controller repair, solar wiring, solar installation process, solar installation time, solar installation cost breakdown, solar subsidy process, solar subsidy application, solar subsidy eligibility, solar subsidy documents, state solar subsidy, central solar subsidy, solar net metering, net metering application, net metering process, discom approval for solar, electricity department approval for solar, solar panel permit, solar installation license, solar installers near me, solar company near me, solar dealer near me, solar contractor near me, solar energy consultant near me, solar panel price list, solar inverter price, solar battery price, solar mounting structure price, solar installation charges, solar panel installation charges, solar panel installation steps, solar panel installation guide, DIY solar installation, professional solar installation, solar installation team, solar installation safety, solar installation quality, solar installation warranty, solar panel warranty claim, solar panel degradation, solar panel lifespan, solar panel recycling, solar panel disposal, solar energy facts, solar energy statistics, solar energy growth India, solar energy future, solar energy trends, solar innovation, smart solar solutions, IoT solar monitoring, solar with app control, solar with WiFi, solar with Bluetooth, solar remote monitoring, solar energy dashboard, solar energy report, solar savings calculator, solar ROI calculator, solar payback period, solar investment, solar tax benefits, solar depreciation benefits, solar for tax saving, solar for corporate social responsibility, solar CSR projects, solar for rural electrification, solar for off-grid areas, solar for remote locations, solar for camping, solar for boats, solar for RVs, portable solar panels, flexible solar panels, lightweight solar panels, transparent solar panels, colored solar panels, custom solar panels, solar panel customization, solar panel colors, solar panel aesthetics, solar panel design, solar panel architecture, building integrated photovoltaics, solar rooftop tiles, solar carport, solar pergola, solar balcony, solar terrace, solar shading solutions, solar energy harvesting, solar energy conversion, solar thermal energy, solar water heating, solar air conditioning, solar cooling, solar heating, solar powered appliances, solar fans, solar lights, solar pumps for irrigation, solar borewell pumps, solar submersible pumps, solar surface pumps, solar DC pumps, solar AC pumps, solar pump controller, solar pump installation, solar pump subsidy, KUSUM scheme solar pump, PM KUSUM scheme, solar pump Yojana, solar energy schemes, government solar schemes, state government solar schemes">
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co/Xr2NHYPY/Gemini-Generated-Image-xeafzlxeafzlxeaf.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         * {
             margin: 0;
@@ -130,6 +133,43 @@
 
         .mobile-menu-btn:hover {
             transform: rotate(90deg);
+        }
+
+        /* Eco-friendly words banner */
+        .eco-banner {
+            background: var(--gradient);
+            color: white;
+            padding: 12px 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(255, 152, 0, 0.2);
+        }
+
+        .eco-words-track {
+            display: flex;
+            white-space: nowrap;
+            animation: slideEcoWords 30s linear infinite;
+        }
+
+        @keyframes slideEcoWords {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .eco-word {
+            padding: 0 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+        }
+
+        .eco-word i {
+            margin-right: 8px;
+            color: var(--yellow);
         }
 
         /* Hero Section */
@@ -309,7 +349,291 @@
             font-weight: 400;
         }
 
-        /* Floating Inquiry Form Section (After Hero Banner) */
+        /* Products Section (New) */
+        .home-products-section {
+            padding: 80px 5%;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .products-slider-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .products-slider {
+            display: flex;
+            gap: 30px;
+            animation: slideProducts 30s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes slideProducts {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .product-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .product-card-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .product-card-img {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            background: #f8f8f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card-link:hover .product-card-img img {
+            transform: scale(1.05);
+        }
+
+        .product-card-content {
+            padding: 20px;
+        }
+
+        .product-card-content h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-card-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Services Section (New) */
+        .home-services-section {
+            padding: 80px 5%;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        .services-slider-container {
+            position: relative;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .services-slider {
+            display: flex;
+            gap: 30px;
+            animation: slideServices 30s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes slideServices {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .service-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            min-width: 300px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .service-card-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .service-card-img {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .service-card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card-link:hover .service-card-img img {
+            transform: scale(1.05);
+        }
+
+        .service-card-content {
+            padding: 20px;
+        }
+
+        .service-card-content h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-card-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Franchisee Section (New) - UPDATED with earning highlight */
+        .franchisee-section {
+            padding: 80px 5%;
+            background: var(--gradient-blue);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .franchisee-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            animation: floatGrid 20s linear infinite;
+        }
+
+        @keyframes pulseEarning {
+            0% {
+                box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        .earning-highlight {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.15) 0%, rgba(255, 193, 7, 0.3) 100%);
+            border: 2px solid var(--yellow);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin: 25px 0;
+            text-align: center;
+            animation: pulseEarning 2s ease-in-out infinite alternate;
+        }
+
+        .earning-highlight h3 {
+            color: var(--yellow);
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .franchisee-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .franchisee-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .franchisee-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .franchisee-btn {
+            background: white;
+            color: var(--dark);
+            border: none;
+            padding: 18px 45px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .franchisee-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: #f8f9fa;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            letter-spacing: 1px;
+        }
+
+        .franchisee-btn i {
+            font-size: 1.3rem;
+            transition: transform 0.4s ease;
+        }
+
+        .franchisee-btn:hover i {
+            transform: translateX(5px) rotate(10deg);
+        }
+
+        /* Floating Inquiry Form Section */
         .floating-inquiry-section {
             padding: 60px 5%;
             background: var(--gradient-blue);
@@ -492,31 +816,6 @@
             left: 100%;
         }
 
-        /* Floating form response message */
-        .floating-response-msg {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.9rem;
-            display: none;
-        }
-
-        .floating-response-msg.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .floating-response-msg.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-
         /* Services Section */
         .services-section {
             padding: 80px 5%;
@@ -603,7 +902,7 @@
             font-size: 0.95rem;
         }
 
-        /* Impact Section (Moved after Services) */
+        /* Impact Section */
         .impact-section {
             padding: 80px 5%;
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -659,7 +958,7 @@
             font-weight: 500;
         }
 
-        /* Subsidy Section with Enhanced Button Animation */
+        /* Subsidy Section */
         .subsidy-section {
             padding: 80px 5%;
             background: var(--gradient-blue);
@@ -680,11 +979,6 @@
             background-size: 50px 50px;
             animation: floatGrid 20s linear infinite;
             z-index: 1;
-        }
-
-        @keyframes floatGrid {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            100% { transform: translate(25px, 25px) rotate(1deg); }
         }
 
         .subsidy-content {
@@ -740,73 +1034,7 @@
             100% { box-shadow: 0 6px 20px rgba(0,0,0,0.2), 0 0 0 0 rgba(255, 152, 0, 0); }
         }
 
-        .eligibility-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.7s ease;
-            z-index: -1;
-        }
-
-        .eligibility-btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            animation: ripple 3s infinite;
-            z-index: -1;
-        }
-
-        @keyframes ripple {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-            100% { transform: translate(-50%, -50%) scale(40); opacity: 0; }
-        }
-
-        .eligibility-btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            background: #f8f9fa;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.3), 0 0 0 0 rgba(255, 152, 0, 0.7);
-            letter-spacing: 1px;
-        }
-
-        .eligibility-btn:hover::before {
-            left: 100%;
-        }
-
-        .eligibility-btn i {
-            font-size: 1.3rem;
-            transition: transform 0.4s ease;
-        }
-
-        .eligibility-btn:hover i {
-            transform: translateX(5px) rotate(10deg);
-        }
-
-        .btn-sparkle {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            pointer-events: none;
-            animation: sparkle 1.5s ease-out forwards;
-        }
-
-        @keyframes sparkle {
-            0% { transform: translate(0, 0) scale(0); opacity: 1; }
-            100% { transform: translate(var(--tx), var(--ty)) scale(1); opacity: 0; }
-        }
-
-        /* Contact Section */
+        /* Contact Section - UPDATED */
         .contact-section {
             padding: 80px 5%;
             background-color: white;
@@ -815,10 +1043,10 @@
 
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr 1fr;
             gap: 50px;
             align-items: start;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -875,67 +1103,112 @@
             margin: 0;
         }
 
-        .contact-form-container {
+        /* Updated Quick Enquiry Form */
+        .quick-enquiry-form {
             background: #f8f9fa;
-            border-radius: 12px;
+            border-radius: 16px;
             padding: 30px;
+            box-shadow: var(--shadow);
             border: 1px solid #eee;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .contact-form-container h3 {
-            font-size: 1.4rem;
+        .quick-enquiry-form h3 {
+            font-size: 1.5rem;
             color: var(--dark);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-weight: 700;
             text-align: center;
-            font-weight: 600;
         }
 
-        .contact-form-container p {
+        .quick-enquiry-form p {
             font-size: 0.95rem;
             color: #666;
             margin-bottom: 25px;
             text-align: center;
+            line-height: 1.5;
         }
 
-        .mini-form {
+        .quick-form-fields {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
+            flex: 1;
         }
 
-        .mini-form .form-control {
+        .quick-form-group {
+            margin-bottom: 0;
+        }
+
+        .quick-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        .quick-form-control {
+            width: 100%;
             padding: 14px 16px;
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 0.95rem;
-            width: 100%;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             background: white;
         }
 
-        .mini-form .form-control:focus {
+        .quick-form-control:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
         }
 
-        .mini-form-btn {
-            background: var(--primary);
+        .quick-form-btn {
+            background: var(--gradient);
             color: white;
             border: none;
-            padding: 14px;
+            padding: 16px;
             font-size: 1rem;
-            font-weight: 600;
-            border-radius: 8px;
+            font-weight: 700;
+            border-radius: 10px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 10px;
+            transition: all 0.3s ease;
             width: 100%;
+            margin-top: 10px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
         }
 
-        .mini-form-btn:hover {
-            background: #f57c00;
-            transform: translateY(-2px);
+        .quick-form-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+        }
+
+        .quick-response-msg {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .quick-response-msg.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .quick-response-msg.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
         }
 
         /* Modal Styles */
@@ -1021,229 +1294,100 @@
             background: rgba(255,255,255,0.3);
         }
 
-        .back-to-site {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            background: rgba(255,255,255,0.2);
-            border: none;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 18px;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .back-to-site:hover {
-            background: rgba(255,255,255,0.3);
-        }
-
-        .modal-body {
-            padding: 25px;
-            overflow-y: auto;
-            flex-grow: 1;
-        }
-
-        /* Form Styles */
-        .form-box {
-            width: 100%;
-        }
-
-        .form-step {
-            display: none;
-        }
-
-        .form-step.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #444;
-            font-size: 0.95rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            background-color: white;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(255, 152, 0, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        select.form-control {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 16px;
-            padding-right: 45px;
-        }
-
-        .form-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-        }
-
-        .form-btn {
-            background: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .form-btn.outline {
-            background: transparent;
-            color: #666;
-            border: 1px solid #ddd;
-        }
-
-        .form-btn.outline:hover {
-            background: #f8f9fa;
-            border-color: #ccc;
-        }
-
-        .form-btn:hover:not(:disabled) {
-            background: #f57c00;
-            transform: translateY(-2px);
-        }
-
-        .form-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-progress {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .form-progress::before {
-            content: '';
-            position: absolute;
-            top: 16px;
+        /* Popup Modal for Subsidy (New) - UPDATED for scrollable */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background-color: #eee;
-            z-index: 1;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 4000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
         }
 
-        .progress-step {
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-modal {
+            background: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            padding: 0;
+            position: relative;
+            transform: translateY(-30px) scale(0.8);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: popupAppear 0.5s ease forwards;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
         }
 
-        .step-circle {
-            width: 32px;
-            height: 32px;
+        @keyframes popupAppear {
+            to {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .popup-header {
+            background: var(--gradient);
+            padding: 30px;
+            color: white;
+            text-align: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .popup-header h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .popup-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.3);
+            border: none;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background-color: #eee;
-            color: #777;
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 600;
-            margin-bottom: 6px;
             transition: all 0.2s ease;
-            border: 2px solid white;
-            font-size: 0.9rem;
         }
 
-        .progress-step.active .step-circle {
-            background-color: var(--primary);
-            color: white;
-            animation: bounce 0.5s ease;
+        .popup-close:hover {
+            background: rgba(255,255,255,0.4);
+            transform: rotate(90deg);
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-        }
-
-        .progress-step.completed .step-circle {
-            background-color: var(--success);
-            color: white;
-        }
-
-        .step-label {
-            font-size: 0.8rem;
-            color: #777;
-            text-align: center;
-        }
-
-        .progress-step.active .step-label {
-            color: #444;
-            font-weight: 500;
-        }
-
-        .msg {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .msg.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        .msg.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+        .popup-body {
+            padding: 20px 30px;
+            overflow-y: auto;
+            flex: 1;
+            max-height: calc(85vh - 120px);
         }
 
         /* Partners Section */
@@ -1445,6 +1589,22 @@
             .floating-inquiry-text h2 {
                 font-size: 1.8rem;
             }
+            
+            .franchisee-content h2 {
+                font-size: 2rem;
+            }
+            
+            .earning-highlight h3 {
+                font-size: 1.2rem;
+            }
+            
+            .product-card-link, .service-card-link {
+                min-width: 280px;
+            }
+            
+            .popup-modal {
+                max-width: 500px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1525,6 +1685,41 @@
             .floating-form-group.full-width {
                 grid-column: span 1;
             }
+            
+            .product-card-link, .service-card-link {
+                min-width: 250px;
+            }
+            
+            .eco-word {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .popup-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .popup-header {
+                padding: 20px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .quick-enquiry-form {
+                padding: 25px;
+            }
+            
+            .earning-highlight {
+                padding: 12px 20px;
+            }
+            
+            .earning-highlight h3 {
+                font-size: 1.1rem;
+                flex-direction: column;
+                gap: 5px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -1552,7 +1747,7 @@
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .stats-container {
@@ -1588,6 +1783,68 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            .product-card-link, .service-card-link {
+                min-width: 220px;
+            }
+            
+            .franchisee-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .franchisee-btn {
+                padding: 14px 30px;
+                font-size: 1rem;
+            }
+            
+            .eco-word {
+                font-size: 0.9rem;
+                padding: 0 15px;
+            }
+            
+            .quick-enquiry-form {
+                padding: 20px;
+            }
+            
+            .quick-form-control {
+                padding: 12px 14px;
+            }
+            
+            .quick-form-btn {
+                padding: 14px;
+            }
+            
+            .popup-modal {
+                max-width: 95%;
+                max-height: 90vh;
+            }
+            
+            .popup-body {
+                padding: 15px 20px;
+                max-height: calc(90vh - 100px);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .product-card-link, .service-card-link {
+                min-width: 200px;
+            }
+            
+            .floating-inquiry-form {
+                padding: 20px;
+            }
+            
+            .quick-enquiry-form {
+                padding: 15px;
+            }
+            
+            .earning-highlight {
+                padding: 10px 15px;
+            }
+            
+            .earning-highlight h3 {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -1613,6 +1870,29 @@
             <a href="about.html">About Us</a>
         </nav>
     </header>
+
+    <!-- Eco-friendly words banner -->
+    <div class="eco-banner">
+        <div class="eco-words-track">
+            <div class="eco-word"><i class="fas fa-sun"></i> Era Solar</div>
+            <div class="eco-word"><i class="fas fa-leaf"></i> Best Solar</div>
+            <div class="eco-word"><i class="fas fa-recycle"></i> Eco-Friendly</div>
+            <div class="eco-word"><i class="fas fa-bolt"></i> Clean Energy</div>
+            <div class="eco-word"><i class="fas fa-shield-alt"></i> Government Approved</div>
+            <div class="eco-word"><i class="fas fa-rupee-sign"></i> Affordable Solar</div>
+            <div class="eco-word"><i class="fas fa-globe"></i> Sustainable Future</div>
+            <div class="eco-word"><i class="fas fa-tree"></i> Green Energy</div>
+            <!-- Duplicate for seamless animation -->
+            <div class="eco-word"><i class="fas fa-sun"></i> Era Solar</div>
+            <div class="eco-word"><i class="fas fa-leaf"></i> Best Solar</div>
+            <div class="eco-word"><i class="fas fa-recycle"></i> Eco-Friendly</div>
+            <div class="eco-word"><i class="fas fa-bolt"></i> Clean Energy</div>
+            <div class="eco-word"><i class="fas fa-shield-alt"></i> Government Approved</div>
+            <div class="eco-word"><i class="fas fa-rupee-sign"></i> Affordable Solar</div>
+            <div class="eco-word"><i class="fas fa-globe"></i> Sustainable Future</div>
+            <div class="eco-word"><i class="fas fa-tree"></i> Green Energy</div>
+        </div>
+    </div>
 
     <!-- Hero Section with Visible Images -->
     <section class="hero-section" id="home">
@@ -1661,7 +1941,56 @@
         </div>
     </section>
 
-    <!-- Floating Inquiry Form Section (AFTER Hero Banner) -->
+    <!-- Our Products Section -->
+    <section class="home-products-section">
+        <div class="section-title">
+            <h2>Our Products</h2>
+            <p>High-quality solar products with government subsidy available</p>
+        </div>
+        
+        <div class="products-slider-container">
+            <div class="products-slider" id="productsSlider">
+                <!-- Product cards will be fetched from database -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="home-services-section">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive solar energy services for residential and commercial needs</p>
+        </div>
+        
+        <div class="services-slider-container">
+            <div class="services-slider" id="servicesSlider">
+                <!-- Service cards will be added by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Ask for Franchisee Section - UPDATED with earning highlight -->
+    <section class="franchisee-section">
+        <div class="franchisee-content">
+            <h2>Join the Solar Revolution</h2>
+            <p>Become a part of India's fastest growing solar energy company. Start your own Era Solar franchise and contribute to a sustainable future while building a profitable business.</p>
+            
+            <!-- New earning highlight section -->
+            <div class="earning-highlight">
+                <h3>
+                    <i class="fas fa-rupee-sign"></i>
+                    Earn Upto 1.5 Lacs Per Month
+                    <i class="fas fa-chart-line"></i>
+                </h3>
+            </div>
+            
+            <a href="franchisee.html" class="franchisee-btn">
+                <i class="fas fa-store"></i> Ask for Franchisee
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating Inquiry Form Section -->
     <section class="floating-inquiry-section">
         <div class="floating-inquiry-content">
             <div class="floating-inquiry-text">
@@ -1743,7 +2072,7 @@
         </div>
     </section>
 
-    <!-- Impact Section (Moved after Services) -->
+    <!-- Impact Section -->
     <section class="impact-section" id="impact">
         <div class="section-title">
             <h2>Our Impact in Numbers</h2>
@@ -1779,7 +2108,7 @@
         </div>
     </section>
 
-    <!-- Subsidy Section with Enhanced Button -->
+    <!-- Subsidy Section -->
     <section class="subsidy-section" id="products">
         <div class="subsidy-content">
             <h2>Get Upto 50% Govt Subsidy</h2>
@@ -1790,7 +2119,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with UPDATED Quick Enquiry Form -->
     <section class="contact-section" id="contact">
         <div class="section-title">
             <h2>Contact Us</h2>
@@ -1829,17 +2158,52 @@
                 </div>
             </div>
             
-            <div class="contact-form-container">
+            <div class="quick-enquiry-form">
                 <h3>Quick Enquiry</h3>
-                <p>Fill out this short form and we'll get back to you within 24 hours</p>
+                <p>Fill out this form and we'll get back to you within 24 hours</p>
                 
-                <form class="mini-form" id="miniForm">
-                    <input type="text" id="miniName" name="name" class="form-control" placeholder="Your Name" required>
-                    <input type="tel" id="miniMobile" name="mobile" class="form-control" placeholder="Mobile Number" required>
-                    <input type="email" id="miniEmail" name="email" class="form-control" placeholder="Email Address">
-                    <button type="submit" class="mini-form-btn">
-                        Send Message
-                    </button>
+                <form id="quickEnquiryForm">
+                    <div class="quick-form-fields">
+                        <div class="quick-form-group">
+                            <label for="quickName">Full Name *</label>
+                            <input type="text" id="quickName" name="name" class="quick-form-control" placeholder="Enter your name" required>
+                        </div>
+                        
+                        <div class="quick-form-group">
+                            <label for="quickMobile">Mobile Number *</label>
+                            <input type="tel" id="quickMobile" name="mobile" class="quick-form-control" placeholder="10-digit mobile number" required>
+                        </div>
+                        
+                        <div class="quick-form-group">
+                            <label for="quickEmail">Email Address</label>
+                            <input type="email" id="quickEmail" name="email" class="quick-form-control" placeholder="Enter your email (optional)">
+                        </div>
+                        
+                        <div class="quick-form-group">
+                            <label for="quickInterest">Interest</label>
+                            <select id="quickInterest" name="interest" class="quick-form-control">
+                                <option value="">Select interest</option>
+                                <option>Residential Solar</option>
+                                <option>Commercial Solar</option>
+                                <option>Solar Water Pump</option>
+                                <option>Maintenance Services</option>
+                                <option>Govt Subsidy Info</option>
+                                <option>Product Inquiry</option>
+                                <option>Service Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="quick-form-group">
+                            <label for="quickMessage">Message (Optional)</label>
+                            <textarea id="quickMessage" name="message" class="quick-form-control" placeholder="Your message or query" rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="quick-form-btn" id="quickSubmitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <div class="quick-response-msg" id="quickResponseMsg"></div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -1849,9 +2213,6 @@
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <div class="modal-header">
-                <button class="back-to-site" id="backToSite" title="Back to site">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
                 <button class="close-modal" id="closeModal" title="Close">
                     <i class="fas fa-times"></i>
                 </button>
@@ -1968,6 +2329,62 @@
                         </div>
                         
                         <div class="msg" id="responseMsg"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Modal for Subsidy (Appears on page load) - UPDATED for scrollable -->
+    <div class="popup-overlay" id="subsidyPopup">
+        <div class="popup-modal">
+            <div class="popup-header">
+                <button class="popup-close" id="closeSubsidyPopup" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h2>Hurry Up!</h2>
+                <p>Avail upto 50% Govt Subsidy on Solar Installations</p>
+            </div>
+            
+            <div class="popup-body">
+                <div class="floating-inquiry-form" style="box-shadow: none; transform: none; padding: 20px; margin: 0;">
+                    <h3>Get Free Quote & Subsidy Details</h3>
+                    <form id="popupInquiryForm">
+                        <div class="floating-form-fields">
+                            <div class="floating-form-group">
+                                <label for="popupName">Full Name *</label>
+                                <input type="text" id="popupName" name="name" class="floating-form-control" placeholder="Enter your name" required>
+                            </div>
+                            <div class="floating-form-group">
+                                <label for="popupMobile">Mobile Number *</label>
+                                <input type="tel" id="popupMobile" name="mobile" class="floating-form-control" placeholder="10-digit mobile number" required>
+                            </div>
+                            <div class="floating-form-group full-width">
+                                <label for="popupEmail">Email Address</label>
+                                <input type="email" id="popupEmail" name="email" class="floating-form-control" placeholder="Enter your email (optional)">
+                            </div>
+                            <div class="floating-form-group">
+                                <label for="popupCity">City *</label>
+                                <input type="text" id="popupCity" name="city" class="floating-form-control" placeholder="Your city" required>
+                            </div>
+                            <div class="floating-form-group">
+                                <label for="popupType">Interest</label>
+                                <select id="popupType" name="interest" class="floating-form-control">
+                                    <option value="">Select interest</option>
+                                    <option>Residential Solar</option>
+                                    <option>Commercial Solar</option>
+                                    <option>Solar Water Pump</option>
+                                    <option>Maintenance Services</option>
+                                    <option>Govt Subsidy Info</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="floating-form-btn" id="popupSubmitBtn">
+                            <i class="fas fa-paper-plane"></i> Get Subsidy Details
+                        </button>
+                        
+                        <div class="floating-response-msg" id="popupResponseMsg"></div>
                     </form>
                 </div>
             </div>
@@ -2126,7 +2543,180 @@
         
         setInterval(changeVisionText, 4000);
         
-        // Services data
+        // Supabase Configuration (Same as Product.html)
+        const SUPABASE_URL = "https://mcnfmtbpstgeinjdasns.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_0-sYcywNGQ4NUQK76MdG1w_opZjXshg";
+        
+        // Initialize Supabase
+        const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        
+        // Fetch products from database
+        async function fetchProducts() {
+            try {
+                const { data, error } = await sb
+                    .from("products")
+                    .select("*, product_images(image_url)")
+                    .eq("is_active", true)
+                    .limit(12);
+                
+                if (error) throw error;
+                
+                return data.map(product => ({
+                    id: product.id,
+                    title: product.product_name,
+                    description: product.specification || "High quality solar product",
+                    image: product.product_images[0]?.image_url || "https://via.placeholder.com/300x200?text=Product+Image",
+                    link: "Product.html",
+                    price: product.price ? `₹${product.price}` : "Price on request"
+                }));
+            } catch (error) {
+                console.error('Error fetching products:', error);
+                return [];
+            }
+        }
+        
+        // Create products slider with real data from database
+        async function loadProductsSlider() {
+            const productsSlider = document.getElementById('productsSlider');
+            const products = await fetchProducts();
+            
+            if (products.length === 0) {
+                // Fallback products if database fetch fails
+                const fallbackProducts = [
+                    {
+                        title: "Solar Panels",
+                        description: "High efficiency solar panels for residential and commercial use.",
+                        image: "https://i.ibb.co/HLYQw3m6/image-removebg-preview-7.png",
+                        link: "Product.html",
+                        price: "₹18,500"
+                    },
+                    {
+                        title: "Solar Inverters",
+                        description: "Advanced solar inverters with smart monitoring capabilities.",
+                        image: "https://i.ibb.co/DgVYZjcw/image-removebg-preview-5.png",
+                        link: "Product.html",
+                        price: "₹25,000"
+                    },
+                    {
+                        title: "Solar Batteries",
+                        description: "Long-lasting solar batteries for energy storage solutions.",
+                        image: "https://i.ibb.co/14k2pgB/image-removebg-preview-3.png",
+                        link: "Product.html",
+                        price: "₹32,000"
+                    },
+                    {
+                        title: "Solar Mounting",
+                        description: "Durable mounting structures for all types of installations.",
+                        image: "https://i.ibb.co/N6dVJ65x/image-removebg-preview-4.png",
+                        link: "Product.html",
+                        price: "₹8,500"
+                    },
+                    {
+                        title: "Solar Charge Controllers",
+                        description: "Smart charge controllers for optimal battery charging.",
+                        image: "https://i.ibb.co/6RVP5y0K/image-removebg-preview-2.png",
+                        link: "Product.html",
+                        price: "₹12,500"
+                    },
+                    {
+                        title: "Solar Accessories",
+                        description: "Complete range of solar installation accessories.",
+                        image: "https://i.ibb.co/JWW8pdBr/image-removebg-preview-6.png",
+                        link: "Product.html",
+                        price: "From ₹5,000"
+                    }
+                ];
+                
+                displayProducts(fallbackProducts);
+                return;
+            }
+            
+            displayProducts(products);
+        }
+        
+        function displayProducts(products) {
+            const productsSlider = document.getElementById('productsSlider');
+            // Clear existing content
+            productsSlider.innerHTML = '';
+            
+            // Create product cards (duplicate for seamless animation)
+            [...products, ...products].forEach(product => {
+                const productCard = document.createElement('a');
+                productCard.className = 'product-card-link';
+                productCard.href = product.link;
+                productCard.innerHTML = `
+                    <div class="product-card-img">
+                        <img src="${product.image}" alt="${product.title}" onerror="this.src='https://via.placeholder.com/300x200?text=Product+Image'">
+                    </div>
+                    <div class="product-card-content">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <div class="product-price">${product.price}</div>
+                    </div>
+                `;
+                productsSlider.appendChild(productCard);
+            });
+        }
+        
+        // Services data for sliding section
+        const servicesData = [
+            {
+                title: "Residential Solar Installation",
+                description: "Complete solar solutions for homes with subsidy assistance.",
+                image: "https://i.ibb.co/s97P4MtJ/Residential-Solar-Panel-Installatio.jpg",
+                link: "Services.html"
+            },
+            {
+                title: "Commercial Solar Solutions",
+                description: "Large-scale solar systems for businesses and industries.",
+                image: "https://i.ibb.co/Y4JMzzp9/Commercial-Solar-System-Installatio.jpg",
+                link: "Services.html"
+            },
+            {
+                title: "Solar Maintenance",
+                description: "Regular maintenance and cleaning services.",
+                image: "https://i.ibb.co/q38wN8t2/Solar-Panel-Cleaning-Servic.jpg",
+                link: "Services.html"
+            },
+            {
+                title: "Solar Repair Services",
+                description: "Expert repair services for all solar components.",
+                image: "https://i.ibb.co/xSNjJBP3/Solar-Panel-Repair-Servic.jpg",
+                link: "Services.html"
+            },
+            {
+                title: "Solar Water Pumps",
+                description: "Solar-powered water pumps for agricultural use.",
+                image: "https://i.ibb.co/99bKJHc3/Solar-Water-Pump-Installatio.jpg",
+                link: "Services.html"
+            },
+            {
+                title: "Free Consultation",
+                description: "Free site assessment and consultation services.",
+                image: "https://i.ibb.co/4ndT3B0K/Free-Solar-Consultatio.jpg",
+                link: "Services.html"
+            }
+        ];
+        
+        // Create services slider (duplicate for seamless animation)
+        const servicesSlider = document.getElementById('servicesSlider');
+        [...servicesData, ...servicesData].forEach(service => {
+            const serviceCard = document.createElement('a');
+            serviceCard.className = 'service-card-link';
+            serviceCard.href = service.link;
+            serviceCard.innerHTML = `
+                <div class="service-card-img">
+                    <img src="${service.image}" alt="${service.title}" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                </div>
+                <div class="service-card-content">
+                    <h3>${service.title}</h3>
+                    <p>${service.description}</p>
+                </div>
+            `;
+            servicesSlider.appendChild(serviceCard);
+        });
+        
+        // Services data for grid
         const services = [
             {
                 title: "Residential Solar Solutions",
@@ -2167,7 +2757,7 @@
             serviceCard.className = 'service-card';
             serviceCard.innerHTML = `
                 <div class="service-img">
-                    <img src="${service.gif}" alt="${service.title}">
+                    <img src="${service.gif}" alt="${service.title}" onerror="this.src='https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
                 <div class="service-content">
                     <h3>${service.title}</h3>
@@ -2192,15 +2782,14 @@
         [...partnerLogos, ...partnerLogos].forEach(logoUrl => {
             const partnerLogo = document.createElement('div');
             partnerLogo.className = 'partner-logo';
-            partnerLogo.innerHTML = `<img src="${logoUrl}" alt="Partner Logo">`;
+            partnerLogo.innerHTML = `<img src="${logoUrl}" alt="Partner Logo" onerror="this.src='https://via.placeholder.com/150x80?text=Brand+Logo'">`;
             partnersSlider.appendChild(partnerLogo);
         });
         
-        // Modal functionality with enhanced animations
+        // Modal functionality
         const eligibilityBtn = document.getElementById('eligibilityBtn');
         const modalOverlay = document.getElementById('modalOverlay');
         const closeModal = document.getElementById('closeModal');
-        const backToSite = document.getElementById('backToSite');
         
         eligibilityBtn.addEventListener('click', () => {
             createButtonSparkles(eligibilityBtn);
@@ -2213,11 +2802,6 @@
         });
         
         closeModal.addEventListener('click', () => {
-            modalOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        backToSite.addEventListener('click', () => {
             modalOverlay.classList.remove('active');
             document.body.style.overflow = 'auto';
         });
@@ -2293,27 +2877,98 @@
             floatingResponseMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         
-        // Mini form submission
-        const miniForm = document.getElementById('miniForm');
-        miniForm.addEventListener('submit', function(e) {
+        // Quick Enquiry Form submission (NEW)
+        const quickEnquiryForm = document.getElementById('quickEnquiryForm');
+        const quickSubmitBtn = document.getElementById('quickSubmitBtn');
+        const quickResponseMsg = document.getElementById('quickResponseMsg');
+        
+        quickEnquiryForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('miniName').value;
-            const mobile = document.getElementById('miniMobile').value;
-            const email = document.getElementById('miniEmail').value;
+            const name = document.getElementById('quickName').value.trim();
+            const mobile = document.getElementById('quickMobile').value.trim();
+            const email = document.getElementById('quickEmail').value.trim();
+            const interest = document.getElementById('quickInterest').value;
+            const message = document.getElementById('quickMessage').value.trim();
             
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            // Validation
+            if (!name) {
+                showQuickMessage('Please enter your name', 'error');
+                return;
+            }
             
-            showStep('step1');
-            updateProgress(1);
+            const mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                showQuickMessage('Please enter a valid 10-digit mobile number', 'error');
+                return;
+            }
             
-            setTimeout(() => {
-                document.getElementById('name').value = name;
-                document.getElementById('mobile').value = mobile;
-                document.getElementById('email').value = email;
-            }, 300);
+            if (!interest) {
+                showQuickMessage('Please select your interest', 'error');
+                return;
+            }
+            
+            // Show loading state
+            quickSubmitBtn.disabled = true;
+            quickSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Submit to Google Apps Script
+            const API_URL = "https://script.google.com/macros/s/AKfycbzVOpDQ0Qz-z1EkWIA4XuJnctWeD_6VWB8LWIkVMgW33HLPXsLsjpmAGXKufygkw4tfZA/exec";
+            
+            const payload = {
+                name: name,
+                mobile: mobile,
+                email: email || "Not provided",
+                interest: interest,
+                message: message || "No additional message",
+                formType: "Quick Enquiry Form",
+                timestamp: new Date().toISOString()
+            };
+            
+            fetch(API_URL, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.text())
+            .then(text => {
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    throw new Error("Invalid server response");
+                }
+                
+                if (data.status === "success") {
+                    showQuickMessage('Thank you! Your enquiry has been submitted. We will contact you within 24 hours.', 'success');
+                    quickEnquiryForm.reset();
+                    
+                    // Auto-hide success message after 5 seconds
+                    setTimeout(() => {
+                        quickResponseMsg.style.display = 'none';
+                        quickResponseMsg.className = 'quick-response-msg';
+                    }, 5000);
+                } else {
+                    throw new Error(data.message || "Server error");
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                showQuickMessage('Submission failed. Please try again or call us directly.', 'error');
+            })
+            .finally(() => {
+                quickSubmitBtn.disabled = false;
+                quickSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            });
         });
+        
+        function showQuickMessage(message, type) {
+            quickResponseMsg.textContent = message;
+            quickResponseMsg.className = `quick-response-msg ${type}`;
+            quickResponseMsg.style.display = 'block';
+            
+            // Scroll to message
+            quickResponseMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
         
         // Multi-step form functionality
         const stepLabels = ['Name', 'Mobile', 'Email', 'Solar Type', 'Location', 'Message'];
@@ -2463,7 +3118,6 @@
                         modalOverlay.classList.remove('active');
                         document.body.style.overflow = 'auto';
                         responseMsg.textContent = "";
-                        miniForm.reset();
                     }, 3000);
                 } else {
                     throw new Error(data.message || "Server error");
@@ -2479,6 +3133,121 @@
                 submitBtn.textContent = "Submit";
             });
         });
+        
+        // Popup form submission
+        const popupInquiryForm = document.getElementById('popupInquiryForm');
+        const popupSubmitBtn = document.getElementById('popupSubmitBtn');
+        const popupResponseMsg = document.getElementById('popupResponseMsg');
+        
+        popupInquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('popupName').value.trim();
+            const mobile = document.getElementById('popupMobile').value.trim();
+            const email = document.getElementById('popupEmail').value.trim();
+            const city = document.getElementById('popupCity').value.trim();
+            const interest = document.getElementById('popupType').value;
+            
+            // Validation
+            if (!name) {
+                showPopupMessage('Please enter your name', 'error');
+                return;
+            }
+            
+            const mobileRegex = /^[0-9]{10}$/;
+            if (!mobileRegex.test(mobile)) {
+                showPopupMessage('Please enter a valid 10-digit mobile number', 'error');
+                return;
+            }
+            
+            if (!city) {
+                showPopupMessage('Please enter your city', 'error');
+                return;
+            }
+            
+            // Show loading state
+            popupSubmitBtn.disabled = true;
+            popupSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+            
+            // Submit to Google Apps Script
+            const payload = {
+                name: name,
+                mobile: mobile,
+                email: email || "Not provided",
+                interest: interest,
+                city: city,
+                formType: "Popup Subsidy Form",
+                timestamp: new Date().toISOString()
+            };
+            
+            fetch(API_URL, {
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+            .then(res => res.text())
+            .then(text => {
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch {
+                    throw new Error("Invalid server response");
+                }
+                
+                if (data.status === "success") {
+                    showPopupMessage('Thank you! Your inquiry has been submitted. Our team will contact you within 24 hours with subsidy details.', 'success');
+                    
+                    // Reset form
+                    popupInquiryForm.reset();
+                    
+                    // Auto-hide success message after 5 seconds and close popup
+                    setTimeout(() => {
+                        popupResponseMsg.style.display = 'none';
+                        popupResponseMsg.className = 'floating-response-msg';
+                        document.getElementById('subsidyPopup').classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }, 5000);
+                } else {
+                    throw new Error(data.message || "Server error");
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                showPopupMessage('Submission failed. Please try again.', 'error');
+            })
+            .finally(() => {
+                popupSubmitBtn.disabled = false;
+                popupSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Get Subsidy Details';
+            });
+        });
+        
+        function showPopupMessage(message, type) {
+            popupResponseMsg.textContent = message;
+            popupResponseMsg.className = `floating-response-msg ${type}`;
+            popupResponseMsg.style.display = 'block';
+            
+            // Scroll to message if needed
+            popupResponseMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Close popup
+        document.getElementById('closeSubsidyPopup').addEventListener('click', () => {
+            document.getElementById('subsidyPopup').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close popup on outside click
+        document.getElementById('subsidyPopup').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('subsidyPopup')) {
+                document.getElementById('subsidyPopup').classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Show popup after 2 seconds of page load
+        setTimeout(() => {
+            document.getElementById('subsidyPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }, 2000);
         
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -2627,6 +3396,20 @@
             }, 1000);
         }
         
+        // Pause sliders on hover
+        const sliders = document.querySelectorAll('.products-slider-container, .services-slider-container');
+        sliders.forEach(container => {
+            const slider = container.querySelector('.products-slider, .services-slider');
+            
+            container.addEventListener('mouseenter', () => {
+                slider.style.animationPlayState = 'paused';
+            });
+            
+            container.addEventListener('mouseleave', () => {
+                slider.style.animationPlayState = 'running';
+            });
+        });
+        
         // Add floating animation to eligibility button on hover
         eligibilityBtn.addEventListener('mouseenter', () => {
             eligibilityBtn.style.animation = 'pulse 1s infinite';
@@ -2636,8 +3419,12 @@
             eligibilityBtn.style.animation = 'pulse 2s infinite';
         });
         
-        // Add skeleton loading effect for floating form on page load
-        window.addEventListener('load', function() {
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load products from database
+            loadProductsSlider();
+            
+            // Add skeleton loading effect for floating form on page load
             const floatingForm = document.querySelector('.floating-inquiry-form');
             floatingForm.style.opacity = '0';
             floatingForm.style.transform = 'translateY(20px)';
