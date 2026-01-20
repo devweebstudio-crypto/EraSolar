@@ -331,7 +331,266 @@
             transform: scale(1.05);
         }
 
-        /* Values Section */
+        /* Director Highlight Section */
+        .director-highlight {
+            max-width: 1000px;
+            margin: 0 auto 80px;
+        }
+
+        .director-card {
+            background: linear-gradient(135deg, #1A237E 0%, #283593 50%, #3949AB 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(26, 35, 126, 0.2);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .director-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+
+        .director-image {
+            position: relative;
+            z-index: 2;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: #f8f9fa;
+        }
+
+        .director-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .director-card:hover .director-image img {
+            transform: scale(1.05);
+        }
+
+        .director-info {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .director-info h3 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .director-title {
+            color: #FFC107;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .director-bio {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .cert-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cert-badge i {
+            color: #4CAF50;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Professional Cards */
+        .professional-card {
+            border: 2px solid #E3F2FD;
+            background: white;
+        }
+
+        .professional-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            position: relative;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-info h3 {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .member-info p {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .member-info .bio {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .director-info .social-links a {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        .director-info .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Placeholder for missing info */
+        .placeholder {
+            color: #999;
+            font-style: italic;
+        }
+
+        /* Fallback placeholder */
+        .member-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e9ecef;
+            color: #6c757d;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        /* Values Section (Now after Team) */
         .values-section {
             padding: 100px 5%;
             background-color: white;
@@ -393,100 +652,6 @@
             color: #666;
             font-size: 0.95rem;
             line-height: 1.6;
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 100px 5%;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .team-member {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .member-image {
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .team-member:hover .member-image img {
-            transform: scale(1.1);
-        }
-
-        .member-info {
-            padding: 25px 20px;
-        }
-
-        .member-info h3 {
-            font-size: 1.3rem;
-            color: var(--dark);
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .member-info p {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-
-        .member-info .bio {
-            color: #666;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-links a {
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 14px;
-            transition: all 0.2s ease;
-        }
-
-        .social-links a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-2px);
         }
 
         /* CTA Section */
@@ -641,6 +806,34 @@
             animation: none;
         }
 
+        /* Loading spinner for images */
+        .image-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #f8f9fa;
+            z-index: 1;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .about-hero h1 {
@@ -664,6 +857,27 @@
             
             .values-grid, .team-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .director-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+                padding: 30px;
+            }
+            
+            .director-image {
+                height: 300px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .director-info h3 {
+                font-size: 1.8rem;
+            }
+            
+            .certifications {
+                justify-content: center;
             }
         }
 
@@ -730,6 +944,32 @@
                 padding: 16px 35px;
                 font-size: 1.1rem;
             }
+            
+            .director-card {
+                padding: 25px;
+            }
+            
+            .director-image {
+                height: 250px;
+            }
+            
+            .director-info h3 {
+                font-size: 1.6rem;
+            }
+            
+            .director-bio {
+                font-size: 1rem;
+            }
+            
+            .member-image {
+                height: 200px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
         }
 
         @media (max-width: 576px) {
@@ -750,7 +990,7 @@
             }
             
             .member-image {
-                height: 250px;
+                height: 220px;
             }
             
             .cta-button {
@@ -766,6 +1006,26 @@
                 width: 45px;
                 height: 45px;
                 font-size: 22px;
+            }
+            
+            .director-card {
+                padding: 20px;
+            }
+            
+            .director-image {
+                height: 220px;
+            }
+            
+            .director-info h3 {
+                font-size: 1.4rem;
+            }
+            
+            .director-title {
+                font-size: 1rem;
+            }
+            
+            .member-info .bio {
+                font-size: 0.85rem;
             }
         }
     </style>
@@ -872,7 +1132,201 @@
         </div>
     </section>
 
-    <!-- Values Section -->
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="section-title">
+            <h2>Meet Our Leadership & Skilled Professionals</h2>
+            <p>The certified team driving India's solar revolution</p>
+        </div>
+        
+        <!-- Director Highlight Card -->
+        <div class="director-highlight">
+            <div class="director-card">
+                <div class="director-image">
+                    <img src="https://i.ibb.co/8gRDxtHq/Rushikesh-Bele-Director.jpg" 
+                         data-src="https://i.ibb.co/8gRDxtHq/Rushikesh-Bele-Director.jpg" 
+                         alt="Rushikesh Bele - Director">
+                </div>
+                <div class="director-info">
+                    <h3>Rushikesh Bele</h3>
+                    <p class="director-title">Founder & Director</p>
+                    <div class="director-bio">
+                        Visionary leader with 12+ years in renewable energy sector. Instrumental in establishing Era Solar 
+                        as a leading solar solutions provider. Specializes in strategic planning, business development, 
+                        and sustainable energy policies.
+                    </div>
+                    <div class="certifications">
+                        <span class="cert-badge"><i class="fas fa-certificate"></i> MNRE Certified</span>
+                        <span class="cert-badge"><i class="fas fa-certificate"></i> Solar Energy Expert</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Professional Team Grid -->
+        <div class="section-title" style="margin-top: 60px;">
+            <h3>Our Certified Professionals</h3>
+            <p>Skilled team ensuring quality installations and customer satisfaction</p>
+        </div>
+        
+        <div class="team-grid">
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/tw8CDL2W/Altaf-Shaikh.png" 
+                         data-src="https://i.ibb.co/tw8CDL2W/Altaf-Shaikh.png" 
+                         alt="Altaf Shaikh - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Altaf Shaikh</h3>
+                    <p>Senior Installation Engineer</p>
+                    <div class="bio">
+                        8+ years experience in solar panel installation. Certified in rooftop solar systems and 
+                        grid-tied installations. Specializes in complex residential setups.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/BK7BVt7k/Amol-Bambarde-Franchisee-manager.png" 
+                         data-src="https://i.ibb.co/BK7BVt7k/Amol-Bambarde-Franchisee-manager.png" 
+                         alt="Amol Bambarde - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Amol Bambarde</h3>
+                    <p>Franchisee Manager</p>
+                    <div class="bio">
+                        Manages franchisee network across North India. 6+ years in business development and 
+                        franchise operations. Expertise in partner training and support.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/dJsTkgVP/Pramod-jadhav-Marketing.png" 
+                         data-src="https://i.ibb.co/dJsTkgVP/Pramod-jadhav-Marketing.png" 
+                         alt="Pramod Jadhav - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Pramod Jadhav</h3>
+                    <p>Marketing Head</p>
+                    <div class="bio">
+                        10+ years in digital and traditional marketing.  
+                        Leads our outreach programs and customer acquisition strategies. Expert in solar energy market analysis.
+                    </div>
+                    <div class="certifications" style="margin-top: 10px;">
+                        <span class="cert-badge" style="background: rgba(255,152,0,0.1); color: #666; padding: 5px 10px; font-size: 0.8rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i> Digital Marketing Certified
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/jZDhdLp1/Chetan-shinde-Human-Resourec.png" 
+                         data-src="https://i.ibb.co/jZDhdLp1/Chetan-shinde-Human-Resourec.png" 
+                         alt="Chetan Shinde - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Chetan Shinde</h3>
+                    <p>Human Resources Manager</p>
+                    <div class="bio">
+                        Manages talent acquisition and team development. 7+ years in HR with focus on 
+                        renewable energy sector. Certified in organizational development.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/wFFpPygN/Sales-head.png" 
+                         data-src="https://i.ibb.co/wFFpPygN/Sales-head.png" 
+                         alt="Sales Head - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Satish Khillare</h3>
+                    <p>Sales Department</p>
+                    <div class="bio placeholder">
+                        Information to be updated soon. Part of our dedicated sales team ensuring 
+                        customer satisfaction and business growth.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/S4mqC9GC/Sales-Executive.png" 
+                         data-src="https://i.ibb.co/S4mqC9GC/Sales-Executive.png" 
+                         alt="Sales Executive - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Swapnil Walwale</h3>
+                    <p>Sales Executive</p>
+                    <div class="bio placeholder">
+                        Certified sales professional specializing in residential solar solutions. 
+                        Expert in customer consultation and needs assessment.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/mVf4N58R/Suresh-mhaske.png" 
+                         data-src="https://i.ibb.co/mVf4N58R/Suresh-mhaske.png" 
+                         alt="Suresh Mhaske - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Suresh Mhaske</h3>
+                    <p>Technical Supervisor</p>
+                    <div class="bio">
+                        Oversees installation quality and safety protocols. 8+ years in solar 
+                        system supervision. Certified in electrical safety and quality control.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/tp2y61Pz/MSEB-Work.png" 
+                         data-src="https://i.ibb.co/tp2y61Pz/MSEB-Work.png" 
+                         alt="MSEB Work Specialist - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Ajay Gorade</h3>
+                    <p>Government Liaison Officer</p>
+                    <div class="bio">
+                        Handles government approvals and grid connections. Expert in MSEB procedures 
+                        and documentation. 6+ years in regulatory compliance.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/3mZr960J/Nation-Portal-Work.png" 
+                         data-src="https://i.ibb.co/3mZr960J/Nation-Portal-Work.png" 
+                         alt="Portal Operations - Team Member">
+                </div>
+                <div class="member-info">
+                    <h3>Vaibhav Somde</h3>
+                    <p>Digital Operations Manager</p>
+                    <div class="bio">
+                        Manages online portals and digital documentation. 5+ years in IT operations 
+                        and portal management. Ensures seamless digital customer experience.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section (Now after Team Section) -->
     <section class="values-section">
         <div class="section-title">
             <h2>Our Core Values</h2>
@@ -926,92 +1380,6 @@
                 </div>
                 <h3>Reliability</h3>
                 <p>Providing dependable solar solutions with comprehensive warranties and 24/7 support.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="section-title">
-            <h2>Meet Our Leadership</h2>
-            <p>The passionate team driving India's solar revolution</p>
-        </div>
-        
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Founder & CEO">
-                </div>
-                <div class="member-info">
-                    <h3>Rajesh Sharma</h3>
-                    <p>Founder & CEO</p>
-                    <div class="bio">
-                        15+ years in renewable energy. Former project head at a leading solar company. 
-                        Passionate about sustainable energy solutions.
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Technical Director">
-                </div>
-                <div class="member-info">
-                    <h3>Priya Verma</h3>
-                    <p>Technical Director</p>
-                    <div class="bio">
-                        MTech in Renewable Energy from IIT Delhi. 12+ years experience in solar system design 
-                        and implementation.
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Operations Head">
-                </div>
-                <div class="member-info">
-                    <h3>Arun Patel</h3>
-                    <p>Operations Head</p>
-                    <div class="bio">
-                        10+ years in project management. Specializes in large-scale commercial solar installations 
-                        and maintenance.
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="team-member">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Customer Relations">
-                </div>
-                <div class="member-info">
-                    <h3>Neha Gupta</h3>
-                    <p>Customer Relations Head</p>
-                    <div class="bio">
-                        8+ years in customer service. Ensures seamless customer experience from consultation 
-                        to after-sales support.
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1141,7 +1509,7 @@
         }, observerOptions);
         
         // Observe elements for scroll animations
-        document.querySelectorAll('.mv-card, .value-card, .team-member').forEach(el => {
+        document.querySelectorAll('.mv-card, .value-card, .team-member, .professional-card, .director-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1187,12 +1555,147 @@
         // Add hover effect to team members
         document.querySelectorAll('.team-member').forEach(member => {
             member.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
+                if (!this.classList.contains('professional-card')) {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                }
             });
             
             member.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
+                if (!this.classList.contains('professional-card')) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
             });
+        });
+        
+        // Director card hover effect
+        const directorCard = document.querySelector('.director-card');
+        if (directorCard) {
+            directorCard.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.01)';
+                this.style.boxShadow = '0 30px 60px rgba(26, 35, 126, 0.3)';
+            });
+            
+            directorCard.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = '0 20px 40px rgba(26, 35, 126, 0.2)';
+            });
+        }
+        
+        // Improved Image Loading with Fallback
+        function loadImagesWithFallback() {
+            const images = document.querySelectorAll('.member-image img, .director-image img');
+            
+            images.forEach(img => {
+                // Store original source
+                const originalSrc = img.src || img.getAttribute('data-src');
+                if (!originalSrc) return;
+                
+                // Add loading spinner
+                const spinner = document.createElement('div');
+                spinner.className = 'image-loading';
+                spinner.innerHTML = '<div class="spinner"></div>';
+                img.parentElement.appendChild(spinner);
+                
+                // Create new image to test loading
+                const testImage = new Image();
+                testImage.onload = function() {
+                    // Image loaded successfully
+                    img.src = originalSrc;
+                    img.style.opacity = '0';
+                    setTimeout(() => {
+                        img.style.opacity = '1';
+                        img.style.transition = 'opacity 0.5s ease';
+                        spinner.remove();
+                    }, 100);
+                };
+                
+                testImage.onerror = function() {
+                    // Image failed to load
+                    spinner.remove();
+                    
+                    // Create placeholder
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'member-placeholder';
+                    
+                    // Get name from alt text or parent info
+                    const altText = img.alt || 'Team Member';
+                    const nameMatch = altText.match(/([^-]+)/);
+                    const displayName = nameMatch ? nameMatch[1].trim() : 'Team Member';
+                    
+                    placeholder.innerHTML = `<div style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">${displayName}</div>
+                                           <div style="font-size: 12px;">Image loading...</div>`;
+                    
+                    img.parentElement.appendChild(placeholder);
+                    img.style.display = 'none';
+                    
+                    // Try alternative loading method after delay
+                    setTimeout(() => {
+                        const retryImage = new Image();
+                        retryImage.onload = function() {
+                            placeholder.remove();
+                            img.src = originalSrc;
+                            img.style.display = 'block';
+                            img.style.opacity = '0';
+                            setTimeout(() => {
+                                img.style.opacity = '1';
+                            }, 50);
+                        };
+                        retryImage.src = originalSrc;
+                    }, 2000);
+                };
+                
+                // Start loading test
+                testImage.src = originalSrc;
+            });
+        }
+        
+        // Load images when page is ready
+        document.addEventListener('DOMContentLoaded', loadImagesWithFallback);
+        
+        // Also try on window load
+        window.addEventListener('load', loadImagesWithFallback);
+        
+        // Preload images for better mobile performance
+        function preloadImages() {
+            const imageUrls = [
+                'https://i.ibb.co/tw8CDL2W/Altaf-Shaikh.png',
+                'https://i.ibb.co/BK7BVt7k/Amol-Bambarde-Franchisee-manager.png',
+                'https://i.ibb.co/dJsTkgVP/Pramod-jadhav-Marketing.png',
+                'https://i.ibb.co/jZDhdLp1/Chetan-shinde-Human-Resourec.png',
+                'https://i.ibb.co/wFFpPygN/Sales-head.png',
+                'https://i.ibb.co/S4mqC9GC/Sales-Executive.png',
+                'https://i.ibb.co/mVf4N58R/Suresh-mhaske.png',
+                'https://i.ibb.co/tp2y61Pz/MSEB-Work.png',
+                'https://i.ibb.co/3mZr960J/Nation-Portal-Work.png',
+                'https://i.ibb.co/8gRDxtHq/Rushikesh-Bele-Director.jpg'
+            ];
+            
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        }
+        
+        // Start preloading after a short delay
+        setTimeout(preloadImages, 500);
+        
+        // Add Pramod Jadhav's certification as shown in the image
+        document.addEventListener('DOMContentLoaded', function() {
+            const pramodCard = document.querySelector('.professional-card:nth-child(3)');
+            if (pramodCard) {
+                const certDiv = document.createElement('div');
+                certDiv.className = 'certifications';
+                certDiv.style.marginTop = '10px';
+                certDiv.innerHTML = `
+                    <span class="cert-badge" style="background: rgba(255,152,0,0.1); color: #666; padding: 5px 10px; font-size: 0.8rem;">
+                        <i class="fas fa-certificate" style="color: var(--primary);"></i> Digital Marketing Certified
+                    </span>
+                `;
+                const memberInfo = pramodCard.querySelector('.member-info');
+                if (memberInfo) {
+                    memberInfo.appendChild(certDiv);
+                }
+            }
         });
     </script>
 </body>
