@@ -9,6 +9,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -43,46 +46,95 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header */
-        .header {
+        /* Header Styles - Same as index.html */
+        header {
             background: #ffffff;
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 15px 5%;
+            padding: 18px 5%;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            animation: slideDown 0.3s ease-out;
         }
 
-        .back-btn {
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .logo-slogan {
+            font-size: 13px;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 6px 0;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
             background: none;
             border: none;
-            font-size: 16px;
-            color: var(--dark);
+            font-size: 20px;
+            color: #444;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            font-weight: 500;
+            transition: transform 0.3s ease;
         }
 
-        .back-btn:hover {
-            background: rgba(255, 152, 0, 0.1);
-            color: var(--primary);
-            transform: translateX(-3px);
-        }
-
-        .header-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--dark);
-            text-align: center;
-            flex: 1;
+        .mobile-menu-btn:hover {
+            transform: rotate(90deg);
         }
 
         /* Breadcrumb */
@@ -114,31 +166,123 @@
         .product-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* Skeleton Loading */
+        .skeleton-loading {
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .skeleton-product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .skeleton-product-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .skeleton-image-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skeleton-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .skeleton-thumbnails {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .skeleton-thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .skeleton-content {
             padding: 20px;
         }
 
-        /* Loading State */
-        .loading-container {
+        .skeleton-line {
+            height: 20px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .skeleton-line.title {
+            width: 80%;
+            height: 32px;
+        }
+
+        .skeleton-line.price {
+            width: 40%;
+            height: 28px;
+        }
+
+        .skeleton-line.short {
+            width: 60%;
+        }
+
+        .skeleton-line.medium {
+            width: 80%;
+        }
+
+        .skeleton-line.long {
+            width: 100%;
+        }
+
+        .skeleton-meta {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 60vh;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
 
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 20px;
+        .skeleton-meta-item {
+            width: 120px;
+            height: 34px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
         }
 
         /* Product Details Layout */
@@ -147,6 +291,16 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 992px) {
@@ -648,7 +802,7 @@
         }
 
         /* Floating WhatsApp */
-        .floating-whatsapp {
+        .whatsapp-button {
             position: fixed;
             bottom: 25px;
             right: 25px;
@@ -660,38 +814,131 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 22px;
+            font-size: 24px;
             box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            animation: float 3s ease-in-out infinite;
+            z-index: 999;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            animation: floatWhatsApp 3s ease-in-out infinite;
         }
 
-        @keyframes float {
+        @keyframes floatWhatsApp {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
 
-        .floating-whatsapp:hover {
+        .whatsapp-button:hover {
             transform: scale(1.1);
             background: #1da851;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
             animation: none;
         }
 
+        /* Footer - Same as index.html */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 60px 5% 25px;
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-column a:hover {
+            color: white;
+            transform: translateX(3px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                border-top: 1px solid #eee;
+                gap: 15px;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
             .product-container {
-                padding: 15px;
-            }
-            
-            .header {
-                padding: 12px 15px;
-            }
-            
-            .header-title {
-                font-size: 16px;
+                padding: 20px 15px;
             }
             
             .breadcrumb {
@@ -699,7 +946,7 @@
                 font-size: 0.85rem;
             }
             
-            .main-image-container {
+            .skeleton-image-container, .main-image-container {
                 height: 300px;
             }
             
@@ -724,18 +971,22 @@
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 15px;
             }
+            
+            .skeleton-image-container {
+                height: 300px;
+            }
         }
 
         @media (max-width: 576px) {
-            .product-details-grid {
+            .product-details-grid, .skeleton-product-grid {
                 gap: 20px;
             }
             
-            .main-image-container {
+            .skeleton-image-container, .main-image-container {
                 height: 250px;
             }
             
-            .thumbnail {
+            .skeleton-thumbnail, .thumbnail {
                 width: 60px;
                 height: 60px;
             }
@@ -744,13 +995,15 @@
                 grid-template-columns: 1fr;
             }
             
-            .product-meta {
+            .product-meta, .skeleton-meta {
                 gap: 8px;
             }
             
-            .meta-item {
+            .meta-item, .skeleton-meta-item {
                 padding: 6px 12px;
                 font-size: 0.8rem;
+                width: 100px;
+                height: 30px;
             }
             
             .section-title {
@@ -761,7 +1014,7 @@
                 font-size: 0.95rem;
             }
             
-            .floating-whatsapp {
+            .whatsapp-button {
                 bottom: 20px;
                 right: 20px;
                 width: 45px;
@@ -787,12 +1040,16 @@
                 justify-content: center;
             }
             
-            .back-btn span {
-                display: none;
+            .logo-slogan {
+                font-size: 11px;
             }
             
-            .back-btn {
-                padding: 8px;
+            .skeleton-line.title {
+                height: 24px;
+            }
+            
+            .skeleton-line.price {
+                height: 20px;
             }
         }
 
@@ -815,15 +1072,27 @@
 </head>
 <body>
 
-<!-- Header -->
-<header class="header">
-    <button class="back-btn" onclick="goBack()">
-        <i class="fas fa-arrow-left"></i>
-        <span>Back to Products</span>
-    </button>
-    
-    <div class="header-title" id="pageTitle">Product Details</div>
-</header>
+    <!-- Header with same navigation as index.html -->
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg" alt="Era Solar Logo">
+            <div class="logo-slogan">Sunlight in your pocket</div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="Services.html">Services</a>
+            <a href="Work.html">Our Work</a>
+            <a href="franchisee.html">Ask for Franchisee</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </nav>
+    </header>
 
 <!-- Breadcrumb -->
 <div class="breadcrumb">
@@ -837,10 +1106,96 @@
 <!-- Main Container -->
 <div class="product-container">
     
-    <!-- Loading State -->
-    <div class="loading-container" id="loadingState">
-        <div class="loading-spinner"></div>
-        <p>Loading product details...</p>
+    <!-- Skeleton Loading -->
+    <div class="skeleton-loading" id="skeletonLoading">
+        <div class="skeleton-product-grid">
+            <!-- Left Column: Image Gallery Skeleton -->
+            <div class="image-gallery">
+                <div class="skeleton-image-container">
+                    <div class="skeleton-image"></div>
+                </div>
+                <div class="skeleton-thumbnails">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-thumbnail"></div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Product Info Skeleton -->
+            <div class="skeleton-content">
+                <div class="skeleton-line title"></div>
+                <div class="skeleton-line price"></div>
+                
+                <div class="skeleton-meta">
+                    <div class="skeleton-meta-item"></div>
+                    <div class="skeleton-meta-item"></div>
+                </div>
+                
+                <div class="section">
+                    <div class="skeleton-line medium" style="height: 24px; width: 200px; margin-bottom: 20px;"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line medium"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line short"></div>
+                </div>
+                
+                <div class="section">
+                    <div class="skeleton-line medium" style="height: 24px; width: 200px; margin-bottom: 20px;"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line medium"></div>
+                </div>
+                
+                <div class="action-buttons">
+                    <div class="skeleton-line long" style="height: 50px; margin-bottom: 10px;"></div>
+                    <div class="skeleton-line long" style="height: 50px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Suggestions Skeleton -->
+        <div class="suggestions-section">
+            <div class="section-header">
+                <div class="skeleton-line medium" style="height: 24px; width: 200px;"></div>
+                <div class="skeleton-line short" style="height: 20px; width: 100px;"></div>
+            </div>
+            <div class="suggestions-grid">
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Product Details (Will be populated dynamically) -->
@@ -945,6 +1300,53 @@
     </div>
 </div>
 
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Era Solar</h3>
+            <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="Services.html">Services</a>
+            <a href="Work.html">Our Work</a>
+            <a href="franchisee.html">Ask for Franchisee</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <a href="#">Residential Solar</a>
+            <a href="#">Commercial Solar</a>
+            <a href="#">Solar Maintenance</a>
+            <a href="#">Solar Water Pumps</a>
+            <a href="#">Govt Subsidy Assistance</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Sector 18, Gurugram, Haryana 122015</p>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-envelope"></i> info@erasolar.com</p>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        © 2023 Era Solar. All rights reserved.
+    </div>
+</footer>
+
 <!-- Image Zoom Modal -->
 <div class="image-modal" id="imageModal">
     <div class="modal-close" onclick="closeImageModal()">
@@ -953,10 +1355,10 @@
     <img class="modal-content" id="modalImage" alt="Enlarged Product Image">
 </div>
 
-<!-- Floating WhatsApp Button -->
-<div class="floating-whatsapp" onclick="orderOnWhatsApp()">
+<!-- WhatsApp Button -->
+<a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
-</div>
+</a>
 
 <!-- Supabase -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -970,6 +1372,28 @@ const sb = supabase.createClient(
 
 let currentProduct = null;
 let allProducts = [];
+let loadingTimeout = null;
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+}
 
 // Get product ID from URL
 function getProductIdFromURL() {
@@ -995,61 +1419,74 @@ async function loadProductDetails() {
     }
     
     try {
-        // Fetch product with companies
-        const { data: product, error } = await sb
-            .from('products')
-            .select(`
-                *,
-                product_companies (
-                    company_id,
-                    companies (
-                        id,
-                        company_name,
-                        logo_image_id
-                    )
-                )
-            `)
-            .eq('id', productId)
-            .single();
-            
-        if (error) throw error;
+        // Show skeleton loading
+        document.getElementById('skeletonLoading').style.display = 'block';
+        document.getElementById('productDetails').style.display = 'none';
+        document.getElementById('errorState').style.display = 'none';
         
-        if (!product) {
-            showErrorState();
-            return;
-        }
+        // Clear any existing timeout
+        if (loadingTimeout) clearTimeout(loadingTimeout);
         
-        currentProduct = product;
-        
-        // Fetch all products for suggestions
-        const { data: allProductsData } = await sb
-            .from('products')
-            .select('*')
-            .neq('id', productId)
-            .limit(8);
-            
-        allProducts = allProductsData || [];
-        
-        // Update page title
-        document.title = `${product.title} - Era Solar`;
-        document.getElementById('pageTitle').textContent = product.title;
-        document.getElementById('breadcrumbProduct').textContent = product.title;
-        
-        // Render product details
-        renderProductDetails();
-        
-        // Render suggestions
-        renderSuggestions();
-        
-        // Set SEO meta
-        setSEOMeta();
-        
-        // Hide loading, show content
-        document.getElementById('loadingState').style.display = 'none';
-        document.getElementById('productDetails').style.display = 'block';
+        // Set a timeout to show loading state for at least 500ms
+        loadingTimeout = setTimeout(async () => {
+            try {
+                // Fetch product with companies
+                const { data: product, error } = await sb
+                    .from('products')
+                    .select(`
+                        *,
+                        product_companies (
+                            company_id,
+                            companies (
+                                id,
+                                company_name,
+                                logo_image_id
+                            )
+                        )
+                    `)
+                    .eq('id', productId)
+                    .single();
+                    
+                if (error) throw error;
+                
+                if (!product) {
+                    showErrorState();
+                    return;
+                }
+                
+                currentProduct = product;
+                
+                // Update page title
+                document.title = `${product.title} - Era Solar`;
+                document.getElementById('breadcrumbProduct').textContent = product.title;
+                
+                // Fetch all products for suggestions
+                const { data: allProductsData } = await sb
+                    .from('products')
+                    .select('*')
+                    .neq('id', productId)
+                    .limit(8);
+                    
+                allProducts = allProductsData || [];
+                
+                // Hide skeleton and render content
+                document.getElementById('skeletonLoading').style.display = 'none';
+                renderProductDetails();
+                renderSuggestions();
+                
+                // Show content with animation
+                setTimeout(() => {
+                    document.getElementById('productDetails').style.display = 'block';
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error loading product:', error);
+                showErrorState();
+            }
+        }, 500); // Minimum loading time for better UX
         
     } catch (error) {
-        console.error('Error loading product:', error);
+        console.error('Error in loadProductDetails:', error);
         showErrorState();
     }
 }
@@ -1176,6 +1613,7 @@ function renderProductDetails() {
                 logo.src = company.logo_image_id;
                 logo.alt = company.company_name;
                 logo.title = company.company_name;
+                logo.loading = 'lazy';
                 logo.onerror = () => {
                     logo.src = 'https://via.placeholder.com/60x60/FF9800/ffffff?text=' + 
                               encodeURIComponent(company.company_name.charAt(0));
@@ -1194,12 +1632,14 @@ function renderProductDetails() {
     if (images.length > 0) {
         mainImage.src = images[0];
         mainImage.style.display = 'block';
+        mainImage.loading = 'eager';
         
         images.forEach((imageUrl, index) => {
             const thumbnail = document.createElement('img');
             thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
             thumbnail.src = imageUrl;
             thumbnail.alt = `Product Image ${index + 1}`;
+            thumbnail.loading = index === 0 ? 'eager' : 'lazy';
             thumbnail.onclick = () => {
                 mainImage.src = imageUrl;
                 document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
@@ -1240,7 +1680,8 @@ function renderSuggestions() {
         
         suggestionCard.innerHTML = `
             <img src="${imageUrl}" alt="${product.title}" class="suggestion-image" 
-                 onerror="this.src='https://via.placeholder.com/300x200/FF9800/ffffff?text=Solar+Product'">
+                 onerror="this.src='https://via.placeholder.com/300x200/FF9800/ffffff?text=Solar+Product'"
+                 loading="lazy">
             <div class="suggestion-info">
                 <h3 class="suggestion-title">${product.title}</h3>
                 <div class="suggestion-price">${product.price && product.price !== 'NA' ? `₹${product.price}` : 'Price on Request'}</div>
@@ -1254,61 +1695,17 @@ function renderSuggestions() {
     });
 }
 
-// Set SEO meta
-function setSEOMeta() {
-    if (!currentProduct) return;
-    
-    const product = currentProduct;
-    const firstImage = product.images_id && product.images_id.length > 0 
-        ? product.images_id[0] 
-        : '';
-    
-    const url = window.location.href;
-    
-    // JSON-LD Schema
-    const schema = {
-        "@context": "https://schema.org/",
-        "@type": "Product",
-        "name": product.title,
-        "description": product.description || `Premium solar energy product from Era Solar`,
-        "image": product.images_id || [],
-        "sku": product.product_code || product.id.toString(),
-        "brand": {
-            "@type": "Brand",
-            "name": "Era Solar"
-        },
-        "offers": {
-            "@type": "Offer",
-            "url": url,
-            "priceCurrency": "INR",
-            "price": product.price && product.price !== 'NA' ? parseFloat(product.price) : undefined,
-            "availability": "https://schema.org/InStock",
-            "seller": {
-                "@type": "Organization",
-                "name": "Era Solar"
-            }
-        }
-    };
-    
-    document.getElementById('productSchema').textContent = JSON.stringify(schema, null, 2);
-}
-
 // Show error state
 function showErrorState() {
-    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('skeletonLoading').style.display = 'none';
+    document.getElementById('productDetails').style.display = 'none';
     document.getElementById('errorState').style.display = 'block';
 }
 
 // Retry loading
 function retryLoading() {
     document.getElementById('errorState').style.display = 'none';
-    document.getElementById('loadingState').style.display = 'flex';
     loadProductDetails();
-}
-
-// Go back
-function goBack() {
-    window.history.back();
 }
 
 // Image modal functions
@@ -1398,6 +1795,11 @@ document.addEventListener('DOMContentLoaded', () => {
             closeImageModal();
         }
     });
+});
+
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+    if (loadingTimeout) clearTimeout(loadingTimeout);
 });
 </script>
 </body>
