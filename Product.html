@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - Era Solar | Premium Solar Solutions</title>
-    <meta name="description" content="Browse Era Solar's premium collection of solar panels, inverters, batteries, and complete solar solutions.">
+    <title>Product Details - Era Solar</title>
+    <meta name="description" content="View detailed information about Era Solar's premium solar products">
     
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Animate.css -->
@@ -137,228 +137,93 @@
             transform: rotate(90deg);
         }
 
-        /* Main Container */
-        .main-container {
-            padding: 30px 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Page Title */
-        .page-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .page-title h1 {
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .page-title p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Search and Filter Section */
-        .controls-section {
-            margin-bottom: 40px;
-        }
-
-        .search-container {
-            position: relative;
-            margin-bottom: 25px;
-        }
-
-        .search-box {
-            width: 100%;
-            padding: 16px 50px 16px 20px;
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: white;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-        }
-
-        .search-box:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.15);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .filter-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .filter-btn {
-            background: white;
-            border: 2px solid #e2e8f0;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #4a5568;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .filter-btn.active {
-            background: var(--gradient);
-            color: white;
-            border-color: transparent;
-        }
-
-        .price-filter-btn {
-            background: white;
-            border: 2px solid #e2e8f0;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #4a5568;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .price-filter-btn:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* Price Filter Panel */
-        .price-filter-panel {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-top: 15px;
-            box-shadow: var(--shadow);
-            display: none;
-            animation: slideDown 0.3s ease;
-        }
-
-        .price-filter-panel.active {
-            display: block;
-        }
-
-        .price-inputs {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .price-inputs input {
-            padding: 10px 15px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            width: 150px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .price-inputs input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .price-buttons {
-            display: flex;
-            gap: 12px;
-        }
-
-        .price-buttons button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .apply-btn {
-            background: var(--gradient);
-            color: white;
-        }
-
-        .apply-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
-        }
-
-        .clear-btn {
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 5%;
             background: #f8f9fa;
-            color: #4a5568;
-            border: 2px solid #e2e8f0;
-        }
-
-        .clear-btn:hover {
-            background: #e9ecef;
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        /* Results Count */
-        .results-count {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #666;
-            margin-bottom: 20px;
-            padding: 0 5px;
-            font-weight: 500;
+            border-bottom: 1px solid #eee;
         }
 
-        /* Products Grid */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--dark);
+            text-decoration: underline;
+        }
+
+        .breadcrumb span {
+            margin: 0 8px;
+            color: #999;
+        }
+
+        /* Main Container */
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
         }
 
         /* Skeleton Loading */
         .skeleton-loading {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
         }
 
-        .skeleton-card {
-            background: white;
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .skeleton-product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .skeleton-product-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .skeleton-image-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid #f0f0f0;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
         }
 
         .skeleton-image {
-            height: 200px;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .skeleton-thumbnails {
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .skeleton-thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
             background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
             background-size: 200% 100%;
             animation: loading 1.5s infinite;
@@ -369,12 +234,22 @@
         }
 
         .skeleton-line {
-            height: 12px;
+            height: 20px;
             background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
             background-size: 200% 100%;
             animation: loading 1.5s infinite;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             border-radius: 4px;
+        }
+
+        .skeleton-line.title {
+            width: 80%;
+            height: 32px;
+        }
+
+        .skeleton-line.price {
+            width: 40%;
+            height: 28px;
         }
 
         .skeleton-line.short {
@@ -389,21 +264,33 @@
             width: 100%;
         }
 
+        .skeleton-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .skeleton-meta-item {
+            width: 120px;
+            height: 34px;
+            border-radius: 20px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
         @keyframes loading {
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
         }
 
-        /* Product Card */
-        .product-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
+        /* Product Details Layout */
+        .product-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.5s ease forwards;
@@ -416,229 +303,535 @@
             }
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary);
+        @media (max-width: 992px) {
+            .product-details-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
 
-        .product-carousel {
+        /* Image Gallery */
+        .image-gallery {
             position: relative;
-            width: 100%;
+        }
+
+        .main-image-container {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
             overflow: hidden;
-            height: 200px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            margin-bottom: 15px;
+            border: 1px solid #eee;
             display: flex;
             align-items: center;
             justify-content: center;
+            height: 400px;
         }
 
-        .product-carousel img {
+        .main-image {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
+            padding: 20px;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
         }
 
-        .product-carousel img.active {
-            opacity: 1;
+        .main-image:hover {
+            transform: scale(1.02);
         }
 
-        .carousel-dots {
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
+        .thumbnail-container {
             display: flex;
-            justify-content: center;
-            gap: 5px;
-            z-index: 2;
+            gap: 10px;
+            padding: 10px;
+            overflow-x: auto;
         }
 
-        .carousel-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid transparent;
             cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+            padding: 5px;
         }
 
-        .carousel-dot.active {
-            background: var(--primary);
-            transform: scale(1.2);
+        .thumbnail:hover,
+        .thumbnail.active {
+            border-color: var(--primary);
+            transform: scale(1.05);
         }
 
+        /* Product Info */
         .product-info {
             padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
         }
 
         .product-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--dark);
-            line-height: 1.4;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
 
         .product-price {
-            font-size: 1.3rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: baseline;
         }
 
         .product-price::before {
             content: '₹';
-            font-size: 1rem;
-            margin-right: 2px;
+            font-size: 1.2rem;
+            margin-right: 4px;
+        }
+
+        .product-price.na {
+            color: #666;
+            font-size: 1.4rem;
+        }
+
+        .product-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 152, 0, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        /* Sections */
+        .section {
+            margin: 30px 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--primary);
         }
 
         .product-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            white-space: pre-line;
+        }
+
+        /* Specifications Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .spec-item:hover {
+            background: white;
+            box-shadow: var(--shadow);
+            transform: translateY(-2px);
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
             font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
+        }
+
+        .spec-value {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Companies Section */
+        .company-logos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            padding: 8px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+
+        .company-logo:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .whatsapp-btn {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 152, 0, 0.4);
+        }
+
+        .call-btn {
+            background: var(--gradient-blue);
+            color: white;
+            box-shadow: 0 4px 15px rgba(26, 35, 126, 0.3);
+        }
+
+        .call-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26, 35, 126, 0.4);
+        }
+
+        /* Share Section */
+        .share-section {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+        }
+
+        .share-facebook { background: #3b5998; }
+        .share-twitter { background: #1da1f2; }
+        .share-whatsapp { background: #25d366; }
+        .share-email { background: var(--primary); }
+
+        /* Suggestions Section */
+        .suggestions-section {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .view-all {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .view-all:hover {
+            color: var(--dark);
+            gap: 12px;
+        }
+
+        .suggestions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .suggestion-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #f0f0f0;
+        }
+
+        .suggestion-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+
+        .suggestion-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .suggestion-card:hover .suggestion-image {
+            transform: scale(1.05);
+        }
+
+        .suggestion-info {
+            padding: 20px;
+        }
+
+        .suggestion-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.4;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
-        .product-brands {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+        .suggestion-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
-        .brand-logo {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            padding: 2px;
-            background: white;
-            transition: all 0.3s ease;
-        }
-
-        .brand-logo:hover {
-            transform: scale(1.1);
-            border-color: var(--primary);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .category-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: var(--gradient);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 2;
-        }
-
-        .product-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: auto;
-        }
-
-        .view-details-btn {
-            background: var(--dark-blue);
-            color: white;
-            padding: 12px;
-            text-align: center;
-            border-radius: 8px;
-            cursor: pointer;
+        .suggestion-price::before {
+            content: '₹';
             font-size: 0.9rem;
-            font-weight: 600;
-            border: none;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
+            margin-right: 2px;
         }
 
-        .view-details-btn:hover {
+        .suggestion-btn {
+            width: 100%;
+            padding: 10px;
+            background: var(--dark-blue);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .suggestion-btn:hover {
             background: #152452;
             transform: translateY(-2px);
         }
 
-        .whatsapp-btn {
+        /* Error State */
+        .error-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 500px;
+            box-shadow: var(--shadow);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .error-state i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            opacity: 0.7;
+        }
+
+        .error-state h2 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .error-state p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .retry-btn {
             background: var(--gradient);
             color: white;
-            padding: 12px;
-            text-align: center;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
             border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: all 0.3s ease;
+        }
+
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        /* Image Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            transition: all 0.3s ease;
         }
 
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
         }
 
-        .whatsapp-btn i {
-            font-size: 1rem;
+        /* Floating WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            z-index: 999;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            animation: floatWhatsApp 3s ease-in-out infinite;
         }
 
-        /* Empty State */
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #666;
-            grid-column: 1 / -1;
+        @keyframes floatWhatsApp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            opacity: 0.5;
-        }
-
-        .empty-state h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #444;
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            background: #1da851;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            animation: none;
         }
 
         /* Footer - Same as index.html */
@@ -709,66 +902,7 @@
             font-size: 0.9rem;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-button {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 50px;
-            height: 50px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 24px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-            z-index: 999;
-            transition: all 0.2s ease;
-            text-decoration: none;
-            animation: floatWhatsApp 3s ease-in-out infinite;
-        }
-
-        @keyframes floatWhatsApp {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .whatsapp-button:hover {
-            transform: scale(1.1);
-            background: #1da851;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-            animation: none;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .products-grid, .skeleton-loading {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .nav-links {
-                gap: 20px;
-            }
-            
-            .nav-links a {
-                font-size: 13px;
-            }
-            
-            .page-title h1 {
-                font-size: 2.2rem;
-            }
-            
-            .products-grid, .skeleton-loading {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 768px) {
             header {
                 padding: 15px 20px;
@@ -803,86 +937,141 @@
                 display: block;
             }
             
-            .page-title h1 {
-                font-size: 2rem;
+            .product-container {
+                padding: 20px 15px;
             }
             
-            .page-title p {
-                font-size: 1rem;
+            .breadcrumb {
+                padding: 12px 15px;
+                font-size: 0.85rem;
             }
             
-            .products-grid, .skeleton-loading {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            .skeleton-image-container, .main-image-container {
+                height: 300px;
+            }
+            
+            .product-title {
+                font-size: 1.5rem;
+            }
+            
+            .product-price {
+                font-size: 1.6rem;
+            }
+            
+            .action-buttons {
+                gap: 10px;
+            }
+            
+            .action-btn {
+                padding: 14px;
+                font-size: 0.95rem;
+            }
+            
+            .suggestions-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
                 gap: 15px;
             }
             
-            .product-carousel {
-                height: 180px;
-            }
-            
-            .skeleton-image {
-                height: 180px;
+            .skeleton-image-container {
+                height: 300px;
             }
         }
 
-        @media (max-width: 640px) {
-            .main-container {
-                padding: 20px;
+        @media (max-width: 576px) {
+            .product-details-grid, .skeleton-product-grid {
+                gap: 20px;
             }
             
-            .products-grid, .skeleton-loading {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .skeleton-image-container, .main-image-container {
+                height: 250px;
             }
             
-            .filter-row {
-                justify-content: center;
+            .skeleton-thumbnail, .thumbnail {
+                width: 60px;
+                height: 60px;
             }
             
-            .price-inputs {
-                flex-direction: column;
-                align-items: stretch;
+            .specs-grid {
+                grid-template-columns: 1fr;
             }
             
-            .price-inputs input {
-                width: 100%;
+            .product-meta, .skeleton-meta {
+                gap: 8px;
             }
             
-            .page-title h1 {
-                font-size: 1.8rem;
+            .meta-item, .skeleton-meta-item {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+                width: 100px;
+                height: 30px;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+            
+            .product-description {
+                font-size: 0.95rem;
+            }
+            
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
             }
         }
 
         @media (max-width: 480px) {
-            .products-grid, .skeleton-loading {
+            .suggestions-grid {
                 grid-template-columns: 1fr;
-                max-width: 350px;
-                margin: 0 auto;
             }
             
-            .product-carousel, .skeleton-image {
-                height: 200px;
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .share-buttons {
+                justify-content: center;
+            }
+            
+            .company-logos {
+                justify-content: center;
             }
             
             .logo-slogan {
                 font-size: 11px;
             }
             
-            .filter-btn, .price-filter-btn {
-                padding: 8px 16px;
-                font-size: 0.85rem;
+            .skeleton-line.title {
+                height: 24px;
             }
             
-            .search-box {
-                padding: 14px 45px 14px 15px;
+            .skeleton-line.price {
+                height: 20px;
             }
-            
-            .search-icon {
-                right: 15px;
+        }
+
+        /* Animations */
+        .product-details-grid > * {
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
+
     <!-- Header with same navigation as index.html -->
     <header>
         <div class="logo-container">
@@ -905,681 +1094,713 @@
         </nav>
     </header>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Page Title -->
-        <div class="page-title">
-            <h1>Our Premium Solar Products</h1>
-            <p>Explore our wide range of high-quality solar panels, inverters, batteries, and complete solar solutions</p>
-        </div>
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>></span>
+    <a href="products.html">Products</a>
+    <span>></span>
+    <span id="breadcrumbProduct">Product Details</span>
+</div>
 
-        <!-- Controls Section -->
-        <div class="controls-section">
-            <!-- Search Box -->
-            <div class="search-container">
-                <input type="text" class="search-box" id="searchBox" placeholder="Search solar products by name, category, or brand...">
-                <div class="search-icon">
-                    <i class="fas fa-search"></i>
+<!-- Main Container -->
+<div class="product-container">
+    
+    <!-- Skeleton Loading -->
+    <div class="skeleton-loading" id="skeletonLoading">
+        <div class="skeleton-product-grid">
+            <!-- Left Column: Image Gallery Skeleton -->
+            <div class="image-gallery">
+                <div class="skeleton-image-container">
+                    <div class="skeleton-image"></div>
+                </div>
+                <div class="skeleton-thumbnails">
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-thumbnail"></div>
+                    <div class="skeleton-thumbnail"></div>
                 </div>
             </div>
-
-            <!-- Results Count -->
-            <div class="results-count" id="resultsCount">Loading products...</div>
-
-            <!-- Filter Row -->
-            <div class="filter-row">
-                <div id="filterButtons"></div>
-                <button class="price-filter-btn" id="priceFilterBtn">
-                    <i class="fas fa-filter"></i> Price Filter
-                </button>
-            </div>
-
-            <!-- Price Filter Panel -->
-            <div class="price-filter-panel" id="priceFilterPanel">
-                <div class="price-inputs">
-                    <input type="number" id="minPrice" placeholder="Min ₹" min="0">
-                    <span>to</span>
-                    <input type="number" id="maxPrice" placeholder="Max ₹" min="0">
+            
+            <!-- Right Column: Product Info Skeleton -->
+            <div class="skeleton-content">
+                <div class="skeleton-line title"></div>
+                <div class="skeleton-line price"></div>
+                
+                <div class="skeleton-meta">
+                    <div class="skeleton-meta-item"></div>
+                    <div class="skeleton-meta-item"></div>
                 </div>
-                <div class="price-buttons">
-                    <button class="apply-btn" onclick="applyPriceFilter()">Apply Filter</button>
-                    <button class="clear-btn" onclick="clearPriceFilter()">Clear</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Skeleton Loading -->
-        <div class="skeleton-loading" id="skeletonLoading">
-            <!-- 6 skeleton cards -->
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-content">
-                    <div class="skeleton-line short"></div>
+                
+                <div class="section">
+                    <div class="skeleton-line medium" style="height: 24px; width: 200px; margin-bottom: 20px;"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line long"></div>
                     <div class="skeleton-line medium"></div>
                     <div class="skeleton-line long"></div>
-                    <div class="skeleton-line long"></div>
-                </div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-content">
                     <div class="skeleton-line short"></div>
-                    <div class="skeleton-line medium"></div>
-                    <div class="skeleton-line long"></div>
-                    <div class="skeleton-line long"></div>
                 </div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-content">
-                    <div class="skeleton-line short"></div>
+                
+                <div class="section">
+                    <div class="skeleton-line medium" style="height: 24px; width: 200px; margin-bottom: 20px;"></div>
+                    <div class="skeleton-line long"></div>
+                    <div class="skeleton-line long"></div>
                     <div class="skeleton-line medium"></div>
-                    <div class="skeleton-line long"></div>
-                    <div class="skeleton-line long"></div>
                 </div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-content">
-                    <div class="skeleton-line short"></div>
-                    <div class="skeleton-line medium"></div>
-                    <div class="skeleton-line long"></div>
-                    <div class="skeleton-line long"></div>
-                </div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-content">
-                    <div class="skeleton-line short"></div>
-                    <div class="skeleton-line medium"></div>
-                    <div class="skeleton-line long"></div>
-                    <div class="skeleton-line long"></div>
-                </div>
-            </div>
-            <div class="skeleton-card">
-                <div class="skeleton-image"></div>
-                <div class="skeleton-content">
-                    <div class="skeleton-line short"></div>
-                    <div class="skeleton-line medium"></div>
-                    <div class="skeleton-line long"></div>
-                    <div class="skeleton-line long"></div>
+                
+                <div class="action-buttons">
+                    <div class="skeleton-line long" style="height: 50px; margin-bottom: 10px;"></div>
+                    <div class="skeleton-line long" style="height: 50px;"></div>
                 </div>
             </div>
         </div>
-
-        <!-- Products Grid -->
-        <div id="productsGrid" class="products-grid" style="display: none;"></div>
+        
+        <!-- Suggestions Skeleton -->
+        <div class="suggestions-section">
+            <div class="section-header">
+                <div class="skeleton-line medium" style="height: 24px; width: 200px;"></div>
+                <div class="skeleton-line short" style="height: 20px; width: 100px;"></div>
+            </div>
+            <div class="suggestions-grid">
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+                <div class="suggestion-card">
+                    <div class="skeleton-image" style="height: 180px; border-radius: 0;"></div>
+                    <div class="suggestion-info">
+                        <div class="skeleton-line medium" style="margin-bottom: 10px;"></div>
+                        <div class="skeleton-line short" style="margin-bottom: 15px;"></div>
+                        <div class="skeleton-line long" style="height: 35px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-column">
-                <h3>Era Solar</h3>
-                <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Product Details (Will be populated dynamically) -->
+    <div id="productDetails" style="display: none;">
+        
+        <!-- Product Information -->
+        <div class="product-details-grid">
+            
+            <!-- Image Gallery -->
+            <div class="image-gallery">
+                <div class="main-image-container">
+                    <img id="mainImage" class="main-image" alt="Product Image" onclick="openImageModal(this.src)">
                 </div>
+                <div class="thumbnail-container" id="thumbnailContainer"></div>
             </div>
             
-            <div class="footer-column">
-                <h3>Quick Links</h3>
-                <a href="index.html">Home</a>
-                <a href="products.html">Products</a>
-                <a href="Services.html">Services</a>
-                <a href="Work.html">Our Work</a>
-                <a href="franchisee.html">Ask for Franchisee</a>
-                <a href="Contact.html">Contact Us</a>
-                <a href="about.html">About Us</a>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Our Services</h3>
-                <a href="#">Residential Solar</a>
-                <a href="#">Commercial Solar</a>
-                <a href="#">Solar Maintenance</a>
-                <a href="#">Solar Water Pumps</a>
-                <a href="#">Govt Subsidy Assistance</a>
-            </div>
-            
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Sector 18, Gurugram, Haryana 122015</p>
-                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fas fa-envelope"></i> info@erasolar.com</p>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            © 2023 Era Solar. All rights reserved.
-        </div>
-    </footer>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        // Supabase client
-        const sb = supabase.createClient(
-            "https://mnkewhamntefyutzrnaw.supabase.co",
-            "sb_publishable_8wi_FUAoAhhnHRNsJg3u8w_bbPLiGHd"
-        );
-
-        let allProducts = [];
-        let filteredProducts = [];
-        let carouselIntervals = new Map();
-        let isPriceFilterOpen = false;
-        let loadingTimeout = null;
-
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                    ? '<i class="fas fa-times"></i>' 
-                    : '<i class="fas fa-bars"></i>';
-            });
-            
-            // Close menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                });
-            });
-        }
-
-        // Load all products with optimization
-        async function loadProducts() {
-            try {
-                // Show skeleton loading
-                document.getElementById('skeletonLoading').style.display = 'grid';
-                document.getElementById('productsGrid').style.display = 'none';
-                document.getElementById('resultsCount').textContent = 'Loading products...';
+            <!-- Product Info -->
+            <div class="product-info">
+                <!-- Title & Price -->
+                <h1 class="product-title" id="productTitle"></h1>
+                <div class="product-price" id="productPrice"></div>
                 
-                // Clear any existing timeout
-                if (loadingTimeout) clearTimeout(loadingTimeout);
+                <!-- Product Meta -->
+                <div class="product-meta" id="productMeta"></div>
                 
-                // Set a timeout to show loading state for at least 500ms
-                loadingTimeout = setTimeout(async () => {
-                    try {
-                        // Load companies and products in parallel for better performance
-                        const [companiesResponse, productsResponse] = await Promise.all([
-                            sb.from('companies').select('*'),
-                            sb.from('products').select(`
-                                *,
-                                product_companies (
-                                    company_id,
-                                    companies (
-                                        id,
-                                        company_name,
-                                        logo_image_id
-                                    )
-                                )
-                            `).order('created_at', { ascending: false })
-                        ]);
-                        
-                        const { data: companies, error: companiesError } = companiesResponse;
-                        const { data: products, error: productsError } = productsResponse;
-                        
-                        if (companiesError) throw companiesError;
-                        if (productsError) throw productsError;
-                        
-                        // Cache companies for faster lookup
-                        const companiesMap = new Map();
-                        (companies || []).forEach(company => {
-                            companiesMap.set(company.id, company);
-                        });
-                        
-                        // Process products data
-                        allProducts = (products || []).map(product => {
-                            // Get associated companies from the map
-                            const companies = (product.product_companies || [])
-                                .map(pc => companiesMap.get(pc.company_id))
-                                .filter(Boolean);
-                            
-                            return {
-                                ...product,
-                                companies: companies,
-                                // Ensure images_id is an array
-                                images_id: Array.isArray(product.images_id) ? product.images_id : []
-                            };
-                        });
-                        
-                        filteredProducts = [...allProducts];
-                        
-                        // Hide skeleton and show products
-                        document.getElementById('skeletonLoading').style.display = 'none';
-                        renderProducts(filteredProducts);
-                        renderFilters();
-                        
-                    } catch (error) {
-                        console.error('Error loading products:', error);
-                        showErrorState();
-                    }
-                }, 500); // Minimum loading time for better UX
+                <!-- Description -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-file-alt"></i>
+                        Product Description
+                    </h2>
+                    <div class="product-description" id="productDescription"></div>
+                </div>
                 
-            } catch (error) {
-                console.error('Error in loadProducts:', error);
-                showErrorState();
-            }
-        }
-
-        // Show error state
-        function showErrorState() {
-            document.getElementById('skeletonLoading').style.display = 'none';
-            document.getElementById('productsGrid').innerHTML = `
-                <div class="empty-state">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h3>Error Loading Products</h3>
-                    <p>Please check your connection and try again.</p>
-                    <button onclick="loadProducts()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-                        <i class="fas fa-redo"></i> Retry
+                <!-- Specifications -->
+                <div class="section" id="specificationsSection"></div>
+                
+                <!-- Companies -->
+                <div class="section" id="companiesSection"></div>
+                
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn whatsapp-btn" onclick="orderOnWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Inquire on WhatsApp</span>
+                    </button>
+                    <button class="action-btn call-btn" onclick="callForInquiry()">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call for Details</span>
                     </button>
                 </div>
-            `;
-            document.getElementById('productsGrid').style.display = 'grid';
-            document.getElementById('resultsCount').textContent = 'Error loading products';
-        }
-
-        // Render products
-        function renderProducts(products) {
-            const grid = document.getElementById('productsGrid');
-            
-            // Clear existing carousel intervals
-            carouselIntervals.forEach(interval => clearInterval(interval));
-            carouselIntervals.clear();
-            
-            // Update results count
-            document.getElementById('resultsCount').textContent = 
-                `Showing ${products.length} product${products.length !== 1 ? 's' : ''}`;
-            
-            if (products.length === 0) {
-                grid.innerHTML = `
-                    <div class="empty-state">
-                        <i class="fas fa-search"></i>
-                        <h3>No Products Found</h3>
-                        <p>Try adjusting your search or filter criteria</p>
-                        <button onclick="clearAllFilters()" style="margin-top: 20px; padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
-                            <i class="fas fa-times"></i> Clear All Filters
-                        </button>
+                
+                <!-- Share Section -->
+                <div class="share-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-share-alt"></i>
+                        Share this Product
+                    </h3>
+                    <div class="share-buttons">
+                        <div class="share-btn share-facebook" onclick="shareOnFacebook()">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="share-btn share-twitter" onclick="shareOnTwitter()">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <div class="share-btn share-whatsapp" onclick="shareOnWhatsApp()">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="share-btn share-email" onclick="shareViaEmail()">
+                            <i class="fas fa-envelope"></i>
+                        </div>
                     </div>
-                `;
-                grid.style.display = 'grid';
-                return;
+                </div>
+            </div>
+        </div>
+        
+        <!-- Product Suggestions -->
+        <div class="suggestions-section" id="suggestionsSection">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-sun"></i>
+                    Related Solar Products
+                </h2>
+                <a href="products.html" class="view-all">
+                    View All Products
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="suggestions-grid" id="suggestionsGrid"></div>
+        </div>
+    </div>
+    
+    <!-- Error State -->
+    <div class="error-state" id="errorState" style="display: none;">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h2>Product Not Found</h2>
+        <p>The product you're looking for doesn't exist or has been removed.</p>
+        <button class="retry-btn" onclick="retryLoading()">
+            <i class="fas fa-redo"></i>
+            Try Again
+        </button>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Era Solar</h3>
+            <p>Bringing sunlight to your pocket with innovative solar solutions for a sustainable future.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="Services.html">Services</a>
+            <a href="Work.html">Our Work</a>
+            <a href="franchisee.html">Ask for Franchisee</a>
+            <a href="Contact.html">Contact Us</a>
+            <a href="about.html">About Us</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Our Services</h3>
+            <a href="#">Residential Solar</a>
+            <a href="#">Commercial Solar</a>
+            <a href="#">Solar Maintenance</a>
+            <a href="#">Solar Water Pumps</a>
+            <a href="#">Govt Subsidy Assistance</a>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Solar Energy Park, Sector 18, Gurugram, Haryana 122015</p>
+            <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+            <p><i class="fas fa-envelope"></i> info@erasolar.com</p>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        © 2023 Era Solar. All rights reserved.
+    </div>
+</footer>
+
+<!-- Image Zoom Modal -->
+<div class="image-modal" id="imageModal">
+    <div class="modal-close" onclick="closeImageModal()">
+        <i class="fas fa-times"></i>
+    </div>
+    <img class="modal-content" id="modalImage" alt="Enlarged Product Image">
+</div>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// Supabase Client
+const sb = supabase.createClient(
+    "https://mnkewhamntefyutzrnaw.supabase.co",
+    "sb_publishable_8wi_FUAoAhhnHRNsJg3u8w_bbPLiGHd"
+);
+
+let currentProduct = null;
+let allProducts = [];
+let loadingTimeout = null;
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+    });
+    
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+}
+
+// Get product ID from URL
+function getProductIdFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id');
+}
+
+// Format price
+function formatPrice(price) {
+    if (!price || price === 'NA') {
+        return '<span class="product-price na">Price on Request</span>';
+    }
+    return `₹${parseFloat(price).toLocaleString('en-IN')}`;
+}
+
+// Load product details
+async function loadProductDetails() {
+    const productId = getProductIdFromURL();
+    
+    if (!productId) {
+        showErrorState();
+        return;
+    }
+    
+    try {
+        // Show skeleton loading
+        document.getElementById('skeletonLoading').style.display = 'block';
+        document.getElementById('productDetails').style.display = 'none';
+        document.getElementById('errorState').style.display = 'none';
+        
+        // Clear any existing timeout
+        if (loadingTimeout) clearTimeout(loadingTimeout);
+        
+        // Set a timeout to show loading state for at least 500ms
+        loadingTimeout = setTimeout(async () => {
+            try {
+                // Fetch product with companies
+                const { data: product, error } = await sb
+                    .from('products')
+                    .select(`
+                        *,
+                        product_companies (
+                            company_id,
+                            companies (
+                                id,
+                                company_name,
+                                logo_image_id
+                            )
+                        )
+                    `)
+                    .eq('id', productId)
+                    .single();
+                    
+                if (error) throw error;
+                
+                if (!product) {
+                    showErrorState();
+                    return;
+                }
+                
+                currentProduct = product;
+                
+                // Update page title
+                document.title = `${product.title} - Era Solar`;
+                document.getElementById('breadcrumbProduct').textContent = product.title;
+                
+                // Fetch all products for suggestions
+                const { data: allProductsData } = await sb
+                    .from('products')
+                    .select('*')
+                    .neq('id', productId)
+                    .limit(8);
+                    
+                allProducts = allProductsData || [];
+                
+                // Hide skeleton and render content
+                document.getElementById('skeletonLoading').style.display = 'none';
+                renderProductDetails();
+                renderSuggestions();
+                
+                // Show content with animation
+                setTimeout(() => {
+                    document.getElementById('productDetails').style.display = 'block';
+                }, 100);
+                
+            } catch (error) {
+                console.error('Error loading product:', error);
+                showErrorState();
             }
-            
-            grid.innerHTML = '';
-            
-            // Create document fragment for better performance
-            const fragment = document.createDocumentFragment();
-            
-            products.forEach((product, index) => {
-                const card = document.createElement('div');
-                card.className = 'product-card';
-                card.style.animationDelay = `${index * 0.05}s`;
-                
-                // Product code badge
-                if (product.product_code) {
-                    const codeBadge = document.createElement('div');
-                    codeBadge.className = 'product-badge';
-                    codeBadge.innerHTML = `<i class="fas fa-tag"></i> ${product.product_code}`;
-                    card.appendChild(codeBadge);
-                }
-                
-                // Category badge (if available)
-                if (product.category) {
-                    const categoryBadge = document.createElement('div');
-                    categoryBadge.className = 'category-badge';
-                    categoryBadge.textContent = product.category;
-                    card.appendChild(categoryBadge);
-                }
-                
-                // Carousel
-                const carousel = document.createElement('div');
-                carousel.className = 'product-carousel';
-                
-                const images = product.images_id || [];
-                
-                if (images.length > 0) {
-                    // Preload first image
-                    const firstImg = new Image();
-                    firstImg.src = images[0];
-                    
-                    images.forEach((imageUrl, imgIndex) => {
-                        const img = document.createElement('img');
-                        img.src = imageUrl;
-                        img.alt = product.title;
-                        img.loading = imgIndex === 0 ? 'eager' : 'lazy';
-                        img.className = imgIndex === 0 ? 'active' : '';
-                        img.onerror = () => {
-                            // Show placeholder for broken images
-                            img.src = 'https://via.placeholder.com/300x200/FF9800/ffffff?text=Solar+Product';
-                        };
-                        carousel.appendChild(img);
-                    });
-                    
-                    // Add navigation dots if multiple images
-                    if (images.length > 1) {
-                        const dotsContainer = document.createElement('div');
-                        dotsContainer.className = 'carousel-dots';
-                        
-                        images.forEach((_, dotIndex) => {
-                            const dot = document.createElement('div');
-                            dot.className = `carousel-dot ${dotIndex === 0 ? 'active' : ''}`;
-                            dot.onclick = (e) => {
-                                e.stopPropagation();
-                                showImage(carousel, dotIndex);
-                            };
-                            dotsContainer.appendChild(dot);
-                        });
-                        
-                        carousel.appendChild(dotsContainer);
-                        
-                        // Auto-rotate carousel
-                        let currentIndex = 0;
-                        const interval = setInterval(() => {
-                            currentIndex = (currentIndex + 1) % images.length;
-                            showImage(carousel, currentIndex);
-                        }, 4000);
-                        
-                        carouselIntervals.set(card, interval);
-                    }
-                } else {
-                    // No image placeholder
-                    const placeholder = document.createElement('div');
-                    placeholder.style.cssText = `
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-                        color: var(--primary);
-                        font-size: 40px;
-                    `;
-                    placeholder.innerHTML = '<i class="fas fa-solar-panel"></i>';
-                    carousel.appendChild(placeholder);
-                }
-                
-                card.appendChild(carousel);
-                
-                // Product Info
-                const info = document.createElement('div');
-                info.className = 'product-info';
-                
-                info.innerHTML = `
-                    <div class="product-title">${product.title}</div>
-                    ${product.price && product.price !== 'NA' ? `<div class="product-price">${product.price}</div>` : ''}
-                    ${product.description ? `<div class="product-description">${product.description}</div>` : ''}
+        }, 500); // Minimum loading time for better UX
+        
+    } catch (error) {
+        console.error('Error in loadProductDetails:', error);
+        showErrorState();
+    }
+}
+
+// Render product details
+function renderProductDetails() {
+    if (!currentProduct) return;
+    
+    const product = currentProduct;
+    
+    // Set title
+    document.getElementById('productTitle').textContent = product.title;
+    
+    // Set price
+    const priceElement = document.getElementById('productPrice');
+    if (product.price && product.price !== 'NA') {
+        priceElement.innerHTML = formatPrice(product.price);
+        priceElement.className = 'product-price';
+    } else {
+        priceElement.innerHTML = '<span class="product-price na">Price on Request</span>';
+    }
+    
+    // Set description
+    const description = product.description || 'No detailed description available for this solar product.';
+    document.getElementById('productDescription').textContent = description;
+    
+    // Set meta info
+    const metaContainer = document.getElementById('productMeta');
+    metaContainer.innerHTML = '';
+    
+    if (product.product_code) {
+        const metaItem = document.createElement('div');
+        metaItem.className = 'meta-item';
+        metaItem.innerHTML = `
+            <i class="fas fa-tag"></i>
+            <span>Product Code: ${product.product_code}</span>
+        `;
+        metaContainer.appendChild(metaItem);
+    }
+    
+    if (product.category) {
+        const metaItem = document.createElement('div');
+        metaItem.className = 'meta-item';
+        metaItem.innerHTML = `
+            <i class="fas fa-solar-panel"></i>
+            <span>Category: ${product.category}</span>
+        `;
+        metaContainer.appendChild(metaItem);
+    }
+    
+    // Set specifications
+    const specsSection = document.getElementById('specificationsSection');
+    specsSection.innerHTML = '';
+    
+    // Additional specifications from product data
+    const additionalSpecs = {
+        'Material': product.material,
+        'Color': product.color,
+        'Size': product.size,
+        'Weight': product.weight,
+        'Dimensions': product.dimensions,
+        'Warranty': product.warranty,
+        'Power Output': product.power_output,
+        'Efficiency': product.efficiency,
+        'Voltage': product.voltage,
+        'Temperature Range': product.temperature_range
+    };
+    
+    let hasSpecs = false;
+    for (const [key, value] of Object.entries(additionalSpecs)) {
+        if (value) {
+            hasSpecs = true;
+            break;
+        }
+    }
+    
+    if (hasSpecs) {
+        specsSection.innerHTML = `
+            <h2 class="section-title">
+                <i class="fas fa-list-alt"></i>
+                Product Specifications
+            </h2>
+            <div class="specs-grid" id="specsGrid"></div>
+        `;
+        
+        const specsGrid = document.getElementById('specsGrid');
+        
+        for (const [key, value] of Object.entries(additionalSpecs)) {
+            if (value) {
+                const specItem = document.createElement('div');
+                specItem.className = 'spec-item';
+                specItem.innerHTML = `
+                    <div class="spec-label">${key}</div>
+                    <div class="spec-value">${value}</div>
                 `;
-                
-                // Company logos
-                if (product.companies && product.companies.length > 0) {
-                    const brandsContainer = document.createElement('div');
-                    brandsContainer.className = 'product-brands';
-                    
-                    product.companies.forEach(company => {
-                        if (company.logo_image_id) {
-                            const img = document.createElement('img');
-                            img.src = company.logo_image_id;
-                            img.alt = company.company_name;
-                            img.title = company.company_name;
-                            img.className = 'brand-logo';
-                            img.loading = 'lazy';
-                            img.onerror = () => {
-                                img.style.display = 'none';
-                            };
-                            brandsContainer.appendChild(img);
-                        }
-                    });
-                    
-                    if (brandsContainer.children.length > 0) {
-                        info.appendChild(brandsContainer);
-                    }
-                }
-                
-                card.appendChild(info);
-                
-                // Button Container
-                const actionsContainer = document.createElement('div');
-                actionsContainer.className = 'product-actions';
-                
-                // View Details Button
-                const viewDetailsBtn = document.createElement('button');
-                viewDetailsBtn.className = 'view-details-btn';
-                viewDetailsBtn.innerHTML = '<i class="fas fa-eye"></i> View Details';
-                viewDetailsBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    viewProductDetails(product.id);
-                };
-                
-                // WhatsApp Button
-                const whatsappBtn = document.createElement('button');
-                whatsappBtn.className = 'whatsapp-btn';
-                whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Enquire on WhatsApp';
-                whatsappBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    redirectWA(product);
-                };
-                
-                actionsContainer.appendChild(viewDetailsBtn);
-                actionsContainer.appendChild(whatsappBtn);
-                card.appendChild(actionsContainer);
-                
-                // Make entire card clickable for viewing details
-                card.onclick = () => {
-                    viewProductDetails(product.id);
-                };
-                
-                fragment.appendChild(card);
-            });
-            
-            grid.appendChild(fragment);
-            grid.style.display = 'grid';
+                specsGrid.appendChild(specItem);
+            }
         }
-
-        // Show specific image in carousel
-        function showImage(carousel, index) {
-            const images = carousel.querySelectorAll('img');
-            const dots = carousel.querySelectorAll('.carousel-dot');
-            
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-            
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === index);
-            });
-        }
-
-        // Render filters
-        function renderFilters() {
-            const filterButtons = document.getElementById('filterButtons');
-            filterButtons.innerHTML = '';
-            
-            // All products filter
-            const allFilter = document.createElement('button');
-            allFilter.className = 'filter-btn active';
-            allFilter.textContent = 'All Products';
-            allFilter.onclick = () => {
-                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                allFilter.classList.add('active');
-                closePriceFilter();
-                filteredProducts = [...allProducts];
-                renderProducts(filteredProducts);
-                document.getElementById('searchBox').value = '';
+    }
+    
+    // Set companies
+    const companiesSection = document.getElementById('companiesSection');
+    companiesSection.innerHTML = '';
+    
+    const companies = (product.product_companies || [])
+        .map(pc => pc.companies)
+        .filter(Boolean);
+    
+    if (companies.length > 0) {
+        companiesSection.innerHTML = `
+            <h2 class="section-title">
+                <i class="fas fa-industry"></i>
+                Available Brands
+            </h2>
+            <div class="company-logos" id="companyLogos"></div>
+        `;
+        
+        const companyLogos = document.getElementById('companyLogos');
+        
+        companies.forEach(company => {
+            if (company.logo_image_id) {
+                const logo = document.createElement('img');
+                logo.className = 'company-logo';
+                logo.src = company.logo_image_id;
+                logo.alt = company.company_name;
+                logo.title = company.company_name;
+                logo.loading = 'lazy';
+                logo.onerror = () => {
+                    logo.src = 'https://via.placeholder.com/60x60/FF9800/ffffff?text=' + 
+                              encodeURIComponent(company.company_name.charAt(0));
+                };
+                companyLogos.appendChild(logo);
+            }
+        });
+    }
+    
+    // Set images
+    const images = product.images_id || [];
+    const mainImage = document.getElementById('mainImage');
+    const thumbnailContainer = document.getElementById('thumbnailContainer');
+    thumbnailContainer.innerHTML = '';
+    
+    if (images.length > 0) {
+        mainImage.src = images[0];
+        mainImage.style.display = 'block';
+        mainImage.loading = 'eager';
+        
+        images.forEach((imageUrl, index) => {
+            const thumbnail = document.createElement('img');
+            thumbnail.className = `thumbnail ${index === 0 ? 'active' : ''}`;
+            thumbnail.src = imageUrl;
+            thumbnail.alt = `Product Image ${index + 1}`;
+            thumbnail.loading = index === 0 ? 'eager' : 'lazy';
+            thumbnail.onclick = () => {
+                mainImage.src = imageUrl;
+                document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+                thumbnail.classList.add('active');
+                mainImage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             };
-            filterButtons.appendChild(allFilter);
-            
-            // Get unique categories
-            const categories = [...new Set(allProducts
-                .map(p => p.category)
-                .filter(Boolean)
-                .sort())];
-            
-            categories.forEach(category => {
-                const filter = document.createElement('button');
-                filter.className = 'filter-btn';
-                filter.textContent = category.length > 15 ? category.substring(0, 15) + '...' : category;
-                filter.title = category;
-                filter.onclick = () => {
-                    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                    filter.classList.add('active');
-                    closePriceFilter();
-                    filteredProducts = allProducts.filter(p => p.category === category);
-                    renderProducts(filteredProducts);
-                };
-                filterButtons.appendChild(filter);
-            });
-        }
-
-        // Price filter toggle
-        document.getElementById('priceFilterBtn').addEventListener('click', () => {
-            const panel = document.getElementById('priceFilterPanel');
-            isPriceFilterOpen = !isPriceFilterOpen;
-            
-            if (isPriceFilterOpen) {
-                panel.classList.add('active');
-                document.getElementById('priceFilterBtn').style.borderColor = 'var(--primary)';
-                document.getElementById('priceFilterBtn').style.color = 'var(--primary)';
-            } else {
-                panel.classList.remove('active');
-                document.getElementById('priceFilterBtn').style.borderColor = '';
-                document.getElementById('priceFilterBtn').style.color = '';
-            }
+            thumbnail.onerror = () => {
+                thumbnail.src = 'https://via.placeholder.com/80x80/FF9800/ffffff?text=Image';
+            };
+            thumbnailContainer.appendChild(thumbnail);
         });
+    } else {
+        mainImage.src = 'https://via.placeholder.com/500x400/FF9800/ffffff?text=Solar+Product';
+        mainImage.style.display = 'block';
+    }
+}
 
-        function closePriceFilter() {
-            const panel = document.getElementById('priceFilterPanel');
-            panel.classList.remove('active');
-            isPriceFilterOpen = false;
-            document.getElementById('priceFilterBtn').style.borderColor = '';
-            document.getElementById('priceFilterBtn').style.color = '';
+// Render suggestions
+function renderSuggestions() {
+    const suggestionsGrid = document.getElementById('suggestionsGrid');
+    suggestionsGrid.innerHTML = '';
+    
+    if (allProducts.length === 0) {
+        document.getElementById('suggestionsSection').style.display = 'none';
+        return;
+    }
+    
+    allProducts.slice(0, 4).forEach(product => {
+        const imageUrl = product.images_id && product.images_id.length > 0 
+            ? product.images_id[0] 
+            : 'https://via.placeholder.com/300x200/FF9800/ffffff?text=Solar+Product';
+        
+        const suggestionCard = document.createElement('div');
+        suggestionCard.className = 'suggestion-card';
+        suggestionCard.onclick = () => {
+            window.location.href = `product.html?id=${product.id}`;
+        };
+        
+        suggestionCard.innerHTML = `
+            <img src="${imageUrl}" alt="${product.title}" class="suggestion-image" 
+                 onerror="this.src='https://via.placeholder.com/300x200/FF9800/ffffff?text=Solar+Product'"
+                 loading="lazy">
+            <div class="suggestion-info">
+                <h3 class="suggestion-title">${product.title}</h3>
+                <div class="suggestion-price">${product.price && product.price !== 'NA' ? `₹${product.price}` : 'Price on Request'}</div>
+                <button class="suggestion-btn" onclick="event.stopPropagation(); window.location.href='product.html?id=${product.id}'">
+                    <i class="fas fa-eye"></i> View Details
+                </button>
+            </div>
+        `;
+        
+        suggestionsGrid.appendChild(suggestionCard);
+    });
+}
+
+// Show error state
+function showErrorState() {
+    document.getElementById('skeletonLoading').style.display = 'none';
+    document.getElementById('productDetails').style.display = 'none';
+    document.getElementById('errorState').style.display = 'block';
+}
+
+// Retry loading
+function retryLoading() {
+    document.getElementById('errorState').style.display = 'none';
+    loadProductDetails();
+}
+
+// Image modal functions
+function openImageModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = src;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeImageModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Share functions
+function shareOnFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+}
+
+function shareOnTwitter() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(currentProduct?.title || 'Check out this solar product from Era Solar!');
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+}
+
+function shareOnWhatsApp() {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(`Check out ${currentProduct?.title || 'this solar product'} from Era Solar!`);
+    window.open(`https://wa.me/?text=${text}%0A${url}`, '_blank');
+}
+
+function shareViaEmail() {
+    const subject = encodeURIComponent(currentProduct?.title || 'Solar Product Details - Era Solar');
+    const body = encodeURIComponent(`Check out this solar product from Era Solar: ${window.location.href}`);
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
+}
+
+// Order functions
+function orderOnWhatsApp() {
+    if (!currentProduct) return;
+    
+    let message = `Hi Era Solar,%0A%0A`;
+    message += `I'm interested in your solar product: *${encodeURIComponent(currentProduct.title)}*%0A`;
+    
+    if (currentProduct.product_code) {
+        message += `Product Code: ${encodeURIComponent(currentProduct.product_code)}%0A`;
+    }
+    
+    if (currentProduct.price && currentProduct.price !== 'NA') {
+        message += `Price: ₹${encodeURIComponent(currentProduct.price)}%0A`;
+    }
+    
+    if (currentProduct.description) {
+        const shortDesc = currentProduct.description.length > 100 
+            ? currentProduct.description.substring(0, 100) + '...' 
+            : currentProduct.description;
+        message += `Description: ${encodeURIComponent(shortDesc)}%0A`;
+    }
+    
+    message += `%0APlease provide more details about installation, warranty, and delivery.`;
+    
+    window.open(`https://wa.me/919511864107?text=${message}`, '_blank');
+}
+
+function callForInquiry() {
+    window.location.href = 'tel:+919511864107';
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadProductDetails();
+    
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeImageModal();
         }
-
-        // Apply price filter
-        function applyPriceFilter() {
-            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
-            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
-            
-            filteredProducts = allProducts.filter(product => {
-                if (product.price === 'NA' || !product.price) return false;
-                const price = parseFloat(product.price);
-                return price >= minPrice && price <= maxPrice;
-            });
-            
-            renderProducts(filteredProducts);
-            closePriceFilter();
+    });
+    
+    // Close modal when clicking outside image
+    document.getElementById('imageModal').addEventListener('click', (e) => {
+        if (e.target.id === 'imageModal') {
+            closeImageModal();
         }
+    });
+});
 
-        // Clear price filter
-        function clearPriceFilter() {
-            document.getElementById('minPrice').value = '';
-            document.getElementById('maxPrice').value = '';
-            filteredProducts = [...allProducts];
-            renderProducts(filteredProducts);
-            closePriceFilter();
-        }
-
-        // Clear all filters
-        function clearAllFilters() {
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.filter-btn')[0].classList.add('active');
-            document.getElementById('searchBox').value = '';
-            clearPriceFilter();
-            filteredProducts = [...allProducts];
-            renderProducts(filteredProducts);
-        }
-
-        // View product details
-        function viewProductDetails(productId) {
-            window.location.href = `product.html?id=${productId}`;
-        }
-
-        // WhatsApp redirect
-        function redirectWA(product) {
-            let message = `Hi Era Solar,%0A%0A`;
-            message += `I'm interested in: *${encodeURIComponent(product.title)}*%0A`;
-            
-            if (product.product_code) {
-                message += `Product Code: ${encodeURIComponent(product.product_code)}%0A`;
-            }
-            
-            if (product.price && product.price !== 'NA') {
-                message += `Price: ₹${encodeURIComponent(product.price)}%0A`;
-            }
-            
-            if (product.companies && product.companies.length > 0) {
-                const companyNames = product.companies.map(c => c.company_name).join(', ');
-                message += `Brand(s): ${encodeURIComponent(companyNames)}%0A`;
-            }
-            
-            message += `%0APlease provide more details about this product.`;
-            
-            const whatsappUrl = `https://wa.me/919511864107?text=${message}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Search functionality
-        function setupSearch() {
-            const searchBox = document.getElementById('searchBox');
-            let searchTimeout;
-            
-            searchBox.addEventListener('input', (e) => {
-                clearTimeout(searchTimeout);
-                
-                searchTimeout = setTimeout(() => {
-                    const searchTerm = e.target.value.toLowerCase().trim();
-                    
-                    if (searchTerm === '') {
-                        filteredProducts = [...allProducts];
-                        renderProducts(filteredProducts);
-                        return;
-                    }
-                    
-                    filteredProducts = allProducts.filter(product => 
-                        product.title.toLowerCase().includes(searchTerm) ||
-                        (product.description && product.description.toLowerCase().includes(searchTerm)) ||
-                        (product.product_code && product.product_code.toLowerCase().includes(searchTerm)) ||
-                        (product.category && product.category.toLowerCase().includes(searchTerm)) ||
-                        (product.companies && product.companies.some(c => 
-                            c.company_name.toLowerCase().includes(searchTerm)
-                        ))
-                    );
-                    
-                    renderProducts(filteredProducts);
-                }, 300); // Debounce search by 300ms
-            });
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            loadProducts();
-            setupSearch();
-            
-            // Close price filter when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('#priceFilterBtn') && !e.target.closest('#priceFilterPanel') && isPriceFilterOpen) {
-                    closePriceFilter();
-                }
-            });
-        });
-
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', () => {
-            carouselIntervals.forEach(interval => clearInterval(interval));
-            if (loadingTimeout) clearTimeout(loadingTimeout);
-        });
-    </script>
+// Cleanup on page unload
+window.addEventListener('beforeunload', () => {
+    if (loadingTimeout) clearTimeout(loadingTimeout);
+});
+</script>
 </body>
 </html>
