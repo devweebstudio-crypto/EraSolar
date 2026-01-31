@@ -1985,7 +1985,7 @@
     </section>
 
     <!-- Our Products Section (New - Merged from our products.htm) -->
-    <section class="our-products-section" id="products">
+    <section class="our-products-section" id="our-products">
         <div class="section-title">
             <h2>Our Products</h2>
             <p>Explore our premium range of solar products from top brands</p>
@@ -2136,7 +2136,7 @@
                     <div class="impact-label">MegaWatts Generated</div>
                 </div>
                 
-                <div class="impact-stat">
+                .impact-stat">
                     <div class="impact-number" id="co2Count">0</div>
                     <div class="impact-unit">T</div>
                     <div class="impact-label">Tons of CO₂ Reduced</div>
@@ -2624,7 +2624,7 @@
                 if (!data || data.length === 0) {
                     // Add placeholder products if no data
                     simpleTrack.innerHTML = `
-                        <div class="simple-card">
+                        <div class="simple-card" onclick="openProduct('8')">
                             <div class="image-box">
                                 <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
                             </div>
@@ -2634,7 +2634,7 @@
                                 <img src="https://via.placeholder.com/35x35?text=Brand">
                             </div>
                         </div>
-                        <div class="simple-card">
+                        <div class="simple-card" onclick="openProduct('9')">
                             <div class="image-box">
                                 <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
                             </div>
@@ -2644,7 +2644,7 @@
                                 <img src="https://via.placeholder.com/35x35?text=Brand">
                             </div>
                         </div>
-                        <div class="simple-card">
+                        <div class="simple-card" onclick="openProduct('10')">
                             <div class="image-box">
                                 <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
                             </div>
@@ -2714,13 +2714,14 @@
             }
         }
         
-        // Open product function
+        // Open product function - UPDATED to use hash fragment instead of query parameter
         function openProduct(id) {
             const simpleTrack = document.getElementById("simpleTrack");
             if (simpleTrack) {
                 simpleTrack.style.animationPlayState = "paused";
                 setTimeout(() => {
-                    window.location.href = `products.html?product=${id}`;
+                    // Navigate to Products.html with hash fragment instead of query parameter
+                    window.location.href = `Products.html#product-${id}`;
                 }, 150);
             }
         }
