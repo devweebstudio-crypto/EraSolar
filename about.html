@@ -590,10 +590,112 @@
             z-index: 1;
         }
 
-        /* Values Section (Now after Team) */
+        /* Certificates Section - NOW ABOVE VALUES */
+        .certificates-section {
+            padding: 100px 5%;
+            background: white;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid #eee;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .certificate-image {
+            height: 280px;
+            overflow: hidden;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .certificate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            cursor: pointer;
+        }
+
+        .certificate-card:hover .certificate-image img {
+            transform: scale(1.05);
+        }
+
+        .certificate-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certificate-content h3 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .certificate-content p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .certificate-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .certificate-footer .issuer {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .certificate-footer .issuer i {
+            font-size: 1.1rem;
+        }
+
+        .certificate-footer .validity {
+            color: #777;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        /* Values Section (Now after Certificates) */
         .values-section {
             padding: 100px 5%;
-            background-color: white;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .values-grid {
@@ -652,6 +754,94 @@
             color: #666;
             font-size: 0.95rem;
             line-height: 1.6;
+        }
+
+        /* Certificate Modal */
+        .certificate-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1100;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .certificate-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-modal:hover {
+            background: var(--primary);
+            transform: rotate(90deg);
+        }
+
+        .zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .zoom-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .zoom-btn:hover {
+            background: var(--primary);
+            transform: scale(1.1);
         }
 
         /* CTA Section */
@@ -859,6 +1049,11 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
+            .certificates-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            
             .director-card {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -932,12 +1127,21 @@
                 font-size: 2rem;
             }
             
-            .mission-vision, .story-section, .values-section, .team-section {
+            .mission-vision, .story-section, .values-section, .team-section, .certificates-section {
                 padding: 60px 5%;
             }
             
             .mv-card {
                 padding: 30px 20px;
+            }
+            
+            .certificate-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .certificate-image {
+                height: 250px;
             }
             
             .cta-button {
@@ -977,6 +1181,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .about-hero h1 {
                 font-size: 1.8rem;
             }
@@ -987,6 +1195,14 @@
             
             .story-image {
                 height: 300px;
+            }
+            
+            .certificate-image {
+                height: 220px;
+            }
+            
+            .certificate-content {
+                padding: 20px;
             }
             
             .member-image {
@@ -1244,6 +1460,47 @@
                 </div>
             </div>
             
+            <!-- New Team Member: Kartik Ghode -->
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/Bh8cf1Q/Kartik-Ghode.png" 
+                         data-src="https://i.ibb.co/Bh8cf1Q/Kartik-Ghode.png" 
+                         alt="Kartik Ghode - Digital Marketing">
+                </div>
+                <div class="member-info">
+                    <h3>Kartik Ghode</h3>
+                    <p>Digital Marketing Executive</p>
+                    <div class="bio">
+                        1.5+ years experience in digital marketing for renewable energy sector. 
+                        Specializes in social media marketing and SEO optimization for solar solutions. 
+                        Creates engaging content to educate customers about solar benefits.
+                    </div>
+                    <div class="certifications" style="margin-top: 10px;">
+                        <span class="cert-badge" style="background: rgba(255,152,0,0.1); color: #666; padding: 5px 10px; font-size: 0.8rem;">
+                            <i class="fas fa-certificate" style="color: var(--primary);"></i> Google Ads Certified
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New Team Member: Kalyan Shinde -->
+            <div class="team-member professional-card">
+                <div class="member-image">
+                    <img src="https://i.ibb.co/hRM3qQ5Z/Kalyan-shinde.jpg" 
+                         data-src="https://i.ibb.co/hRM3qQ5Z/Kalyan-shinde.jpg" 
+                         alt="Kalyan Shinde - Sales and Customer Relationship">
+                </div>
+                <div class="member-info">
+                    <h3>Kalyan Shinde</h3>
+                    <p>Sales & Customer Relationship Executive</p>
+                    <div class="bio">
+                        2 years experience in solar sales and customer relationship management. 
+                        Focuses on client satisfaction and after-sales support. 
+                        Skilled in understanding customer energy needs and providing tailored solar solutions.
+                    </div>
+                </div>
+            </div>
+            
             <div class="team-member professional-card">
                 <div class="member-image">
                     <img src="https://i.ibb.co/wFFpPygN/Sales-head.png" 
@@ -1326,7 +1583,99 @@
         </div>
     </section>
 
-    <!-- Values Section (Now after Team Section) -->
+    <!-- Certificates Section - NOW ABOVE VALUES -->
+    <section class="certificates-section">
+        <div class="section-title">
+            <h2>Our Certifications & Recognitions</h2>
+            <p>Official accreditations that validate our expertise and commitment to quality</p>
+        </div>
+        
+        <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="https://i.ibb.co/xSshhG2w/Authorized-Dealer-of-Sunsathi-Solar-Inverters.jpg" 
+                         data-src="https://i.ibb.co/xSshhG2w/Authorized-Dealer-of-Sunsathi-Solar-Inverters.jpg" 
+                         alt="Authorized Dealer of Sunsathi Solar Inverters Certificate"
+                         class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Authorized Dealer - Sunsathi Solar Inverters</h3>
+                    <p>
+                        This certificate officially certifies that Rushikesh Industries Pvt. Ltd. is an Authorized Dealer of Sunsathi Solar Inverters.
+                        It authorizes the company to operate as a dealer in the Phulambri, Chh. Sambhajinagar, Maharashtra region for the period 2025–2026.
+                        The certificate is authorized and issued by Sunsathi Solar Pvt. Ltd., recognized as India's Leading Solar Inverter Manufacturer.
+                    </p>
+                    <div class="certificate-footer">
+                        <div class="issuer">
+                            <i class="fas fa-building"></i> Issued by: Sunsathi Solar Pvt. Ltd.
+                        </div>
+                        <div class="validity">
+                            <i class="far fa-calendar-alt"></i> Valid: 2025 - 2026
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 2 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="https://i.ibb.co/HLDr2F44/certificate-is-issued-by-ECE-India-Energies-Limited-ECE-Solar.jpg" 
+                         data-src="https://i.ibb.co/HLDr2F44/certificate-is-issued-by-ECE-India-Energies-Limited-ECE-Solar.jpg" 
+                         alt="ECE Solar Channel Partner Certificate"
+                         class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>ECE Channel Partner Certification</h3>
+                    <p>
+                        This certificate is issued by ECE India Energies Limited (ECE Solar) and officially recognizes 
+                        Rushikesh Industries Pvt. Ltd. as an ECE Channel Partner (ECP). The certification is awarded in 
+                        recognition of the company's expertise in solar installation and strong technical knowledge within 
+                        the solar energy industry. Through this certificate, Rushikesh Industries Pvt. Ltd. is authorized 
+                        to operate as an ECE Channel Partner for Taluka Fulambari, District Chhatrapati Sambhajinagar, Maharashtra.
+                    </p>
+                    <div class="certificate-footer">
+                        <div class="issuer">
+                            <i class="fas fa-building"></i> Issued by: ECE India Energies Limited
+                        </div>
+                        <div class="validity">
+                            <i class="far fa-calendar-alt"></i> Valid: September 2025 - September 2028
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificate 3 -->
+            <div class="certificate-card">
+                <div class="certificate-image">
+                    <img src="https://i.ibb.co/hFNh6JzQ/issued-by-the-Government-of-India-through-the-Department-for-Promotion-of-Industry-and-Internal-Tra.jpg" 
+                         data-src="https://i.ibb.co/hFNh6JzQ/issued-by-the-Government-of-India-through-the-Department-for-Promotion-of-Industry-and-Internal-Tra.jpg" 
+                         alt="Government of India Startup Recognition Certificate"
+                         class="certificate-img">
+                </div>
+                <div class="certificate-content">
+                    <h3>Government of India Startup Recognition</h3>
+                    <p>
+                        This Certificate of Recognition is issued by the Government of India, through the Department for 
+                        Promotion of Industry and Internal Trade (DPIIT) under the Ministry of Commerce & Industry. 
+                        The certificate officially recognizes Rushikesh Industries Private Limited as a Startup, incorporated 
+                        as a Private Limited Company on 07 March 2024. The company is recognized for operating in the 
+                        Renewable Energy and Renewable Solar Energy sector, as self-certified under the Startup India initiative.
+                    </p>
+                    <div class="certificate-footer">
+                        <div class="issuer">
+                            <i class="fas fa-landmark"></i> Issued by: Government of India - DPIIT
+                        </div>
+                        <div class="validity">
+                            <i class="fas fa-award"></i> Status: Recognized Startup
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section (Now after Certificates) -->
     <section class="values-section">
         <div class="section-title">
             <h2>Our Core Values</h2>
@@ -1383,6 +1732,27 @@
             </div>
         </div>
     </section>
+
+    <!-- Certificate Modal -->
+    <div class="certificate-modal" id="certificateModal">
+        <button class="close-modal" id="closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Certificate Preview">
+        </div>
+        <div class="zoom-controls">
+            <button class="zoom-btn" id="zoomIn">
+                <i class="fas fa-search-plus"></i>
+            </button>
+            <button class="zoom-btn" id="zoomOut">
+                <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="zoom-btn" id="resetZoom">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
@@ -1509,7 +1879,7 @@
         }, observerOptions);
         
         // Observe elements for scroll animations
-        document.querySelectorAll('.mv-card, .value-card, .team-member, .professional-card, .director-card').forEach(el => {
+        document.querySelectorAll('.mv-card, .value-card, .team-member, .professional-card, .director-card, .certificate-card').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -1581,9 +1951,83 @@
             });
         }
         
+        // Certificate card hover effect
+        document.querySelectorAll('.certificate-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 25px 50px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'var(--shadow)';
+            });
+        });
+        
+        // Certificate Modal functionality
+        const certificateModal = document.getElementById('certificateModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeModal = document.getElementById('closeModal');
+        const zoomIn = document.getElementById('zoomIn');
+        const zoomOut = document.getElementById('zoomOut');
+        const resetZoom = document.getElementById('resetZoom');
+        
+        let currentScale = 1;
+        
+        // Open modal when clicking on certificate images
+        document.querySelectorAll('.certificate-img').forEach(img => {
+            img.addEventListener('click', function() {
+                modalImage.src = this.src;
+                modalImage.alt = this.alt;
+                currentScale = 1;
+                modalImage.style.transform = `scale(${currentScale})`;
+                modalImage.style.transition = 'transform 0.3s ease';
+                certificateModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            certificateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close modal when clicking outside image
+        certificateModal.addEventListener('click', (e) => {
+            if (e.target === certificateModal) {
+                certificateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
+                certificateModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Zoom functionality
+        zoomIn.addEventListener('click', () => {
+            currentScale = Math.min(currentScale + 0.2, 3);
+            modalImage.style.transform = `scale(${currentScale})`;
+        });
+        
+        zoomOut.addEventListener('click', () => {
+            currentScale = Math.max(currentScale - 0.2, 0.5);
+            modalImage.style.transform = `scale(${currentScale})`;
+        });
+        
+        resetZoom.addEventListener('click', () => {
+            currentScale = 1;
+            modalImage.style.transform = `scale(${currentScale})`;
+        });
+        
         // Improved Image Loading with Fallback
         function loadImagesWithFallback() {
-            const images = document.querySelectorAll('.member-image img, .director-image img');
+            const images = document.querySelectorAll('.member-image img, .director-image img, .certificate-image img');
             
             images.forEach(img => {
                 // Store original source
@@ -1618,11 +2062,17 @@
                     placeholder.className = 'member-placeholder';
                     
                     // Get name from alt text or parent info
-                    const altText = img.alt || 'Team Member';
-                    const nameMatch = altText.match(/([^-]+)/);
-                    const displayName = nameMatch ? nameMatch[1].trim() : 'Team Member';
+                    const altText = img.alt || 'Certificate';
+                    let displayText = 'Certificate';
                     
-                    placeholder.innerHTML = `<div style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">${displayName}</div>
+                    if (img.classList.contains('certificate-img')) {
+                        displayText = 'Certificate Image';
+                    } else {
+                        const nameMatch = altText.match(/([^-]+)/);
+                        displayText = nameMatch ? nameMatch[1].trim() : 'Team Member';
+                    }
+                    
+                    placeholder.innerHTML = `<div style="font-size: 16px; font-weight: 600; margin-bottom: 5px;">${displayText}</div>
                                            <div style="font-size: 12px;">Image loading...</div>`;
                     
                     img.parentElement.appendChild(placeholder);
@@ -1662,12 +2112,17 @@
                 'https://i.ibb.co/BK7BVt7k/Amol-Bambarde-Franchisee-manager.png',
                 'https://i.ibb.co/dJsTkgVP/Pramod-jadhav-Marketing.png',
                 'https://i.ibb.co/jZDhdLp1/Chetan-shinde-Human-Resourec.png',
+                'https://i.ibb.co/Bh8cf1Q/Kartik-Ghode.png',
+                'https://i.ibb.co/hRM3qQ5Z/Kalyan-shinde.jpg',
                 'https://i.ibb.co/wFFpPygN/Sales-head.png',
                 'https://i.ibb.co/S4mqC9GC/Sales-Executive.png',
                 'https://i.ibb.co/mVf4N58R/Suresh-mhaske.png',
                 'https://i.ibb.co/tp2y61Pz/MSEB-Work.png',
                 'https://i.ibb.co/3mZr960J/Nation-Portal-Work.png',
-                'https://i.ibb.co/8gRDxtHq/Rushikesh-Bele-Director.jpg'
+                'https://i.ibb.co/8gRDxtHq/Rushikesh-Bele-Director.jpg',
+                'https://i.ibb.co/xSshhG2w/Authorized-Dealer-of-Sunsathi-Solar-Inverters.jpg',
+                'https://i.ibb.co/HLDr2F44/certificate-is-issued-by-ECE-India-Energies-Limited-ECE-Solar.jpg',
+                'https://i.ibb.co/hFNh6JzQ/issued-by-the-Government-of-India-through-the-Department-for-Promotion-of-Industry-and-Internal-Tra.jpg'
             ];
             
             imageUrls.forEach(url => {
@@ -1693,7 +2148,10 @@
                 `;
                 const memberInfo = pramodCard.querySelector('.member-info');
                 if (memberInfo) {
-                    memberInfo.appendChild(certDiv);
+                    const existingCert = memberInfo.querySelector('.certifications');
+                    if (!existingCert) {
+                        memberInfo.appendChild(certDiv);
+                    }
                 }
             }
         });
