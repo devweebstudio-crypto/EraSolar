@@ -33,6 +33,13 @@
             --shadow: 0 4px 20px rgba(0,0,0,0.08);
             --gradient: linear-gradient(135deg, #FF9800 0%, #FF5722 100%);
             --gradient-blue: linear-gradient(135deg, #1A237E 0%, #2196F3 100%);
+            /* New Vars for Minimal Product Section */
+            --white: #FFFFFF;
+            --border: #E5E7EB;
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.04);
+            --shadow-hover: 0 20px 40px rgba(0,0,0,0.08);
+            --radius: 8px;
+            --text-gray: #4B5563;
         }
 
         body {
@@ -349,120 +356,131 @@
             font-weight: 400;
         }
 
-        /* Our Products Section (New - Merged from our products.htm) */
+        /* --- PRODUCTS SECTION (UPDATED: PROFESSIONAL & MINIMALISTIC) --- */
         .our-products-section {
-            padding: 80px 5%;
-            background-color: #ffffff;
-            position: relative;
-        }
-
-        .simple-products {
-            padding: 40px 0;
+            padding: 100px 5%;
+            background-color: var(--white);
         }
 
         .simple-products h2 {
             text-align: center;
-            font-size: 28px;
-            margin-bottom: 24px;
-            color: var(--dark);
+            font-size: 2.2rem;
+            color: #111827; /* Darker, cleaner */
             font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+        
+        /* Subtitle for products */
+        .simple-products p {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 60px;
         }
 
         .simple-slider {
             overflow: hidden;
-            cursor: grab;
             padding: 20px 0;
+            cursor: grab;
         }
 
         .simple-track {
             display: flex;
             gap: 30px;
-            animation: simpleScroll 35s linear infinite;
             width: max-content;
+            animation: simpleScroll 40s linear infinite;
         }
+        
+        .simple-slider:hover .simple-track { animation-play-state: paused; }
 
-        .simple-slider:hover .simple-track {
-            animation-play-state: paused;
-        }
-
+        /* Updated Product Card Style - Professional Box */
         .simple-card {
-            min-width: 300px;
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 20px;
-            text-align: center;
-            flex-shrink: 0;
-            cursor: pointer;
-            box-shadow: var(--shadow);
+            min-width: 280px; /* Standardized width */
+            width: 280px;
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
             transition: all 0.3s ease;
-            border: 1px solid #eee;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            box-shadow: none; /* Removed heavy shadow by default */
         }
 
         .simple-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
         }
 
         .image-box {
-            height: 200px;
-            background: #f8f8f8;
-            border-radius: 12px;
+            height: 240px; /* Taller image area */
+            background: #fff; /* White background */
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 15px;
-            overflow: hidden;
+            padding: 30px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 0; /* Reset */
         }
 
         .image-box img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            transform: scale(1.05);
-            transition: transform 0.5s ease;
+            transition: transform 0.4s ease;
         }
 
-        .simple-card:hover .image-box img {
-            transform: scale(1.1);
+        .simple-card:hover .image-box img { transform: scale(1.08); }
+
+        .card-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: left; /* Align text left for pro feel */
         }
 
         .simple-card h4 {
-            font-size: 18px;
-            margin: 12px 0 8px;
-            color: var(--dark);
+            font-size: 1rem;
+            color: #111827;
             font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            margin-top: 0;
         }
 
         .simple-price {
             color: var(--primary);
             font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
         .simple-brands {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 12px;
             display: flex;
-            justify-content: center;
             gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
+            margin-top: auto;
+            justify-content: flex-start; /* Left align brands */
         }
 
         .simple-brands img {
-            width: 35px;
-            height: 35px;
-            object-fit: contain;
-            background: #fff;
-            border-radius: 8px;
-            padding: 5px;
-            border: 1px solid #eee;
-            transition: all 0.3s ease;
+            height: 25px;
+            width: auto;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+            border: none;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
         }
-
-        .simple-brands img:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+        .simple-card:hover .simple-brands img { opacity: 1; }
 
         @keyframes simpleScroll {
             from { transform: translateX(0); }
@@ -1892,7 +1910,6 @@
     </style>
 </head>
 <body>
-    <!-- Header with updated navigation -->
     <header>
         <div class="logo-container">
             <img src="https://i.ibb.co/gM4s2pnD/Gemini-Generated-Image-3l0s7k3l0s7k3l0s-removebg-preview.jpg" alt="Era Solar Logo">
@@ -1914,7 +1931,6 @@
         </nav>
     </header>
 
-    <!-- Eco-friendly words banner -->
     <div class="eco-banner">
         <div class="eco-words-track">
             <div class="eco-word"><i class="fas fa-sun"></i> Era Solar</div>
@@ -1925,7 +1941,6 @@
             <div class="eco-word"><i class="fas fa-rupee-sign"></i> Affordable Solar</div>
             <div class="eco-word"><i class="fas fa-globe"></i> Sustainable Future</div>
             <div class="eco-word"><i class="fas fa-tree"></i> Green Energy</div>
-            <!-- Duplicate for seamless animation -->
             <div class="eco-word"><i class="fas fa-sun"></i> Era Solar</div>
             <div class="eco-word"><i class="fas fa-leaf"></i> Best Solar</div>
             <div class="eco-word"><i class="fas fa-recycle"></i> Eco-Friendly</div>
@@ -1937,11 +1952,9 @@
         </div>
     </div>
 
-    <!-- Hero Section with Visible Images -->
     <section class="hero-section" id="home">
         <div class="slideshow-container" id="slideshow">
-            <!-- All 6 images added here -->
-        </div>
+            </div>
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
@@ -1953,8 +1966,7 @@
             </div>
             
             <div class="vision-container" id="visionContainer">
-                <!-- Vision texts added by JavaScript -->
-            </div>
+                </div>
             
             <div class="stats-container">
                 <div class="stat-card">
@@ -1984,11 +1996,10 @@
         </div>
     </section>
 
-    <!-- Our Products Section (New - Merged from our products.htm) -->
     <section class="our-products-section" id="our-products">
         <div class="section-title">
-            <h2>Our Products</h2>
-            <p>Explore our premium range of solar products from top brands</p>
+            <h2>Premium Products</h2>
+            <p>High-efficiency components from world-class manufacturers</p>
         </div>
         
         <div class="simple-products">
@@ -1998,7 +2009,6 @@
         </div>
     </section>
 
-    <!-- Our Services Section -->
     <section class="home-services-section">
         <div class="section-title">
             <h2>Our Services</h2>
@@ -2007,18 +2017,15 @@
         
         <div class="services-slider-container">
             <div class="services-slider" id="servicesSlider">
-                <!-- Service cards will be added by JavaScript -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Ask for Franchisee Section - UPDATED with earning highlight -->
     <section class="franchisee-section">
         <div class="franchisee-content">
             <h2>Join the Solar Revolution</h2>
             <p>Become a part of India's fastest growing solar energy company. Start your own Era Solar franchise and contribute to a sustainable future while building a profitable business.</p>
             
-            <!-- New earning highlight section -->
             <div class="earning-highlight">
                 <h3>
                     <i class="fas fa-rupee-sign"></i>
@@ -2033,7 +2040,6 @@
         </div>
     </section>
 
-    <!-- Floating Inquiry Form Section -->
     <section class="floating-inquiry-section">
         <div class="floating-inquiry-content">
             <div class="floating-inquiry-text">
@@ -2103,7 +2109,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section" id="services">
         <div class="section-title">
             <h2>Our Solar Solutions</h2>
@@ -2111,11 +2116,9 @@
         </div>
         
         <div class="services-container" id="servicesContainer">
-            <!-- Services added by JavaScript -->
-        </div>
+            </div>
     </section>
 
-    <!-- Impact Section -->
     <section class="impact-section" id="impact">
         <div class="section-title">
             <h2>Our Impact in Numbers</h2>
@@ -2136,7 +2139,7 @@
                     <div class="impact-label">MegaWatts Generated</div>
                 </div>
                 
-                .impact-stat">
+                <div class="impact-stat">
                     <div class="impact-number" id="co2Count">0</div>
                     <div class="impact-unit">T</div>
                     <div class="impact-label">Tons of CO₂ Reduced</div>
@@ -2151,7 +2154,6 @@
         </div>
     </section>
 
-    <!-- Subsidy Section -->
     <section class="subsidy-section">
         <div class="subsidy-content">
             <h2>Get Upto 50% Govt Subsidy</h2>
@@ -2162,7 +2164,6 @@
         </div>
     </section>
 
-    <!-- Contact Section with UPDATED Quick Enquiry Form -->
     <section class="contact-section" id="contact">
         <div class="section-title">
             <h2>Contact Us</h2>
@@ -2252,7 +2253,6 @@
         </div>
     </section>
 
-    <!-- Modal for Form -->
     <div class="modal-overlay" id="modalOverlay">
         <div class="modal">
             <div class="modal-header">
@@ -2265,12 +2265,10 @@
             
             <div class="modal-body">
                 <div class="form-progress" id="formProgress">
-                    <!-- Progress steps added by JavaScript -->
-                </div>
+                    </div>
                 
                 <div class="form-box">
                     <form id="enquiryForm">
-                        <!-- Step 1: Name -->
                         <div class="form-step active" id="step1">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
@@ -2284,7 +2282,6 @@
                             </div>
                         </div>
                         
-                        <!-- Step 2: Mobile -->
                         <div class="form-step" id="step2">
                             <div class="form-group">
                                 <label for="mobile">Mobile Number</label>
@@ -2300,7 +2297,6 @@
                             </div>
                         </div>
                         
-                        <!-- Step 3: Email -->
                         <div class="form-step" id="step3">
                             <div class="form-group">
                                 <label for="email">Email (Optional)</label>
@@ -2316,7 +2312,6 @@
                             </div>
                         </div>
                         
-                        <!-- Step 4: Solar Type -->
                         <div class="form-step" id="step4">
                             <div class="form-group">
                                 <label for="solarType">Solar Type</label>
@@ -2339,7 +2334,6 @@
                             </div>
                         </div>
                         
-                        <!-- Step 5: Location -->
                         <div class="form-step" id="step5">
                             <div class="form-group">
                                 <label for="location">Location</label>
@@ -2355,7 +2349,6 @@
                             </div>
                         </div>
                         
-                        <!-- Step 6: Message -->
                         <div class="form-step" id="step6">
                             <div class="form-group">
                                 <label for="message">Message (Optional)</label>
@@ -2378,7 +2371,6 @@
         </div>
     </div>
 
-    <!-- Popup Modal for Subsidy (Appears on page load) - UPDATED for scrollable -->
     <div class="popup-overlay" id="subsidyPopup">
         <div class="popup-modal">
             <div class="popup-header">
@@ -2434,7 +2426,6 @@
         </div>
     </div>
 
-    <!-- Partners Section -->
     <section class="partners-section" id="about">
         <div class="section-title">
             <h2>Our Premium Brand Partners</h2>
@@ -2443,12 +2434,10 @@
         
         <div class="partners-slider-container">
             <div class="partners-slider" id="partnersSlider">
-                <!-- Partner logos added by JavaScript -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-column">
@@ -2495,7 +2484,6 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Button -->
     <a href="https://wa.me/919511864107" class="whatsapp-button" target="_blank" title="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -2593,7 +2581,7 @@
         // Initialize Supabase for products
         const productsSb = supabase.createClient(PRODUCTS_SUPABASE_URL, PRODUCTS_SUPABASE_KEY);
         
-        // Load products function (from our products.htm)
+        // Load products function (UPDATED FOR PROFESSIONAL DESIGN)
         async function loadSimpleProducts() {
             const simpleTrack = document.getElementById("simpleTrack");
             if (!simpleTrack) return;
@@ -2622,77 +2610,72 @@
                 }
 
                 if (!data || data.length === 0) {
-                    // Add placeholder products if no data
-                    simpleTrack.innerHTML = `
-                        <div class="simple-card" onclick="openProduct('8')">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
+                    // Fallback to placeholder if no data, keeping the professional structure
+                     const placeholders = [
+                        {id:'8', title:'Solar Panel 550W Mono Perc', price:'16,500', images_id:['https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600']},
+                        {id:'9', title:'Hybrid Inverter 5kW', price:'45,000', images_id:['https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600']},
+                        {id:'10', title:'Tall Tubular Battery 150Ah', price:'14,500', images_id:['https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=600']}
+                    ];
+
+                    let html = '';
+                    placeholders.forEach(p => {
+                         html += `
+                            <div class="simple-card" onclick="openProduct('${p.id}')">
+                                <div class="image-box">
+                                    <img src="${p.images_id[0]}" alt="${p.title}">
+                                </div>
+                                <div class="card-details">
+                                    <div>
+                                        <h4>${p.title}</h4>
+                                        <div class="simple-price">₹${p.price}</div>
+                                    </div>
+                                    <div class="simple-brands"><img src="https://via.placeholder.com/35x35?text=Brand"></div>
+                                </div>
                             </div>
-                            <h4>Solar Panel 300W</h4>
-                            <div class="simple-price">₹12,500</div>
-                            <div class="simple-brands">
-                                <img src="https://via.placeholder.com/35x35?text=Brand">
-                            </div>
-                        </div>
-                        <div class="simple-card" onclick="openProduct('9')">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
-                            </div>
-                            <h4>Solar Inverter 5kW</h4>
-                            <div class="simple-price">₹35,000</div>
-                            <div class="simple-brands">
-                                <img src="https://via.placeholder.com/35x35?text=Brand">
-                            </div>
-                        </div>
-                        <div class="simple-card" onclick="openProduct('10')">
-                            <div class="image-box">
-                                <img src="https://images.unsplash.com/photo-1624397640148-949b1732bb0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80">
-                            </div>
-                            <h4>Solar Battery 150Ah</h4>
-                            <div class="simple-price">₹18,000</div>
-                            <div class="simple-brands">
-                                <img src="https://via.placeholder.com/35x35?text=Brand">
-                            </div>
-                        </div>
-                    `;
-                    // Duplicate for seamless animation
-                    simpleTrack.innerHTML += simpleTrack.innerHTML;
+                        `;
+                    });
+                    
+                    simpleTrack.innerHTML = html + html;
                     return;
                 }
 
+                let html = '';
                 data.forEach(p => {
-                    const img = p.images_id?.[0] ||
-                        "https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80";
-
+                    const img = p.images_id?.[0] || "https://placehold.co/400x300";
                     const logos = (p.product_companies || [])
-                        .map(pc => pc.companies?.logo_image_id)
-                        .filter(Boolean)
-                        .map(l => `<img src="${l}" alt="Brand Logo">`)
+                        .map(pc => pc.companies?.logo_image_id ? `<img src="${pc.companies.logo_image_id}">` : '')
                         .join("");
 
-                    simpleTrack.innerHTML += `
+                    html += `
                         <div class="simple-card" onclick="openProduct('${p.id}')">
                             <div class="image-box">
                                 <img src="${img}" alt="${p.title}">
                             </div>
-                            <h4>${p.title}</h4>
-                            ${p.price ? `<div class="simple-price">₹${p.price}</div>` : ""}
-                            ${logos ? `<div class="simple-brands">${logos}</div>` : ""}
+                            <div class="card-details">
+                                <div>
+                                    <h4>${p.title}</h4>
+                                    ${p.price ? `<div class="simple-price">₹${p.price}</div>` : ""}
+                                </div>
+                                ${logos ? `<div class="simple-brands">${logos}</div>` : ""}
+                            </div>
                         </div>
                     `;
                 });
 
                 // Duplicate for infinite scroll
-                simpleTrack.innerHTML += simpleTrack.innerHTML;
+                simpleTrack.innerHTML = html + html;
                 
                 // Add drag support for products slider
                 const simpleSlider = document.getElementById("simpleSlider");
                 let isDown = false;
                 let startX = 0;
+                let scrollLeft;
                 
                 simpleSlider.addEventListener("mousedown", e => {
                     isDown = true;
-                    startX = e.pageX;
+                    simpleSlider.classList.add('active');
+                    startX = e.pageX - simpleSlider.offsetLeft;
+                    scrollLeft = simpleSlider.scrollLeft;
                     simpleTrack.style.animationPlayState = "paused";
                 });
                 
@@ -2701,11 +2684,15 @@
                 
                 simpleSlider.addEventListener("mousemove", e => {
                     if (!isDown) return;
-                    simpleSlider.scrollLeft -= (e.pageX - startX) * 1.5;
+                    e.preventDefault();
+                    const x = e.pageX - simpleSlider.offsetLeft;
+                    const walk = (x - startX) * 2; // scroll-fast
+                    simpleSlider.scrollLeft = scrollLeft - walk;
                 });
                 
                 function reset() {
                     isDown = false;
+                    simpleSlider.classList.remove('active');
                     simpleTrack.style.animationPlayState = "running";
                 }
                 
